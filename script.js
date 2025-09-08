@@ -44,9 +44,11 @@ function createHospitalCards() {
 }
 
 // Call the function only on the main page
-if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
-    document.addEventListener('DOMContentLoaded', createHospitalCards);
-}
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelector('.card-grid')) {
+        createHospitalCards();
+    }
+});
 
 // --- KOD UNTUK MENGENDALIKAN HALAMAN HOSPITAL DAN SISTEM KRITIKAL ---
 
@@ -163,3 +165,4 @@ document.addEventListener('DOMContentLoaded', () => {
         mainContent.appendChild(cardGrid);
     }
 });
+
