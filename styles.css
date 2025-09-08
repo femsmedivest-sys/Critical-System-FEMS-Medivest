@@ -31,10 +31,11 @@ body {
 /*--------------------------------------Gaya Button Hospital & Sistem Kritikal */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(4,1fr); /*ROW EDIT BOX*/
-    gap:20px; /*gap antara card */
+    grid-template-columns: repeat(6,1fr); /*ROW EDIT BOX*/
+    gap:30px; /*gap antara card */
 }
 
+/*area edit kotak*/
 .card {
     background-color: #fff;
     border-radius: 30px;
@@ -81,6 +82,10 @@ body {
     border-radius: 30px;
     padding: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    /* Ubah atau tambah baris ini */
+    display: inline-block;
+    width: fit-content; /* Ini akan mengecilkan kotak mengikut kandungan */
+    text-align: left; /* Pilihan: Untuk memastikan teks tidak terpusat jika tidak diperlukan */
 }
 
 .asset-card h3 { /*nama aset*/
@@ -140,7 +145,7 @@ body {
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 5px;
-    /* font-weight: bold; */
+    /*font-weight: bold;*/
     font-size: 0.9em;
     border: 1px solid #ccc;
     transition: background-color 0.2s;
