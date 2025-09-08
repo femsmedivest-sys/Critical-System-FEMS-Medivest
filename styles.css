@@ -127,7 +127,11 @@ body {
 .home-button:hover {
     background-color: #f0f0f0;
 }
-
+/* Gaya untuk kumpulan butang */
+.button-group {
+    display: flex;
+    gap: 10px; /* Ruang antara butang */
+}
 /*--------------------------------------------row edit button "return to system list"*/
 .back-button {
     background-color: #ffffff;
@@ -138,7 +142,8 @@ body {
     font-weight: bold;
     font-size: 0.9em;
     border: 1px solid #ccc;
-    margin-top: 10px; /* Jarak antara butang dan tajuk */
+    transition: background-color 0.2s;
+    /*margin-top: 10px; /* Jarak antara butang dan tajuk */
 }
 
 .back-button:hover {
@@ -149,7 +154,7 @@ body {
     width: 200px;
     height: auto;
     position: absolute;
-    top: 50%;
+    top: 30%;
     transform: translateY(-50%);
     left: 20px;
 }
@@ -159,7 +164,7 @@ body {
     height: auto;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-70%);
     right: 50px;
 }
 
