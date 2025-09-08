@@ -85,10 +85,14 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const assetData = {
             "ELECTRICAL_SUPPLY": [
-                { location: "Bilik LV", name: "VCB 1", status: "FUNCTIONING", remark: "Dalam keadaan normal", action: "N/A", lastUpdate: "2025-09-25" },
-                { location: "Bilik LV", name: "VCB 2", status: "NOT-FUNCTIONING", remark: "Bunyi bising", action: "Laporan", lastUpdate: "2025-09-25" },
-                { location: "Bilik LV", name: "VCB 3", status: "NOT-FUNCTIONING", remark: "Leaking", action: "Laporan", lastUpdate: "2025-09-25" },
-                { location: "Bilik LV", name: "VCB 4", status: "FUNCTIONING", remark: "Mechanism rosak", action: "Laporan", lastUpdate: "2025-09-25" },
+                { location: "BILIK LV", name: "VCB 1", status: "FUNCTIONING", remark: "Dalam keadaan normal", action: "N/A", lastUpdate: "2025-09-25" },
+                { location: "BILIK LV", name: "VCB 2", status: "NOT-FUNCTIONING", remark: "Bunyi bising", action: "Laporan", lastUpdate: "2025-09-25" },
+                { location: "BILIK LV", name: "VCB 3", status: "NOT-FUNCTIONING", remark: "Leaking", action: "Laporan", lastUpdate: "2025-09-25" },
+                { location: "BILIK LV", name: "VCB 4", status: "FUNCTIONING", remark: "Mechanism rosak", action: "Laporan", lastUpdate: "2025-09-25" },
+                { location: "BILIK LV", name: "VCB 5", status: "FUNCTIONING", remark: "Dalam keadaan normal", action: "N/A", lastUpdate: "2025-09-25" },
+                { location: "BILIK LV", name: "VCB 6", status: "NOT-FUNCTIONING", remark: "Bunyi bising", action: "Laporan", lastUpdate: "2025-09-25" },
+                { location: "BILIK LV", name: "VCB 7", status: "NOT-FUNCTIONING", remark: "Leaking", action: "Laporan", lastUpdate: "2025-09-25" },
+                { location: "BILIK LV", name: "VCB 6", status: "FUNCTIONING", remark: "Mechanism rosak", action: "Laporan", lastUpdate: "2025-09-25" },
                 { location: "HT SWITCH ROOM", name: "TRIP CABLE 1", status: "FUNCTIONING", remark: "Dalam keadaan normal", action: "N/A", lastUpdate: "2025-09-25" },
             ],
             // Tambah data untuk sistem lain di sini
