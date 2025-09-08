@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const mainContent = document.querySelector('main');
     const headerTitle = document.getElementById('header-title');
-    const backButton = document.getElementById('back-button');
+    const backButton = document.getElementById('back-button'); //penambahan coding return to list system
 
     // Paparkan butiran aset jika parameter 'sys' wujud
     if (systemId) {
