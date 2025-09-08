@@ -1,0 +1,1 @@
+console.log('🔥 Script berjaya load!'); // versi debug untuk test
