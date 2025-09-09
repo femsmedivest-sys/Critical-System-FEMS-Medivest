@@ -1,6 +1,23 @@
-// --- KOD UNTUK MENJANA BUTANG HOSPITAL DI HALAMAN UTAMA (index.html) ---
+// Gantikan URL ini dengan URL Apps Script yang anda terbitkan
+const googleSheetsApiUrl = 'https://script.google.com/macros/s/AKfycbw6nwHbWfRtgEbu2w7BgD6ip6Xbd4G5XA6UnFc57LFJzYcQ_mnkJe9BJMUKTvuthJNG/exec';
 
-// Data hospital yang akan digunakan untuk menjana butang
+// Fungsi untuk mengambil data dari Google Sheets API
+async function fetchAssetData(systemId) {
+    try {
+        const response = await fetch(googleSheetsApiUrl);
+        const data = await response.json(); 
+
+        // Tapis data mengikut 'Type of System' yang sepadan
+        const filteredData = data.filter(item => item['Type of System'].trim() === systemId.trim());
+        return filteredData;
+
+    } catch (error) {
+        console.error('Error fetching data from Google Sheets API:', error);
+        return [];
+    }
+}
+
+// Data hospital
 const hospitals = [
     { name: "Hospital Melaka", id: "MKA" },
     { name: "Hospital Sultanah Aminah", id: "HSA" },
@@ -28,7 +45,7 @@ const hospitals = [
 
 function createHospitalCards() {
     const cardGrid = document.querySelector('.card-grid');
-    if (!cardGrid) return; // Exit if the element doesn't exist
+    if (!cardGrid) return;
 
     hospitals.forEach(hospital => {
         const card = document.createElement('a');
@@ -43,25 +60,17 @@ function createHospitalCards() {
     });
 }
 
-// Call the function only on the main page
-if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
-    document.addEventListener('DOMContentLoaded', createHospitalCards);
-}
-
-// --- KOD UNTUK MENGENDALIKAN HALAMAN HOSPITAL DAN SISTEM KRITIKAL ---
-
-// Data sistem kritikal
 const criticalSystems = [
-    { name: "ELECTRICAL SUPPLY", id: "ELECTRICAL_SUPPLY" },
-    { name: "WATER SUPPLY SYSTEM", id: "WATER_SUPPLY_SYSTEM" },
+    { name: "ELECTRICAL SUPPLY", id: "ELECTRICAL SUPPLY" },
+    { name: "WATER SUPPLY SYSTEM", id: "WATER SUPPLY SYSTEM" },
     { name: "AUTOCLAVE", id: "AUTOCLAVE" },
-    { name: "CHILLER & COOLING TOWER", id: "CHILLER_COOLING_TOWER" },
-    { name: "GENERATOR SET", id: "GENERATOR_SET" },
-    { name: "MEDICAL GAS PIPELINE SYSTEM", id: "MEDICAL_GAS_PIPELINE" },
-    { name: "VERTICAL TRANSPORTATION", id: "VERTICAL_TRANSPORTATION" },
-    { name: "AHU & HVAC", id: "AHU_HVAC" },
-    { name: "BAS SYSTEM", id: "BAS_SYSTEM" },
-    { name: "FIRE PROTECTION SYSTEM", id: "FIRE_PROTECTION" },
+    { name: "GENERATOR SET", id: "GENERATOR SET" },
+    { name: "MEDICAL GAS PIPELINE SYSTEM", id: "MEDICAL GAS PIPELINE SYSTEM" },
+    { name: "VERTICAL TRANSPORTATION", id: "LIFT" },
+    { name: "AHU & HVAC (coming soon include)", id: "AHU & HVAC" }, //blom ada fail gform
+    { name: "BAS SYSTEM (coming soon include)", id: "BAS SYSTEM" }, //blom ada fail gform
+    { name: "CHILLER & COOLING TOWER", id: "CHILLER-COOLING-TOWER" },
+    { name: "FIRE PROTECTION SYSTEM", id: "FIRE PROTECTION SYSTEM" },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -71,85 +80,106 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const mainContent = document.querySelector('main');
     const headerTitle = document.getElementById('header-title');
-    const backButton = document.getElementById('back-button'); //penambahan coding return to list system
+    const backButton = document.getElementById('back-button');
 
-    // Paparkan butiran aset jika parameter 'sys' wujud
     if (systemId) {
         if (backButton) {
-            backButton.style.display = 'block';
+            backButton.style.display = 'inline-block';
             backButton.href = `hospital-page.html?hosp=${hospitalId}`;
         }
         
-        headerTitle.textContent = `${systemId.replace(/_/g, ' ')}`;
-        mainContent.innerHTML = '';
+        const currentSystem = criticalSystems.find(system => system.id === systemId);
         
-        const assetData = {
-            "ELECTRICAL_SUPPLY": [
-                { location: "BILIK LV", name: "VCB 1", status: "FUNCTIONING", remark: "Dalam keadaan normal", action: "N/A", lastUpdate: "2025-09-25" },
-                { location: "BILIK LV", name: "VCB 2", status: "NOT-FUNCTIONING", remark: "Bunyi bising", action: "Laporan", lastUpdate: "2025-09-25" },
-                { location: "BILIK LV", name: "VCB 3", status: "NOT-FUNCTIONING", remark: "Leaking,minyak mengalir menyebabkan feeder tersebut ditutup", action: "Laporan", lastUpdate: "2025-09-25" },
-                { location: "BILIK LV", name: "VCB 4", status: "FUNCTIONING", remark: "Mechanism rosak", action: "Laporan", lastUpdate: "2025-09-25" },
-                { location: "BILIK LV", name: "VCB 5", status: "FUNCTIONING", remark: "Dalam keadaan normal", action: "N/A", lastUpdate: "2025-09-25" },
-                { location: "BILIK LV", name: "VCB 6", status: "NOT-FUNCTIONING", remark: "Bunyi bising", action: "Laporan", lastUpdate: "2025-09-25" },
-                { location: "BILIK LV", name: "VCB 7", status: "NOT-FUNCTIONING", remark: "Leaking", action: "Laporan", lastUpdate: "2025-09-25" },
-                { location: "BILIK LV", name: "VCB 6", status: "FUNCTIONING", remark: "Mechanism rosak", action: "Laporan", lastUpdate: "2025-09-25" },
-                { location: "HT SWITCH ROOM", name: "TRIP CABLE 1", status: "FUNCTIONING", remark: "Dalam keadaan normal", action: "N/A", lastUpdate: "2025-09-25" },
-            ],
-            // Tambah data untuk sistem lain di sini
-        };
-
-        const data = assetData[systemId] || [];
-        const locations = {};
-
-        data.forEach(item => {
-            if (!locations[item.location]) {
-                locations[item.location] = [];
-            }
-            locations[item.location].push(item);
-        });
-
-        for (const location in locations) {
-            const locationSection = document.createElement('section');
-            locationSection.className = 'location-section';
-            
-            const locationTitle = document.createElement('h2');
-            locationTitle.textContent = location;
-            locationSection.appendChild(locationTitle);
-            
-            const cardGrid = document.createElement('div');
-            cardGrid.className = 'card-grid';
-
-            locations[location].forEach(item => {
-                let statusClass = '';
-                if (item.status === 'FUNCTIONING') {
-                    statusClass = 'status-FUNCTIONING';
-                } else if (item.status === 'NOT-FUNCTIONING') {
-                    statusClass = 'status-NOT-FUNCTIONING';
-                }
-                
-                const card = document.createElement('div');
-                card.className = 'asset-card';
-                card.innerHTML = `
-                    <h3>${item.name}</h3>
-                    <p><strong>Status:</strong> <span class="status-box ${statusClass}">${item.status}</span></p>
-                    <p><strong>Remark:</strong> ${item.remark}</p>
-                    <p><strong>Action:</strong> ${item.action}</p>
-                    <p class="last-update">Last Update: ${item.lastUpdate}</p>
-                `;
-                cardGrid.appendChild(card);
-            });
-            
-            locationSection.appendChild(cardGrid);
-            mainContent.appendChild(locationSection);
+        if (currentSystem) {
+            headerTitle.textContent = currentSystem.name;
+        } else {
+            headerTitle.textContent = systemId; 
         }
 
-    // Paparkan butang sistem kritikal jika parameter 'hosp' wujud
+        mainContent.innerHTML = '<p>Sabar yeeee hehehehehehe😂, akan cuba solve untuk automatik pop up , still program the code ☠️🚀🔥</p>';
+
+        fetchAssetData(systemId)
+            .then(data => {
+                mainContent.innerHTML = '';
+                const locations = {};
+
+                data.forEach(item => {
+                    const location = item['Location']; 
+                    if (!locations[location]) {
+                        locations[location] = [];
+                    }
+                    locations[location].push(item);
+                });
+
+                for (const location in locations) {
+                    const locationSection = document.createElement('section');
+                    locationSection.className = 'location-section';
+                    
+                    const locationTitle = document.createElement('h2');
+                    locationTitle.textContent = location;
+                    locationSection.appendChild(locationTitle);
+                    
+                    const cardGrid = document.createElement('div');
+                    cardGrid.className = 'card-grid';
+
+                    locations[location].forEach(item => {
+                        let statusClass = '';
+                        const itemStatus = item['Status'] ? item['Status'].trim().toUpperCase() : '';
+
+                        if (itemStatus === 'FUNCTIONING') {
+                            statusClass = 'status-FUNCTIONING';
+                        } else if (itemStatus === 'NOT FUNCTIONING') {
+                            statusClass = 'status-NOT-FUNCTIONING';
+                        }
+                        
+                        // Kod baharu untuk memformatkan tarikh
+                        const rawDate = item['Last Update'];
+                        let formattedDate = '';
+                        if (rawDate) {
+                            try {
+                                const dateObj = new Date(rawDate);
+                                const day = String(dateObj.getDate()).padStart(2, '0');
+                                const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+                                const year = dateObj.getFullYear();
+                                const hours = String(dateObj.getHours()).padStart(2, '0');
+                                const minutes = String(dateObj.getMinutes()).padStart(2, '0');
+                                const seconds = String(dateObj.getSeconds()).padStart(2, '0');
+                                formattedDate = `${day}-${month}-${year}, ${hours}:${minutes}:${seconds}`;
+                            } catch (e) {
+                                console.error('Failed to parse date:', rawDate);
+                                formattedDate = rawDate; // Fallback jika gagal
+                            }
+                        } else {
+                            formattedDate = 'N/A';
+                        }
+
+                        const card = document.createElement('div');
+                        card.className = 'asset-card';
+                        card.innerHTML = `
+                            <h3>${item['Asset']}</h3>
+                            <p><strong>Status:</strong> <span class="status-box ${statusClass}">${item['Status']}</span></p>
+                            <p><strong>Remark:</strong> ${item['Remark']}</p>
+                            <p><strong>Action:</strong> ${item['Action']}</p>
+                            <p class="last-update">Last Update: ${formattedDate}</p>
+                        `;
+                        cardGrid.appendChild(card);
+                    });
+                    
+                    locationSection.appendChild(cardGrid);
+                    mainContent.appendChild(locationSection);
+                }
+            })
+            .catch(error => {
+                 mainContent.innerHTML = `<p style="color:red;">Failed to load data. Please check your console for errors.</p>`;
+                 console.error(error);
+            });
+
     } else if (hospitalId) {
         if (backButton) {
             backButton.style.display = 'none';
         }
         
-        headerTitle.textContent = `CRITICAL SYSYTEM - ${hospitalId}`; //TITLE SITE BILA CLICK SITE
+        headerTitle.textContent = `CRITICAL SYSTEM - ${hospitalId}`;
         mainContent.innerHTML = '';
 
         const cardGrid = document.createElement('div');
@@ -167,3 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mainContent.appendChild(cardGrid);
     }
 });
+
+if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
+    document.addEventListener('DOMContentLoaded', createHospitalCards);
+}
