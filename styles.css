@@ -1,7 +1,7 @@
 /* Gaya Umum */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('Gambar/IT2.jpg'); 
+    background-image: url('Critical-System-FEMS-Medivest/IT2.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -20,7 +20,7 @@ body {
     width: 100%;     /* Pastikan header merentangi seluruh lebar skrin */
     z-index: 1000;   /* Pastikan header berada di atas kandungan lain */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Pilihan: untuk kesan bayangan */
-    background-image: url('Gambar/header.jpg'); /* Gantikan dengan laluan fail imej anda */
+    background-image: url('Critical-System-FEMS-Medivest/header.jpg'); /* Gantikan dengan laluan fail imej anda */
     background-size: cover; /* Pastikan imej meliputi keseluruhan header */
     background-position: center; /* Pusatkan imej */
     background-repeat: no-repeat; /* Elakkan imej berulang */
@@ -218,4 +218,5 @@ body {
     border-radius: 8px;
     border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
 }
