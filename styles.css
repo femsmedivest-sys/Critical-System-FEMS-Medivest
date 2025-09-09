@@ -1,7 +1,7 @@
 /* Gaya Umum */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('Gambar/IT2.jpg'); 
+    background-image: url('https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/main/Gambar/IT2.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -21,7 +21,7 @@ body {
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-image: url('Gambar/header.jpg');
+    background-image: url('https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/main/Gambar/header.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -230,4 +230,5 @@ body {
     border-radius: 8px;
     border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
 }*/
