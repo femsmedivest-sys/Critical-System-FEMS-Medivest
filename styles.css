@@ -1,7 +1,7 @@
 /* Gaya Umum */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/main/IT2.jpg'); 
+    background-image: url('Gambar/IT2.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -10,45 +10,77 @@ body {
     padding: 0;
     padding-top: 100px;
 }
+
 .main-header {
     background-color: #ffffff;
     color: rgb(0, 0, 0);
     padding: 20px;
     text-align: center;
     position: fixed; /* Jadikan header tetap */
-    top: 0;          /* Letakkan di bahagian atas skrin */
-    width: 100%;     /* Pastikan header merentangi seluruh lebar skrin */
-    z-index: 1000;   /* Pastikan header berada di atas kandungan lain */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Pilihan: untuk kesan bayangan */
-    background-image: url('https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/main/header.jpg'); /* Gantikan dengan laluan fail imej anda */
-    background-size: cover; /* Pastikan imej meliputi keseluruhan header */
-    background-position: center; /* Pusatkan imej */
-    background-repeat: no-repeat; /* Elakkan imej berulang */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-image: url('Gambar/header.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Ubah ini untuk susun atur logo dan tajuk */
     display: flex;
-    flex-direction: column; /* Susun item dalam lajur */
-    align-items: center; /* Pusatkan item secara mendatar */
+    justify-content: space-between; /* Letakkan item di hujung yang bertentangan */
+    align-items: center; /* Pusatkan secara menegak */
 }
+
+/* Bekas untuk logo kiri dan kanan */
 .header-images {
     display: flex;
     justify-content: space-between; /* Letakkan imej di hujung yang bertentangan */
-    width: 100%; /* Pastikan ia mengambil seluruh lebar */
+    width: 100%;
     padding: 0 20px;
 }
+
+/* Buang position: absolute dari logo */
+.header-logo {
+    width: 200px;
+    height: auto;
+    /* Buang 3 baris di bawah ini */
+    /* position: absolute; */
+    /* top: 30%; */
+    /* transform: translateY(-50%); */
+    left: 20px; /* Boleh dikekalkan jika anda mahu */
+}
+
+.header-logo2 {
+    width: 200px;
+    height: auto;
+    /* Buang 3 baris di bawah ini */
+    /* position: absolute; */
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
+    right: 50px; /* Boleh dikekalkan jika anda mahu */
+}
+
+/* Tambah gaya untuk tajuk, pastikan ia di tengah */
+.main-header h1 {
+    flex-grow: 1; /* Biarkan tajuk membesar untuk mengisi ruang */
+    margin: 0;
+    text-align: center;
+}
+
 .container {
     max-width: 1300px;
     margin: 20px auto;
     padding: 0 20px;
-    padding-top: 50px; /* Pilihan: Tambah di sini jika tidak pada body */
+    padding-top: 50px;
 }
 
 /*--------------------------------------Gaya Button Hospital & Sistem Kritikal */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(4,2fr); /*ROW EDIT BOX*/
-    gap:10px; /*gap antara card */
+    grid-template-columns: repeat(4,2fr);
+    gap:10px;
 }
 
-/*area edit kotak*/
 .card {
     background-color: #f4f3f3;
     border-radius: 30px;
@@ -78,43 +110,39 @@ body {
     margin-bottom: 40px;
 }
 
-/******kotak untuk location asset,eg; bilik LV, GENSET******/
 .location-section h2 {
     font-size: 1.5em;
     color: #ffffff;
-    background-color: #424242; /*Latar belakang putih untuk kotak*/
-    padding: 5px 5px; /* Ruang dalam kotak */
-    border-radius: 20px; /* Sudut bulat */
-    box-shadow: 0 2px 4px rgba(133, 70, 70, 0.05); /* Bayangan lembut */
+    background-color: #424242;
+    padding: 5px 5px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(133, 70, 70, 0.05);
     margin-bottom: 20px;
-    text-align: center; /* Pusat teks */
+    text-align: center;
 }
 
-.asset-card { /*background asset*/
+.asset-card {
     background-color: #ecebeb;
     border-radius: 30px;
     padding: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    /* Ubah atau tambah baris ini */
-    /*display: inline-block;
-    /*width: fit-content; /* Ini akan mengecilkan kotak mengikut kandungan */
-    text-align: left; /* Pilihan: Untuk memastikan teks tidak terpusat jika tidak diperlukan */
+    text-align: left;
 }
 
-.asset-card h3 { /*nama aset*/
+.asset-card h3 {
     font-size: 1.1em;
     color: #000000;
     margin-bottom: 5px;
-    text-align: center; /* Pusat teks */
+    text-align: center;
 }
 
-.asset-card p {/*detail asset*/
+.asset-card p {
     font-size: 0.9em;
     color: #4b4b4b;
     margin: 3px 0;
 }
 
-.last-update { /*ni untuk ayat jaid senget*/
+.last-update {
     font-style: italic;
     font-weight: bold;
     font-size: 0.8em;
@@ -122,7 +150,7 @@ body {
     margin-top: 10px;
 }
 
-.item.location { /*ni untuk ayat jadi senget*/
+.item.location {
     font-style: italic;
     font-weight: bold;
     font-size: 0.8em;
@@ -137,75 +165,59 @@ body {
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 5px;
-    /*font-weight: bold;*/
     font-size: 0.9em;
     border: 1px solid #ccc;
-    /*margin-top: 10px; /* Jarak antara butang dan tajuk */
 }
 
 .home-button:hover {
     background-color: #f0f0f0;
 }
-/* Gaya untuk kumpulan butang */
+
 .button-group {
     display: flex;
-    gap: 10px; /* Ruang antara butang */
+    gap: 10px;
 }
-/*--------------------------------------------row edit button "return to system list"*/
+
 .back-button {
     background-color: #ffffff;
     color: #000000;
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 5px;
-    /*font-weight: bold;*/
     font-size: 0.9em;
     border: 1px solid #ccc;
     transition: background-color 0.2s;
-    /*margin-top: 10px; /* Jarak antara butang dan tajuk */
 }
 
 .back-button:hover {
     background-color: #f0f0f0;
 }
-/*------------------------------------------------logo punya detail */
-.header-logo {
+
+/* Logo - dibetulkan */
+.header-logo, .header-logo2 {
     width: 200px;
     height: auto;
-    position: absolute;
-    top: 30%;
-    transform: translateY(-50%);
-    left: 20px;
 }
 
-.header-logo2 {
-    width: 200px;
-    height: auto;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 50px;
-}
-
-/*--------------------------------------style untuk status functioning/not functioning--------------------------*/
+/* Status */
 .status-box {
-    display: inline-block; /*Untuk membolehkan padding dan margin*/
-    padding: 6px 8px; /*Ruang dalam kotak*/
-    border-radius: 10px; /* Sudut bulat */
-    color: #000000; /* Warna teks putih */
-    font-weight: bold; /* Teks tebal */
-    text-transform: uppercase; /* Tukar teks kepada huruf besar */
-}
-/*untuk status "FUNCTIONING"*/
-.status-FUNCTIONING {
-    background-color: #16ff4c; /*Latar belakang hijau */
-}
-/*untuk status "NOT-FUNCTIONING"*/
-.status-NOT-FUNCTIONING {
-    background-color: #ff0019; /*Latar belakang merah */
+    display: inline-block;
+    padding: 6px 8px;
+    border-radius: 10px;
+    color: #000000;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-/* style utk button dropdown list of hospital, kalau x nak guna boleh delete this coding */
+.status-FUNCTIONING {
+    background-color: #00ff3c;
+}
+
+.status-NOT-FUNCTIONING {
+    background-color: #ff0019;
+}
+
+/* Gaya untuk dropdown jika diperlukan */
 /*.dropdown-container {
     text-align: center;
     margin-top: 50px;
@@ -218,7 +230,4 @@ body {
     border-radius: 8px;
     border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-}
-
-
+}*/
