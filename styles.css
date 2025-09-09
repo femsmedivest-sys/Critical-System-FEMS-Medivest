@@ -1,13 +1,17 @@
 /* Gaya Umum */
 body {
     font-family: Arial, sans-serif;
-    background-color: rgba(211, 211, 211, 0.801); /* Tukar kepada warna lain */
+    background-image: url('Gambar/IT2.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Pilihan: agar imej tidak bergerak semasa scroll */
     margin: 0;
     padding: 0;
     padding-top: 100px;
 }
 .main-header {
-   background-color: #d3ffee;
+    background-color: #ffffff;
     color: rgb(0, 0, 0);
     padding: 20px;
     text-align: center;
@@ -16,10 +20,19 @@ body {
     width: 100%;     /* Pastikan header merentangi seluruh lebar skrin */
     z-index: 1000;   /* Pastikan header berada di atas kandungan lain */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Pilihan: untuk kesan bayangan */
-    background-image: url('Data Tableau/Engineering.jpg'); /* Gantikan dengan laluan fail imej anda */
+    background-image: url('Gambar/header.jpg'); /* Gantikan dengan laluan fail imej anda */
     background-size: cover; /* Pastikan imej meliputi keseluruhan header */
     background-position: center; /* Pusatkan imej */
     background-repeat: no-repeat; /* Elakkan imej berulang */
+    display: flex;
+    flex-direction: column; /* Susun item dalam lajur */
+    align-items: center; /* Pusatkan item secara mendatar */
+}
+.header-images {
+    display: flex;
+    justify-content: space-between; /* Letakkan imej di hujung yang bertentangan */
+    width: 100%; /* Pastikan ia mengambil seluruh lebar */
+    padding: 0 20px;
 }
 .container {
     max-width: 1300px;
@@ -31,15 +44,15 @@ body {
 /*--------------------------------------Gaya Button Hospital & Sistem Kritikal */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(6,1fr); /*ROW EDIT BOX*/
-    gap:30px; /*gap antara card */
+    grid-template-columns: repeat(4,2fr); /*ROW EDIT BOX*/
+    gap:10px; /*gap antara card */
 }
 
 /*area edit kotak*/
 .card {
-    background-color: #fff;
+    background-color: #f4f3f3;
     border-radius: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
     text-align: center;
     padding: 20px;
     transition: transform 0.2s;
@@ -56,7 +69,7 @@ body {
 .card h3 {
     font-size: 1.2em;
     font-weight: bold;
-    color: #696969;
+    color: #414141;
     margin: 0;
 }
 
@@ -78,13 +91,13 @@ body {
 }
 
 .asset-card { /*background asset*/
-    background-color: #ffffff;
+    background-color: #ecebeb;
     border-radius: 30px;
     padding: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     /* Ubah atau tambah baris ini */
-    display: inline-block;
-    width: fit-content; /* Ini akan mengecilkan kotak mengikut kandungan */
+    /*display: inline-block;
+    /*width: fit-content; /* Ini akan mengecilkan kotak mengikut kandungan */
     text-align: left; /* Pilihan: Untuk memastikan teks tidak terpusat jika tidak diperlukan */
 }
 
@@ -179,17 +192,17 @@ body {
     display: inline-block; /*Untuk membolehkan padding dan margin*/
     padding: 6px 8px; /*Ruang dalam kotak*/
     border-radius: 10px; /* Sudut bulat */
-    color: #ffffff; /* Warna teks putih */
+    color: #000000; /* Warna teks putih */
     font-weight: bold; /* Teks tebal */
     text-transform: uppercase; /* Tukar teks kepada huruf besar */
 }
 /*untuk status "FUNCTIONING"*/
 .status-FUNCTIONING {
-    background-color: #28a745; /*Latar belakang hijau */
+    background-color: #16ff4c; /*Latar belakang hijau */
 }
 /*untuk status "NOT-FUNCTIONING"*/
 .status-NOT-FUNCTIONING {
-    background-color: #dc3545; /*Latar belakang merah */
+    background-color: #ff0019; /*Latar belakang merah */
 }
 
 /* style utk button dropdown list of hospital, kalau x nak guna boleh delete this coding */
