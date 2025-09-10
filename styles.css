@@ -1,7 +1,7 @@
 /* Gaya Umum */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/main/IT2.jpg'); 
+    background-image: url('Gambar/IT2.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -21,7 +21,7 @@ body {
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-image: url('https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/main/header.jpg');
+    background-image: url('Gambar/header.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -29,6 +29,8 @@ body {
     display: flex;
     justify-content: space-between; /* Letakkan item di hujung yang bertentangan */
     align-items: center; /* Pusatkan secara menegak */
+    gap: 10px; /* Tambah ruang antara elemen */
+    padding: 20px; /* Kekalkan padding di sini */
 }
 
 /* Bekas untuk logo kiri dan kanan */
@@ -36,7 +38,7 @@ body {
     display: flex;
     justify-content: space-between; /* Letakkan imej di hujung yang bertentangan */
     width: 100%;
-    padding: 0 20px;
+    /*padding: 0 20px;*/
 }
 
 /* Buang position: absolute dari logo */
@@ -51,20 +53,23 @@ body {
 }
 
 .header-logo2 {
-    width: 200px;
+    width: 150px;
     height: auto;
     /* Buang 3 baris di bawah ini */
     /* position: absolute; */
     /* top: 50%; */
     /* transform: translateY(-50%); */
-    right: 50px; /* Boleh dikekalkan jika anda mahu */
+    right:50px; /* Boleh dikekalkan jika anda mahu */
 }
 
 /* Tambah gaya untuk tajuk, pastikan ia di tengah */
 .main-header h1 {
     flex-grow: 1; /* Biarkan tajuk membesar untuk mengisi ruang */
-    margin: 0;
+    margin: 0 10px; /* Tambah margin sisi untuk tajuk */
     text-align: center;
+    min-width: 200px; /* Contoh: Tetapkan lebar minimum */
+    max-width: 100%; /* Contoh: Tidak lebih dari 50% lebar */
+    font-size:2.5em; /* Mungkin perlu kurangkan saiz fon */
 }
 
 .container {
@@ -198,12 +203,6 @@ body {
 .back-button:hover {
     background-color: #b5b5b5; /*affect when cursor touch the button*/
     transform: translateY(-5px);
-}
-
-/* Logo - dibetulkan */
-.header-logo, .header-logo2 {
-    width: 200px;
-    height: auto;
 }
 
 /* Status */
