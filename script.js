@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
             backButton.style.display = 'none';
         }
         
-        headerTitle.textContent = `CRITICAL SYSTEM - ${hospitalId}`;
+        headerTitle.textContent = `CRITICAL SYSTEM HOSPITAL- ${hospitalId}`;
         mainContent.innerHTML = '';
 
         const cardGrid = document.createElement('div');

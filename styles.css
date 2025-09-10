@@ -30,21 +30,22 @@ body {
     justify-content: space-between; /* Letakkan item di hujung yang bertentangan */
     align-items: left; /* Pusatkan secara menegak */
     /*gap: 5px; /* Tambah ruang antara elemen */
-    /*padding: 20px; /* Kekalkan padding di sini */
+    padding: 20px; /* Kekalkan padding di sini */
 }
 
 /* Bekas untuk tajuk dan butang */
-.title-home-container {
+.title-home-container h1 {
     display: flex;
     flex-direction: column; /* Susun item dalam lajur */
     align-items: center; /* **Pusatkan tajuk dan butang** */
     flex-grow: 1;
     text-align: center;
+    font-size: 1.5em; /* Lebih kecil daripada 1.5em */
 }
 
 /* Tajuk (hospital-page) */
 #header-title {
-    font-size: 3.0em; 
+    font-size: 2.0em; 
     font-weight: bold;
     color: #000000;
     margin: 0;
@@ -79,14 +80,7 @@ body {
 }
 
 /* Tambah gaya untuk tajuk, pastikan ia di tengah */
-.main-header h1 {
-    flex-grow: 1; /* Biarkan tajuk membesar untuk mengisi ruang */
-    margin: 0 5px; /* Tambah margin sisi untuk tajuk */
-    text-align: center;
-    min-width: 200px; /* Contoh: Tetapkan lebar minimum */
-    max-width: 100%; /* Contoh: Tidak lebih dari 50% lebar */
-    font-size:2.5em; /* Mungkin perlu kurangkan saiz fon */
-}
+
 
 .container {
     max-width: 1300px;
@@ -114,6 +108,7 @@ body {
     display: block;
     text-decoration: none;
     color: inherit;
+    border: 1px solid #838383;
 }
 
 .card:hover {
@@ -128,6 +123,7 @@ body {
     font-weight: bold;
     color: #2c2c2c;
     margin: 0;
+
 }
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++ Gaya untuk Halaman Butiran Aset ++++++++++++++++++++++++++++++++++ */
@@ -144,6 +140,7 @@ body {
     box-shadow: 0 2px 4px rgba(133, 70, 70, 0.05);
     margin-bottom: 20px;
     text-align: center;
+    border: 1px solid #86ffe5;
 }
 
 .asset-card {
@@ -152,6 +149,7 @@ body {
     padding: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     text-align: left;
+    border: 1px solid #838383;
 }
 
 /*edit utk font detail aset*/
@@ -160,12 +158,14 @@ body {
     color: #000000;
     margin-bottom: 5px;
     text-align: center;
+    
 }
 
 .asset-card p {
     font-size: 0.9em;
     color: #2a2a2a;
     margin: 3px 0;
+    
 }
 
 .last-update {
@@ -192,7 +192,8 @@ body {
     text-decoration: none;
     border-radius: 5px;
     font-size: 0.9em;
-    border: 1px solid #ccc;
+    border: 1px solid #838383;
+    
 }
 
 .home-button:hover {
@@ -212,8 +213,7 @@ body {
     text-decoration: none;
     border-radius: 5px;
     font-size: 0.9em;
-    border: 1px solid #ccc;
-    transition: background-color 0.2s;
+    border: 1px solid #838383;
 }
 
 .back-button:hover {
