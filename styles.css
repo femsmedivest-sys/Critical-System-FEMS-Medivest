@@ -1,7 +1,7 @@
 /* Gaya Umum */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/main/IT2.jpg'); 
+    background-image: url('Gambar/IT2.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -21,7 +21,7 @@ body {
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-image: url('https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/main/header.jpg');
+    background-image: url('Gambar/header.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -74,15 +74,16 @@ body {
     padding-top: 50px;
 }
 
-/*--------------------------------------Gaya Button Hospital & Sistem Kritikal */
+/*Gaya Button Hospital & Sistem Kritikal ++++++++++++++++++++++++++++*/
 .card-grid {
     display: grid;
     grid-template-columns: repeat(4,2fr);
     gap:10px;
 }
 
+/*edit button nama hospital*/
 .card {
-    background-color: #f4f3f3;
+    background-color: #f3f3f3;
     border-radius: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
     text-align: center;
@@ -95,17 +96,20 @@ body {
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    background-color: #ffffff; /*effect button when touch*/
+    transform: scaleX(1.1); /*movement*/
+
 }
 
+/*---edit font utk word  nama hospital-----*/
 .card h3 {
     font-size: 1.2em;
     font-weight: bold;
-    color: #414141;
+    color: #484848;
     margin: 0;
 }
 
-/* ---------------------------------------------- Gaya untuk Halaman Butiran Aset ---------------- */
+/* +++++++++++++++++++++++++++++++++++++++++++++++ Gaya untuk Halaman Butiran Aset ++++++++++++++++++++++++++++++++++ */
 .location-section {
     margin-bottom: 40px;
 }
@@ -122,13 +126,14 @@ body {
 }
 
 .asset-card {
-    background-color: #ecebeb;
+    background-color: #efeeee;
     border-radius: 30px;
     padding: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     text-align: left;
 }
 
+/*edit utk font detail aset*/
 .asset-card h3 {
     font-size: 1.1em;
     color: #000000;
@@ -138,7 +143,7 @@ body {
 
 .asset-card p {
     font-size: 0.9em;
-    color: #4b4b4b;
+    color: #2a2a2a;
     margin: 3px 0;
 }
 
@@ -158,7 +163,7 @@ body {
     margin-top: 10px;
 } 
 
-/* -------------------------------- Butang Home --- */
+/* -------------------------------- Button Home ---------------------------- */
 .home-button {
     background-color: #ffffff;
     color: #000000;
@@ -170,7 +175,8 @@ body {
 }
 
 .home-button:hover {
-    background-color: #f0f0f0;
+    background-color: #b5b5b5;
+    transform: translateY(-5px);
 }
 
 .button-group {
@@ -190,7 +196,8 @@ body {
 }
 
 .back-button:hover {
-    background-color: #f0f0f0;
+    background-color: #b5b5b5; /*affect when cursor touch the button*/
+    transform: translateY(-5px);
 }
 
 /* Logo - dibetulkan */
@@ -230,6 +237,4 @@ body {
     border-radius: 8px;
     border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
 }*/
-
