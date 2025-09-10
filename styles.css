@@ -18,7 +18,7 @@ body {
     text-align: center;
     position: fixed; /* Jadikan header tetap */
     top: 0;
-    width: 100%;
+    width: 99%;/* kotak header <-----> */
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     background-image: url('Gambar/header.jpg');
@@ -28,17 +28,33 @@ body {
     /* Ubah ini untuk susun atur logo dan tajuk */
     display: flex;
     justify-content: space-between; /* Letakkan item di hujung yang bertentangan */
-    align-items: center; /* Pusatkan secara menegak */
-    gap: 10px; /* Tambah ruang antara elemen */
-    padding: 20px; /* Kekalkan padding di sini */
+    align-items: left; /* Pusatkan secara menegak */
+    /*gap: 5px; /* Tambah ruang antara elemen */
+    /*padding: 20px; /* Kekalkan padding di sini */
 }
 
-/* Bekas untuk logo kiri dan kanan */
-.header-images {
+/* Bekas untuk tajuk dan butang */
+.title-home-container {
     display: flex;
-    justify-content: space-between; /* Letakkan imej di hujung yang bertentangan */
-    width: 100%;
-    /*padding: 0 20px;*/
+    flex-direction: column; /* Susun item dalam lajur */
+    align-items: center; /* **Pusatkan tajuk dan butang** */
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* Tajuk (hospital-page) */
+#header-title {
+    font-size: 3.0em; 
+    font-weight: bold;
+    color: #000000;
+    margin: 0;
+}
+
+/* Gaya untuk logo-container yang menempatkan dua logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap:1px; /* Tambah ruang antara dua logo */
 }
 
 /* Buang position: absolute dari logo */
@@ -49,23 +65,23 @@ body {
     /* position: absolute; */
     /* top: 30%; */
     /* transform: translateY(-50%); */
-    left: 20px; /* Boleh dikekalkan jika anda mahu */
+    /*left: 20px; /* Boleh dikekalkan jika anda mahu */
 }
 
 .header-logo2 {
-    width: 150px;
+    width: 200px;
     height: auto;
     /* Buang 3 baris di bawah ini */
     /* position: absolute; */
     /* top: 50%; */
     /* transform: translateY(-50%); */
-    right:50px; /* Boleh dikekalkan jika anda mahu */
+    /*right:50px; /* Boleh dikekalkan jika anda mahu */
 }
 
 /* Tambah gaya untuk tajuk, pastikan ia di tengah */
 .main-header h1 {
     flex-grow: 1; /* Biarkan tajuk membesar untuk mengisi ruang */
-    margin: 0 10px; /* Tambah margin sisi untuk tajuk */
+    margin: 0 5px; /* Tambah margin sisi untuk tajuk */
     text-align: center;
     min-width: 200px; /* Contoh: Tetapkan lebar minimum */
     max-width: 100%; /* Contoh: Tidak lebih dari 50% lebar */
