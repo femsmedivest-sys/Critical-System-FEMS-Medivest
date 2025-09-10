@@ -19,28 +19,28 @@ async function fetchAssetData(systemId) {
 
 // Data hospital
 const hospitals = [
-    { name: "Hospital Melaka", id: "MKA" },
-    { name: "Hospital Sultanah Aminah", id: "HSA" },
-    { name: "Hospital Sultan Ismail", id: "HSI" },
-    { name: "Hospital Enche' Besar Hajjah Khalsom", id: "KLN" },
-    { name: "Hospital Tuanku Ja'afar, Seremban", id: "HTJ" },
-    { name: "Hospital Tuanku Ampuan Najihah", id: "KPL" },
-    { name: "Hospital Pakar Sultanah Fatimah ", id: "MUR" },
-    { name: "Hospital Sultanah Nora Ismail", id: "BPH" },
-    { name: "Hospital Jelebu", id: "JLB" },
-    { name: "Hospital Jempol", id: "JMP" },
-    { name: "Hospital Port Dickson", id: "PDX" },
-    { name: "Hospital Tampin", id: "TMP" },
-    { name: "Hospital Permai", id: "PER" },
-    { name: "Hospital Segamat", id: "SGT" },
-    { name: "Hospital Pontian", id: "PON" },
-    { name: "Hospital Kota Tinggi", id: "KTG" },
-    { name: "Hospital Mersing", id: "MER" },
-    { name: "Hospital Tangkak", id: "TGK" },
-    { name: "Hospital Temenggong Seri Maharaja Ibrahim", id: "KUL" },
-    { name: "Hospital Jasin", id: "JSN" },
-    { name: "Hospital Alor Gajah", id: "AGJ" },
-    { name: "Makmal Kesihatan Awam Johor", id: "MKJ" },
+    { name: "Hospital Melaka", id: "MELAKA" },
+    { name: "Hospital Sultanah Aminah", id: "SULTANAH AMINAH" },
+    { name: "Hospital Sultan Ismail", id: "SULTAN ISMAIL" },
+    { name: "Hospital Enche' Besar Hajjah Khalsom", id: "ENCHE' BESAR HAJJAH KHALSOM" },
+    { name: "Hospital Tuanku Ja'afar, Seremban", id: "TUANKU JAAFAR" },
+    { name: "Hospital Tuanku Ampuan Najihah", id: "TUANKU AMPUAN NAJIHAH,KUALA PILAH" },
+    { name: "Hospital Pakar Sultanah Fatimah ", id: "PAKAR SULTANAH FATIMAH,MUAR" },
+    { name: "Hospital Sultanah Nora Ismail", id: "SULTANAH NORA ISMAIL,BATU PAHAT" },
+    { name: "Hospital Jelebu", id: "JELEBU" },
+    { name: "Hospital Jempol", id: "JEMPOL" },
+    { name: "Hospital Port Dickson", id: "PORT DICKSON" },
+    { name: "Hospital Tampin", id: "TAMPIN" },
+    { name: "Hospital Permai", id: "PERMAI" },
+    { name: "Hospital Segamat", id: "SEGAMAT" },
+    { name: "Hospital Pontian", id: "PONTIAN" },
+    { name: "Hospital Kota Tinggi", id: "KOTA TINGGI" },
+    { name: "Hospital Mersing", id: "MERSING" },
+    { name: "Hospital Tangkak", id: "TANGKAK" },
+    { name: "Hospital Temenggong Seri Maharaja Ibrahim", id: "TEMENGGONG SERI MAHARAJA IBRAHIM,KULAI" },
+    { name: "Hospital Jasin", id: "JASIN" },
+    { name: "Hospital Alor Gajah", id: "ALOR GAJAH" },
+    { name: "Makmal Kesihatan Awam Johor", id: "MAKMAL KESIHATAN AWAM JOHOR" },
 ];
 
 function createHospitalCards() {
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
             backButton.style.display = 'none';
         }
         
-        headerTitle.textContent = `CRITICAL SYSTEM HOSPITAL- ${hospitalId}`;
+        headerTitle.textContent = `CRITICAL SYSTEM - HOSPITAL ${hospitalId}`;
         mainContent.innerHTML = '';
 
         const cardGrid = document.createElement('div');
