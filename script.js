@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
             headerTitle.textContent = systemId; 
         }
 
-        mainContent.innerHTML = '<p>Sabar yeeee hehehehehehe😂, akan cuba solve untuk automatik pop up , still program the code ☠️🚀🔥</p>';
+        mainContent.innerHTML = '<p>Still x jumpa solution🤯, masih solve untuk automatik pop up , masihh trace coding line mana☠️🔥</p>';
 
         fetchAssetData(systemId)
             .then(data => {
@@ -200,4 +200,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
     document.addEventListener('DOMContentLoaded', createHospitalCards);
+
 }
