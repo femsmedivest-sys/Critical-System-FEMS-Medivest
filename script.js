@@ -1,53 +1,56 @@
-// Gantikan URL ini dengan URL Apps Script yang anda terbitkan
-const googleSheetsApiUrl = 'https://script.google.com/macros/s/AKfycbw6nwHbWfRtgEbu2w7BgD6ip6Xbd4G5XA6UnFc57LFJzYcQ_mnkJe9BJMUKTvuthJNG/exec';
+// Data hospital dan pautan Google Sheets
+const hospitalData = [
+    // Pastikan URL di sini adalah URL Apps Script yang betul
+    { name: "Hospital Tuanku Ja'afar, Seremban", id: "TUANKU-JAAFAR", sheetsUrl: "https://script.google.com/macros/s/AKfycbw6nwHbWfRtgEbu2w7BgD6ip6Xbd4G5XA6UnFc57LFJzYcQ_mnkJe9BJMUKTvuthJNG/exec" },
+    { name: "Hospital Tuanku Ja'afar, Seremban", id: "HTJS-SBN", sheetsUrl: "" },
+    { name: "Hospital Tuanku Ampuan Najihah, Kuala Pilah", id: "HTAN-KUALA-PILAH", sheetsUrl: "" },
+    { name: "Hospital Jempol", id: "HJ-JEMPOL", sheetsUrl: "" },
+    { name: "Hospital Jelebu", id: "HJ-JELEBU", sheetsUrl: "" },
+    { name: "Hospital Port Dickson", id: "HPD-PORT-DICKSON", sheetsUrl: "" },
+    { name: "Hospital Tampin", id: "HT-TAMPIN", sheetsUrl: "" },
 
-// Fungsi untuk mengambil data dari Google Sheets API
-async function fetchAssetData(systemId) {
-    try {
-        const response = await fetch(googleSheetsApiUrl);
-        const data = await response.json(); 
+    // --- MELAKA ---
+    { name: "Hospital Melaka", id: "HM-MLK", sheetsUrl: "" },
+    { name: "Hospital Jasin", id: "HJ-JASIN", sheetsUrl: "" },
+    { name: "Hospital Alor Gajah", id: "HAG-ALOR-GAJAH", sheetsUrl: "" },
 
-        // Tapis data mengikut 'Type of System' yang sepadan
-        const filteredData = data.filter(item => item['Type of System'].trim() === systemId.trim());
-        return filteredData;
-
-    } catch (error) {
-        console.error('Error fetching data from Google Sheets API:', error);
-        return [];
-    }
-}
-
-// Data hospital
-const hospitals = [
-    { name: "Hospital Melaka", id: "MELAKA" },
-    { name: "Hospital Sultanah Aminah", id: "SULTANAH AMINAH" },
-    { name: "Hospital Sultan Ismail", id: "SULTAN ISMAIL" },
-    { name: "Hospital Enche' Besar Hajjah Khalsom", id: "ENCHE' BESAR HAJJAH KHALSOM" },
-    { name: "Hospital Tuanku Ja'afar, Seremban", id: "TUANKU JAAFAR" },
-    { name: "Hospital Tuanku Ampuan Najihah", id: "TUANKU AMPUAN NAJIHAH,KUALA PILAH" },
-    { name: "Hospital Pakar Sultanah Fatimah ", id: "PAKAR SULTANAH FATIMAH,MUAR" },
-    { name: "Hospital Sultanah Nora Ismail", id: "SULTANAH NORA ISMAIL,BATU PAHAT" },
-    { name: "Hospital Jelebu", id: "JELEBU" },
-    { name: "Hospital Jempol", id: "JEMPOL" },
-    { name: "Hospital Port Dickson", id: "PORT DICKSON" },
-    { name: "Hospital Tampin", id: "TAMPIN" },
-    { name: "Hospital Permai", id: "PERMAI" },
-    { name: "Hospital Segamat", id: "SEGAMAT" },
-    { name: "Hospital Pontian", id: "PONTIAN" },
-    { name: "Hospital Kota Tinggi", id: "KOTA TINGGI" },
-    { name: "Hospital Mersing", id: "MERSING" },
-    { name: "Hospital Tangkak", id: "TANGKAK" },
-    { name: "Hospital Temenggong Seri Maharaja Ibrahim", id: "TEMENGGONG SERI MAHARAJA IBRAHIM,KULAI" },
-    { name: "Hospital Jasin", id: "JASIN" },
-    { name: "Hospital Alor Gajah", id: "ALOR GAJAH" },
-    { name: "Makmal Kesihatan Awam Johor", id: "MAKMAL KESIHATAN AWAM JOHOR" },
+    // --- JOHOR ---
+    { name: "Hospital Sultanah Aminah, Johor Bahru", id: "HSA-JOHOR", sheetsUrl: "" },
+    { name: "Hospital Sultan Ismail, Johor Bahru", id: "HSI-JOHOR", sheetsUrl: "" },
+    { name: "Hospital Pakar Sultanah Fatimah, Muar", id: "HPSF-MUAR", sheetsUrl: "" },
+    { name: "Hospital Kluang", id: "HK-KLUANG", sheetsUrl: "" },
+    { name: "Hospital Batu Pahat", id: "HBP-BATU-PAHAT", sheetsUrl: "" },
+    { name: "Hospital Pontian", id: "HP-PONTIAN", sheetsUrl: "" },
+    { name: "Hospital Segamat", id: "HS-SEGAMAT", sheetsUrl: "" },
+    { name: "Hospital Temenggong Seri Maharaja Tun Ibrahim, Kulai", id: "HTSMTI-KULAI", sheetsUrl: "" },
+    { name: "Hospital Kota Tinggi", id: "HKT-KOTA-TINGGI", sheetsUrl: "" },
+    { name: "Hospital Mersing", id: "HM-MERSING", sheetsUrl: "" },
+    { name: "Hospital Tangkak", id: "HT-TANGKAK", sheetsUrl: "" },
+    { name: "Makmal Kesihatan Awam Johor", id: "MKAJ-JB", sheetsUrl: "" },
+    { name: "Hospital Permai", id: "HT-PERMAI", sheetsUrl: "" },
+    // Tambah semua hospital di sini dengan ID dan URL mereka
+    // ... hospital lain
 ];
 
+const criticalSystems = [
+    { name: "ELECTRICAL SUPPLY", id: "ELECTRICAL SUPPLY" },
+    { name: "WATER SUPPLY SYSTEM", id: "WATER SUPPLY SYSTEM" },
+    { name: "AUTOCLAVE", id: "AUTOCLAVE" },
+    { name: "GENERATOR SET", id: "GENERATOR SET" },
+    { name: "MEDICAL GAS PIPELINE SYSTEM", id: "MEDICAL GAS PIPELINE SYSTEM" },
+    { name: "VERTICAL TRANSPORTATION", id: "LIFT" },
+    { name: "AHU & HVAC (coming soon include)", id: "AHU & HVAC" },
+    { name: "BAS SYSTEM (coming soon include)", id: "BAS SYSTEM" },
+    { name: "CHILLER & COOLING TOWER", id: "CHILLER-COOLING-TOWER" },
+    { name: "FIRE PROTECTION SYSTEM", id: "FIRE PROTECTION SYSTEM" },
+];
+
+// Fungsi untuk menjana kad hospital di halaman utama
 function createHospitalCards() {
     const cardGrid = document.querySelector('.card-grid');
     if (!cardGrid) return;
 
-    hospitals.forEach(hospital => {
+    hospitalData.forEach(hospital => {
         const card = document.createElement('a');
         card.classList.add('card');
         card.href = `hospital-page.html?hosp=${hospital.id}`;
@@ -60,20 +63,22 @@ function createHospitalCards() {
     });
 }
 
-const criticalSystems = [
-    { name: "ELECTRICAL SUPPLY", id: "ELECTRICAL SUPPLY" },
-    { name: "WATER SUPPLY SYSTEM", id: "WATER SUPPLY SYSTEM" },
-    { name: "AUTOCLAVE", id: "AUTOCLAVE" },
-    { name: "GENERATOR SET", id: "GENERATOR SET" },
-    { name: "MEDICAL GAS PIPELINE SYSTEM", id: "MEDICAL GAS PIPELINE SYSTEM" },
-    { name: "VERTICAL TRANSPORTATION", id: "LIFT" },
-    { name: "AHU & HVAC (coming soon include)", id: "AHU & HVAC" }, //blom ada fail gform
-    { name: "BAS SYSTEM (coming soon include)", id: "BAS SYSTEM" }, //blom ada fail gform
-    { name: "CHILLER & COOLING TOWER", id: "CHILLER-COOLING-TOWER" },
-    { name: "FIRE PROTECTION SYSTEM", id: "FIRE PROTECTION SYSTEM" },
-];
+// Fungsi untuk mengambil data dari Google Sheets API
+async function fetchAssetData(sheetsUrl, systemId) {
+    try {
+        const response = await fetch(sheetsUrl);
+        const data = await response.json(); 
+        const filteredData = data.filter(item => item['Type of System'].trim() === systemId.trim());
+        return filteredData;
 
-document.addEventListener('DOMContentLoaded', () => {
+    } catch (error) {
+        console.error('Error fetching data from Google Sheets API:', error);
+        return [];
+    }
+}
+
+// Logik untuk halaman hospital
+function setupHospitalPage() {
     const urlParams = new URLSearchParams(window.location.search);
     const hospitalId = urlParams.get('hosp');
     const systemId = urlParams.get('sys');
@@ -81,6 +86,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainContent = document.querySelector('main');
     const headerTitle = document.getElementById('header-title');
     const backButton = document.getElementById('back-button');
+    
+    // Cari URL Google Sheets yang sepadan
+    const currentHospital = hospitalData.find(hosp => hosp.id === hospitalId);
+    const sheetsUrl = currentHospital ? currentHospital.sheetsUrl : null;
 
     if (systemId) {
         if (backButton) {
@@ -89,16 +98,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         const currentSystem = criticalSystems.find(system => system.id === systemId);
-        
         if (currentSystem) {
             headerTitle.textContent = currentSystem.name;
         } else {
             headerTitle.textContent = systemId; 
         }
 
-        mainContent.innerHTML = '<p>Still x jumpa solution🤯, masih solve untuk automatik pop up , masihh trace coding line mana☠️🔥</p>';
+        // Semak jika URL wujud sebelum mengambil data
+        if (!sheetsUrl || sheetsUrl === '') {
+            mainContent.innerHTML = `<p style="text-align:center; color:red; font-weight:bold;">No data from Google Spreadsheet for this hospital.</p>`;
+            return; // Hentikan fungsi di sini
+        }
 
-        fetchAssetData(systemId)
+        mainContent.innerHTML = '<p>Sabarrrr yeeee huhuhu, akan cuba solve untuk automatik pop up, still program the code ☠️🚀🔥</p>';
+
+        fetchAssetData(sheetsUrl, systemId)
             .then(data => {
                 mainContent.innerHTML = '';
                 const locations = {};
@@ -132,7 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             statusClass = 'status-NOT-FUNCTIONING';
                         }
                         
-                        // Kod baharu untuk memformatkan tarikh
                         const rawDate = item['Last Update'];
                         let formattedDate = '';
                         if (rawDate) {
@@ -147,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 formattedDate = `${day}-${month}-${year}, ${hours}:${minutes}:${seconds}`;
                             } catch (e) {
                                 console.error('Failed to parse date:', rawDate);
-                                formattedDate = rawDate; // Fallback jika gagal
+                                formattedDate = rawDate;
                             }
                         } else {
                             formattedDate = 'N/A';
@@ -179,8 +192,14 @@ document.addEventListener('DOMContentLoaded', () => {
             backButton.style.display = 'none';
         }
         
-        headerTitle.textContent = `CRITICAL SYSTEM - HOSPITAL ${hospitalId}`;
+        headerTitle.textContent = `Type of Critical System - ${currentHospital ? currentHospital.name : hospitalId}`;
         mainContent.innerHTML = '';
+        
+        // Semak jika URL wujud, jika tidak, paparkan mesej yang sesuai
+        if (!sheetsUrl || sheetsUrl === '') {
+            mainContent.innerHTML = `<p style="text-align:center; color:red; font-weight:bold;">No data from Google Spreadsheet for this hospital. Please contact 011-31234648.</p>`;
+            return;
+        }
 
         const cardGrid = document.createElement('div');
         cardGrid.className = 'card-grid';
@@ -196,9 +215,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         mainContent.appendChild(cardGrid);
     }
-});
+}
 
-if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
+// Panggil fungsi yang betul berdasarkan halaman
+if (window.location.pathname.endsWith('hospital-page.html')) {
+    document.addEventListener('DOMContentLoaded', setupHospitalPage);
+} else if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
     document.addEventListener('DOMContentLoaded', createHospitalCards);
-
 }
