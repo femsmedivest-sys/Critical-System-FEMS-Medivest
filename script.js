@@ -2,7 +2,7 @@
 const hospitalData = [
     // Pastikan URL di sini adalah URL Apps Script yang betul
     { name: "Hospital Tuanku Ja'afar, Seremban", id: "TUANKU-JAAFAR", sheetsUrl: "https://script.google.com/macros/s/AKfycbw6nwHbWfRtgEbu2w7BgD6ip6Xbd4G5XA6UnFc57LFJzYcQ_mnkJe9BJMUKTvuthJNG/exec" },
-    { name: "Hospital Tuanku Ja'afar, Seremban", id: "HTJS-SBN", sheetsUrl: "" },
+    //{ name: "Hospital Tuanku Ja'afar, Seremban", id: "HTJS-SBN", sheetsUrl: "" },
     { name: "Hospital Tuanku Ampuan Najihah, Kuala Pilah", id: "HTAN-KUALA-PILAH", sheetsUrl: "" },
     { name: "Hospital Jempol", id: "HJ-JEMPOL", sheetsUrl: "" },
     { name: "Hospital Jelebu", id: "HJ-JELEBU", sheetsUrl: "" },
@@ -222,4 +222,5 @@ if (window.location.pathname.endsWith('hospital-page.html')) {
     document.addEventListener('DOMContentLoaded', setupHospitalPage);
 } else if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
     document.addEventListener('DOMContentLoaded', createHospitalCards);
+
 }
