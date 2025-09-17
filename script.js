@@ -111,7 +111,7 @@ function setupHospitalPage() {
         }
 
         // Paparkan loading spinner sebelum mengambil data
-        mainContent.innerHTML = '<div class="loading-spinner"></div>';
+        mainContent.innerHTML = '<div class="loading-spinner"></div><p style="text-align:center; margin-top:10px;">Please be patient, data is being loaded... 😔⏳</p>';
 
         fetchAssetData(sheetsUrl, systemId)
             .then(data => {
@@ -130,7 +130,7 @@ function setupHospitalPage() {
                 
                 // Tambahkan check untuk data kosong
                 if (Object.keys(locations).length === 0) {
-                     mainContent.innerHTML = `<p style="text-align:center; color:red; font-weight:bold;">Tiada data ditemui untuk sistem ini.</p>`;
+                     mainContent.innerHTML = `<p style="text-align:center; color:red; font-weight:bold;">No data found for this system! 😲😤.</p>`;
                      return;
                 }
 
