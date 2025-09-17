@@ -1,10 +1,11 @@
-// Data hospital dan pautan Google Sheets
 const hospitalData = [
     // Pastikan URL di sini adalah URL Apps Script yang betul
+    // Jika tiada URL, biarkan string kosong seperti ini: ''
+    //---N9-------
     { name: "Hospital Tuanku Ja'afar, Seremban", id: "TUANKU-JAAFAR", sheetsUrl: "https://script.google.com/macros/s/AKfycbw6nwHbWfRtgEbu2w7BgD6ip6Xbd4G5XA6UnFc57LFJzYcQ_mnkJe9BJMUKTvuthJNG/exec" },
     //{ name: "Hospital Tuanku Ja'afar, Seremban", id: "HTJS-SBN", sheetsUrl: "" },
     { name: "Hospital Tuanku Ampuan Najihah, Kuala Pilah", id: "HTAN-KUALA-PILAH", sheetsUrl: "" },
-    { name: "Hospital Jempol", id: "HJ-JEMPOL", sheetsUrl: "" },
+    { name: "Hospital Jempol", id: "HJ-JEMPOL", sheetsUrl: "https://script.google.com/macros/s/AKfycbyf746jLISfC08pgK0q5R2vTkYjI3TX-Bt89dfdovoYrPZv8aJYcD7DzAEV7vV4FwAO/exec" },
     { name: "Hospital Jelebu", id: "HJ-JELEBU", sheetsUrl: "" },
     { name: "Hospital Port Dickson", id: "HPD-PORT-DICKSON", sheetsUrl: "" },
     { name: "Hospital Tampin", id: "HT-TAMPIN", sheetsUrl: "" },
@@ -87,7 +88,6 @@ function setupHospitalPage() {
     const headerTitle = document.getElementById('header-title');
     const backButton = document.getElementById('back-button');
     
-    // Cari URL Google Sheets yang sepadan
     const currentHospital = hospitalData.find(hosp => hosp.id === hospitalId);
     const sheetsUrl = currentHospital ? currentHospital.sheetsUrl : null;
 
@@ -110,11 +110,14 @@ function setupHospitalPage() {
             return; // Hentikan fungsi di sini
         }
 
-        mainContent.innerHTML = '<p>Sabarrrr yeeee huhuhu, akan cuba solve untuk automatik pop up, still program the code ☠️🚀🔥</p>';
+        // Paparkan loading spinner sebelum mengambil data
+        mainContent.innerHTML = '<div class="loading-spinner"></div>';
 
         fetchAssetData(sheetsUrl, systemId)
             .then(data => {
-                mainContent.innerHTML = '';
+                // Sembunyikan spinner dan paparkan kandungan
+                mainContent.innerHTML = ''; 
+
                 const locations = {};
 
                 data.forEach(item => {
@@ -124,6 +127,12 @@ function setupHospitalPage() {
                     }
                     locations[location].push(item);
                 });
+                
+                // Tambahkan check untuk data kosong
+                if (Object.keys(locations).length === 0) {
+                     mainContent.innerHTML = `<p style="text-align:center; color:red; font-weight:bold;">Tiada data ditemui untuk sistem ini.</p>`;
+                     return;
+                }
 
                 for (const location in locations) {
                     const locationSection = document.createElement('section');
@@ -183,7 +192,7 @@ function setupHospitalPage() {
                 }
             })
             .catch(error => {
-                 mainContent.innerHTML = `<p style="color:red;">Failed to load data. Please check your console for errors.</p>`;
+                 mainContent.innerHTML = `<p style="color:red; text-align:center;">Failed to load data. Please check your console for errors.</p>`;
                  console.error(error);
             });
 
@@ -222,5 +231,4 @@ if (window.location.pathname.endsWith('hospital-page.html')) {
     document.addEventListener('DOMContentLoaded', setupHospitalPage);
 } else if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
     document.addEventListener('DOMContentLoaded', createHospitalCards);
-
 }
