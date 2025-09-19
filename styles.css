@@ -62,9 +62,10 @@ body {
 }
 
 .container {
-    max-width: 1300px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 5px;
+    padding: 20px;
+    padding-top: 100px; /* <--- Tambahkan atau sesuaikan baris ini */
 }
 
 /* Gaya Grid Kad */
@@ -320,3 +321,4 @@ body {
     text-align: left;
 
 }
+
