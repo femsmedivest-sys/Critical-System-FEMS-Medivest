@@ -299,7 +299,7 @@ body {
     }
 
     .container {
-        padding-top: 180px; /* Tingkatkan padding atas untuk elak bertindih */
+        padding-top: 150px; /* Tingkatkan padding atas untuk elak bertindih */
     }
 }
 
@@ -321,4 +321,5 @@ body {
     text-align: left;
 
 }
+
 
