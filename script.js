@@ -34,17 +34,35 @@ const hospitalData = [
 ];
 
 const criticalSystems = [
+    // PENTING: ID ini telah DIBETULKAN tanpa ruang kosong
     { name: "ELECTRICAL SUPPLY", id: "ELECTRICAL SUPPLY" },
+    { name: "GENERATOR SET", id: "GENERATOR SET" },
     { name: "WATER SUPPLY SYSTEM", id: "WATER SUPPLY SYSTEM" },
     { name: "AUTOCLAVE", id: "AUTOCLAVE" },
-    { name: "GENERATOR SET", id: "GENERATOR SET" },
     { name: "MEDICAL GAS PIPELINE SYSTEM", id: "MEDICAL GAS PIPELINE SYSTEM" },
     { name: "VERTICAL TRANSPORTATION", id: "LIFT" },
-    { name: "AHU & HVAC (coming soon include)", id: "AHU & HVAC" },
+    { name: "AHU & HVAC (coming soon include)", id: "AHU HVAC" },
     { name: "BAS SYSTEM (coming soon include)", id: "BAS SYSTEM" },
     { name: "CHILLER & COOLING TOWER", id: "CHILLER-COOLING-TOWER" },
     { name: "FIRE PROTECTION SYSTEM", id: "FIRE PROTECTION SYSTEM" },
 ];
+
+const submissionForms = {
+    'TUANKU-JAAFAR_ELECTRICAL SUPPLY': 'https://forms.gle/FGrMdiZeQqaK65Ay7',
+    'TUANKU-JAAFAR_GENERATOR SET': 'https://forms.gle/mjACBCEG8qQbxyy66',
+    'TUANKU-JAAFAR_AUTOLCAVE': 'https://forms.gle/DvrKQB1jiSueznyw7',
+    'TUANKU-JAAFAR_LIFT': 'https://forms.gle/j9Qtte6Esvife31Q8',
+    'TUANKU-JAAFAR_FIRE PROTECTION SYSTEM': 'https://forms.gle/NBs6XQrdcfdt6xdZA',
+    'TUANKU-JAAFAR_CHILLER-COOLING-TOWER': 'https://forms.gle/BVVG8sKYg3ZUHuE1A',
+    'TUANKU-JAAFAR_GENERATOR SET': 'https://forms.gle/mjACBCEG8qQbxyy66',
+    'TUANKU-JAAFAR_GENERATOR SET': 'https://forms.gle/mjACBCEG8qQbxyy66',
+    'TUANKU-JAAFAR_GENERATOR SET': 'https://forms.gle/mjACBCEG8qQbxyy66',
+    'TUANKU-JAAFAR_GENERATOR SET': 'https://forms.gle/mjACBCEG8qQbxyy66',
+
+
+    // ...tambah semua 220 pautan borang anda di sini...
+};
+
 
 // Fungsi untuk menjana kad hospital di halaman utama
 function createHospitalCards() {
@@ -69,17 +87,17 @@ async function fetchAssetData(sheetsUrl, systemId) {
     try {
         const response = await fetch(sheetsUrl);
         const data = await response.json(); 
-        const filteredData = data.filter(item => item['Type of System'].trim() === systemId.trim());
+        const filteredData = data.filter(item => (item['Type of System'] || '').trim().toUpperCase() === (systemId || '').trim().toUpperCase());
         return filteredData;
 
     } catch (error) {
-        console.error('Error fetching data from Google Sheets API:', error);
+        console.error('Error fetching data from Google Apps Script:', error);
         return [];
     }
 }
 
 // Logik untuk halaman hospital
-function setupHospitalPage() {
+async function setupHospitalPage() {
     const urlParams = new URLSearchParams(window.location.search);
     const hospitalId = urlParams.get('hosp');
     const systemId = urlParams.get('sys');
@@ -113,88 +131,104 @@ function setupHospitalPage() {
         // Paparkan loading spinner sebelum mengambil data
         mainContent.innerHTML = '<div class="loading-spinner"></div><p style="text-align:center; margin-top:10px;">Please be patient, data is being loaded... 😔⏳</p>';
 
-        fetchAssetData(sheetsUrl, systemId)
-            .then(data => {
-                // Sembunyikan spinner dan paparkan kandungan
-                mainContent.innerHTML = ''; 
+        const data = await fetchAssetData(sheetsUrl, systemId);
 
-                const locations = {};
+        // Sembunyikan spinner dan paparkan kandungan
+        mainContent.innerHTML = ''; 
 
-                data.forEach(item => {
-                    const location = item['Location']; 
-                    if (!locations[location]) {
-                        locations[location] = [];
-                    }
-                    locations[location].push(item);
-                });
+        // Tambah butang borang secara dinamik
+        const formKey = `${hospitalId}_${systemId}`;
+        const formUrl = submissionForms[formKey];
+
+        const formButton = document.createElement('a');
+        formButton.className = 'form-button';
+        formButton.textContent = 'Go to Submission Form';
+        formButton.href = formUrl ? formUrl : '#';
+        formButton.target = '_blank';
+        if (!formUrl) {
+            formButton.style.opacity = '0.5';
+            formButton.style.cursor = 'not-allowed';
+            formButton.textContent = 'Form Not Available';
+        }
+        mainContent.appendChild(formButton);
+
+        const locations = {};
+
+        data.forEach(item => {
+            const location = item['Location']; 
+            if (!locations[location]) {
+                locations[location] = [];
+            }
+            locations[location].push(item);
+        });
+        
+        // Tambahkan check untuk data kosong
+        if (Object.keys(locations).length === 0) {
+            mainContent.innerHTML += `<p style="text-align:center; color:red; font-weight:bold;">No data found for this system! 😲😤.</p>`;
+            return;
+        }
+
+        for (const location in locations) {
+            const locationSection = document.createElement('section');
+            locationSection.className = 'location-section';
+            
+            const locationTitle = document.createElement('h2');
+            locationTitle.textContent = location;
+            locationSection.appendChild(locationTitle);
+            
+            const cardGrid = document.createElement('div');
+            cardGrid.className = 'card-grid';
+
+            locations[location].forEach(item => {
+                let statusClass = '';
+                const itemStatus = item['Status'] ? item['Status'].trim().toUpperCase() : '';
+
+                if (itemStatus === 'FUNCTIONING') {
+                    statusClass = 'status-FUNCTIONING';
+                } else if (itemStatus === 'NOT FUNCTIONING') {
+                    statusClass = 'status-NOT-FUNCTIONING';
+                }
                 
-                // Tambahkan check untuk data kosong
-                if (Object.keys(locations).length === 0) {
-                     mainContent.innerHTML = `<p style="text-align:center; color:red; font-weight:bold;">No data found for this system! 😲😤.</p>`;
-                     return;
-                }
-
-                for (const location in locations) {
-                    const locationSection = document.createElement('section');
-                    locationSection.className = 'location-section';
-                    
-                    const locationTitle = document.createElement('h2');
-                    locationTitle.textContent = location;
-                    locationSection.appendChild(locationTitle);
-                    
-                    const cardGrid = document.createElement('div');
-                    cardGrid.className = 'card-grid';
-
-                    locations[location].forEach(item => {
-                        let statusClass = '';
-                        const itemStatus = item['Status'] ? item['Status'].trim().toUpperCase() : '';
-
-                        if (itemStatus === 'FUNCTIONING') {
-                            statusClass = 'status-FUNCTIONING';
-                        } else if (itemStatus === 'NOT FUNCTIONING') {
-                            statusClass = 'status-NOT-FUNCTIONING';
-                        }
+                const rawDate = item['Last Update'];
+                let formattedDate = '';
+                if (rawDate) {
+                    try {
+                        const dateObj = new Date(rawDate);
+                        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                        const day = String(dateObj.getDate());
+                        const month = monthNames[dateObj.getMonth()];
+                        const year = String(dateObj.getFullYear()).slice(-2); // Ambil 2 digit terakhir tahun
+                        let hours = dateObj.getHours();
+                        const minutes = String(dateObj.getMinutes()).padStart(2, '0');
+                        const seconds = String(dateObj.getSeconds()).padStart(2, '0');
+                        const ampm = hours >= 12 ? 'PM' : 'AM';
+                        hours = hours % 12;
+                        hours = hours ? hours : 12; // Jam 0 harus menjadi 12
                         
-                        const rawDate = item['Last Update'];
-                        let formattedDate = '';
-                        if (rawDate) {
-                            try {
-                                const dateObj = new Date(rawDate);
-                                const day = String(dateObj.getDate()).padStart(2, '0');
-                                const month = String(dateObj.getMonth() + 1).padStart(2, '0');
-                                const year = dateObj.getFullYear();
-                                const hours = String(dateObj.getHours()).padStart(2, '0');
-                                const minutes = String(dateObj.getMinutes()).padStart(2, '0');
-                                const seconds = String(dateObj.getSeconds()).padStart(2, '0');
-                                formattedDate = `${day}-${month}-${year}, ${hours}:${minutes}:${seconds}`;
-                            } catch (e) {
-                                console.error('Failed to parse date:', rawDate);
-                                formattedDate = rawDate;
-                            }
-                        } else {
-                            formattedDate = 'N/A';
-                        }
-
-                        const card = document.createElement('div');
-                        card.className = 'asset-card';
-                        card.innerHTML = `
-                            <h3>${item['Asset']}</h3>
-                            <p><strong>Status:</strong> <span class="status-box ${statusClass}">${item['Status']}</span></p>
-                            <p><strong>Remark:</strong> ${item['Remark']}</p>
-                            <p><strong>Action:</strong> ${item['Action']}</p>
-                            <p class="last-update">Last Update: ${formattedDate}</p>
-                        `;
-                        cardGrid.appendChild(card);
-                    });
-                    
-                    locationSection.appendChild(cardGrid);
-                    mainContent.appendChild(locationSection);
+                        formattedDate = `${day} ${month} ${year}, ${hours}:${minutes}:${seconds} ${ampm}`;
+                    } catch (e) {
+                        console.error('Failed to parse date:', rawDate);
+                        formattedDate = rawDate;
+                    }
+                } else {
+                    formattedDate = 'N/A';
                 }
-            })
-            .catch(error => {
-                 mainContent.innerHTML = `<p style="color:red; text-align:center;">Failed to load data. Please check your console for errors.</p>`;
-                 console.error(error);
+
+                const card = document.createElement('div');
+                card.className = 'asset-card';
+                card.innerHTML = `
+                    <h3>${item['Asset']}</h3>
+                    <p><strong>Status:</strong> <span class="status-box ${statusClass}">${item['Status']}</span></p>
+                    <p><strong>Remark:</strong> ${item['Remark']}</p>
+                    <p><strong>Action:</strong> ${item['Action']}</p>
+                    <p class="last-update">Last Update: ${formattedDate}</p>
+                `;
+                cardGrid.appendChild(card);
             });
+            
+            locationSection.appendChild(cardGrid);
+            mainContent.appendChild(locationSection);
+        }
 
     } else if (hospitalId) {
         if (backButton) {
