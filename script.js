@@ -54,10 +54,10 @@ const submissionForms = {
     'TUANKU-JAAFAR_LIFT': 'https://forms.gle/j9Qtte6Esvife31Q8',
     'TUANKU-JAAFAR_FIRE PROTECTION SYSTEM': 'https://forms.gle/NBs6XQrdcfdt6xdZA',
     'TUANKU-JAAFAR_CHILLER-COOLING-TOWER': 'https://forms.gle/BVVG8sKYg3ZUHuE1A',
-    'TUANKU-JAAFAR_GENERATOR SET': 'https://forms.gle/mjACBCEG8qQbxyy66',
-    'TUANKU-JAAFAR_GENERATOR SET': 'https://forms.gle/mjACBCEG8qQbxyy66',
-    'TUANKU-JAAFAR_GENERATOR SET': 'https://forms.gle/mjACBCEG8qQbxyy66',
-    'TUANKU-JAAFAR_GENERATOR SET': 'https://forms.gle/mjACBCEG8qQbxyy66',
+    'TUANKU-JAAFAR_WATER SUUPLY SYSTEM': 'https://forms.gle/PqRcpXEouvMubKbg8',
+    'TUANKU-JAAFAR_MEDICAL GAS PIPELINE SYSTEM': 'https://forms.gle/Ah3eb6xrcqJLh5j37',
+    'TUANKU-JAAFAR_GENERATOR SET': '',
+    'TUANKU-JAAFAR_GENERATOR SET': '',
 
 
     // ...tambah semua 220 pautan borang anda di sini...
@@ -142,7 +142,7 @@ async function setupHospitalPage() {
 
         const formButton = document.createElement('a');
         formButton.className = 'form-button';
-        formButton.textContent = 'Go to Submission Form';
+        formButton.textContent = 'SUBMISSION FORM';
         formButton.href = formUrl ? formUrl : '#';
         formButton.target = '_blank';
         if (!formUrl) {
@@ -205,7 +205,7 @@ async function setupHospitalPage() {
                         hours = hours % 12;
                         hours = hours ? hours : 12; // Jam 0 harus menjadi 12
                         
-                        formattedDate = `${day} ${month} ${year}, ${hours}:${minutes}:${seconds} ${ampm}`;
+                        formattedDate = `${day} ${month} ${year}, ${hours}:${minutes}:${seconds}${ampm}`;
                     } catch (e) {
                         console.error('Failed to parse date:', rawDate);
                         formattedDate = rawDate;
@@ -264,5 +264,23 @@ async function setupHospitalPage() {
 if (window.location.pathname.endsWith('hospital-page.html')) {
     document.addEventListener('DOMContentLoaded', setupHospitalPage);
 } else if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
-    document.addEventListener('DOMContentLoaded', createHospitalCards);
+    document.addEventListener('DOMContentLoaded', () => {
+        const dropdown = document.getElementById('hospital-dropdown');
+        
+        // Isi dropdown dengan data dari hospitalData
+        hospitalData.forEach(hospital => {
+            const option = document.createElement('option');
+            option.value = hospital.id;
+            option.textContent = hospital.name;
+            dropdown.appendChild(option);
+        });
+
+        // Tambah event listener untuk mengendalikan perubahan dropdown
+        dropdown.addEventListener('change', (event) => {
+            const selectedHospitalId = event.target.value;
+            if (selectedHospitalId) {
+                window.location.href = `hospital-page.html?hosp=${selectedHospitalId}`;
+            }
+        });
+    });
 }

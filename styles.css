@@ -1,7 +1,7 @@
 /* Gaya Umum */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/main/IT2.jpg'); 
+    background-image: url('Gambar/IT2.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -22,7 +22,7 @@ body {
     width: 99%;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-image: url('https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/main/header.jpg');
+    background-image: url('Gambar/header.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -62,16 +62,16 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 5px;
 }
 
 /* Gaya Grid Kad */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+    gap: 10px;
     margin-top: 20px;
 }
 
@@ -96,9 +96,10 @@ body {
 }
 
 .card h3 {
-    margin: 0;
-    font-size: 1.5em;
+    font-size: 1.2em;
+    font-weight: bold;
     color: #2c2c2c;
+    margin: 0;
 }
 
 .location-section {
@@ -138,9 +139,9 @@ body {
 }
 
 .asset-card h3 {
-    margin: 0;
-    font-size: 1.2em;
-    color: #333;
+    font-size: 1.1em;
+    color: #000000;
+    margin-bottom: 5px;
     text-align: center;
 }
 
@@ -225,7 +226,7 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-/* Gaya untuk Butang Borang */
+/*Gaya untuk Butang Borang*/
 .form-button {
     background-color: #007bff;
     color: white;
@@ -242,67 +243,79 @@ body {
 
 .form-button:hover {
     background-color: #0056b3;
-
 }
 
 /*mode telefon*/
-/* Gaya untuk peranti skrin kecil (max-width: 768px) */
+/* Gaya untuk peranti skrin kecil (mod potret telefon) */
 @media (max-width: 768px) {
     .main-header {
         flex-direction: column; /* Susun elemen dalam lajur */
         align-items: center; /* Pusatkan elemen secara mendatar */
         padding: 10px; /* Kurangkan padding */
-        height: auto; /* Biarkan tinggi menyesuaikan diri */
+        height: auto;
     }
 
     .main-header h1 {
-        font-size: 1em; /* Kecilkan saiz fon untuk tajuk */
+        font-size: 1.1em; /* Kecilkan saiz fon untuk tajuk */
         text-align: center;
         margin-top: 10px;
         margin-bottom: 10px;
     }
 
     .logo-container {
-        justify-content: center; /* Pastikan logo berada di tengah */
+        justify-content: center; /* Pusatkan logo */
         width: 100%;
         margin-bottom: 5px;
     }
     
     .header-logo, .header-logo2 {
-        height: 50px; /* Kecilkan saiz logo */
-        width: auto;
+        width: 150px; /* Kecilkan saiz logo */
+        height: auto;
     }
     
     .title-home-container {
         flex-direction: column; /* Susun tajuk dan butang dalam lajur */
-        align-items: center; /* Pusatkan mereka */
+        align-items: center;
         gap: 5px; /* Kurangkan jarak antara butang */
     }
 
     .button-group {
-        flex-direction: row; /* Kekalkan butang dalam baris */
+        flex-direction: column; /* Susun butang dalam lajur */
         justify-content: center;
-        flex-wrap: wrap; /* Benarkan butang melompat ke baris baharu jika perlu */
+        width: 100%;
     }
 
     .back-button, .home-button, .link-button {
-        padding: 8px 12px; /* Kecilkan saiz padding butang */
-        font-size: 0.8em; /* Kecilkan saiz fon butang */
+        width: 90%; /* Jadikan butang lebih lebar */
+        text-align: center;
+        font-size: 0.9em;
+        padding: 10px 0;
     }
-
-    /* Ubah grid kad untuk skrin kecil */
+    
     .card-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 1-2 kad setiap baris */
-        gap: 15px; /* Kurangkan jarak antara kad */
+        grid-template-columns: 1fr; /* Paparkan 1 kad per baris */
+        gap: 15px;
     }
 
     .container {
-        padding-top: 130px; /* Tambahkan padding atas untuk mengelakkan bertindih */
+        padding-top: 180px; /* Tingkatkan padding atas untuk elak bertindih */
     }
+}
 
-    /* Gaya untuk `link-button` yang dinamik */
-    .form-button {
-        width: 90%; /* Jadikan butang borang lebih lebar */
-        font-size: 0.9em;
-    }
+.hospital-dropdown-section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.hospital-dropdown {
+    width: 90%;
+    max-width: 400px;
+    padding: 12px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    border: 1px solid #909090;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #dcdbdb;
+    cursor: pointer;
+    text-align: left;
 }
