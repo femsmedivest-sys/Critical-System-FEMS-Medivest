@@ -244,3 +244,65 @@ body {
     background-color: #0056b3;
 
 }
+
+/*mode telefon*/
+/* Gaya untuk peranti skrin kecil (max-width: 768px) */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column; /* Susun elemen dalam lajur */
+        align-items: center; /* Pusatkan elemen secara mendatar */
+        padding: 10px; /* Kurangkan padding */
+        height: auto; /* Biarkan tinggi menyesuaikan diri */
+    }
+
+    .main-header h1 {
+        font-size: 1em; /* Kecilkan saiz fon untuk tajuk */
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .logo-container {
+        justify-content: center; /* Pastikan logo berada di tengah */
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .header-logo, .header-logo2 {
+        height: 50px; /* Kecilkan saiz logo */
+        width: auto;
+    }
+    
+    .title-home-container {
+        flex-direction: column; /* Susun tajuk dan butang dalam lajur */
+        align-items: center; /* Pusatkan mereka */
+        gap: 5px; /* Kurangkan jarak antara butang */
+    }
+
+    .button-group {
+        flex-direction: row; /* Kekalkan butang dalam baris */
+        justify-content: center;
+        flex-wrap: wrap; /* Benarkan butang melompat ke baris baharu jika perlu */
+    }
+
+    .back-button, .home-button, .link-button {
+        padding: 8px 12px; /* Kecilkan saiz padding butang */
+        font-size: 0.8em; /* Kecilkan saiz fon butang */
+    }
+
+    /* Ubah grid kad untuk skrin kecil */
+    .card-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 1-2 kad setiap baris */
+        gap: 15px; /* Kurangkan jarak antara kad */
+    }
+
+    .container {
+        padding-top: 130px; /* Tambahkan padding atas untuk mengelakkan bertindih */
+    }
+
+    /* Gaya untuk `link-button` yang dinamik */
+    .form-button {
+        width: 90%; /* Jadikan butang borang lebih lebar */
+        font-size: 0.9em;
+    }
+}
