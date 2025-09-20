@@ -3,7 +3,6 @@ const hospitalData = [
     // Jika tiada URL, biarkan string kosong seperti ini: ''
     //---N9-------
     { name: "Hospital Tuanku Ja'afar, Seremban", id: "TUANKU-JAAFAR", sheetsUrl: "https://script.google.com/macros/s/AKfycbw6nwHbWfRtgEbu2w7BgD6ip6Xbd4G5XA6UnFc57LFJzYcQ_mnkJe9BJMUKTvuthJNG/exec" },
-    //{ name: "Hospital Tuanku Ja'afar, Seremban", id: "HTJS-SBN", sheetsUrl: "" },
     { name: "Hospital Tuanku Ampuan Najihah, Kuala Pilah", id: "HTAN-KUALA-PILAH", sheetsUrl: "" },
     { name: "Hospital Jempol", id: "HJ-JEMPOL", sheetsUrl: "https://script.google.com/macros/s/AKfycbyf746jLISfC08pgK0q5R2vTkYjI3TX-Bt89dfdovoYrPZv8aJYcD7DzAEV7vV4FwAO/exec" },
     { name: "Hospital Jelebu", id: "HJ-JELEBU", sheetsUrl: "" },
@@ -52,6 +51,11 @@ const submissionForms = {
     'TUANKU-JAAFAR_LIFT': 'https://forms.gle/j9Qtte6Esvife31Q8',
     'TUANKU-JAAFAR_FIRE PROTECTION SYSTEM': 'https://forms.gle/NBs6XQrdcfdt6xdZA',
     'TUANKU-JAAFAR_CHILLER-COOLING-TOWER': 'https://forms.gle/BVVG8sKYg3ZUHuE1A',
+    'TUANKU-JAAFAR_WATER SUPPLY SYSTEM': 'https://forms.gle/PqRcpXEouvMubKbg8',
+    'TUANKU-JAAFAR_AHU HVAC': '',
+    'TUANKU-JAAFAR_MEDICAL GAS PIPELINE SYSTEM': 'https://forms.gle/Ah3eb6xrcqJLh5j37',
+    'TUANKU-JAAFAR_BAS SYSTEM': '',
+
 };
 
 // Fungsi untuk mengemas kini kad hospital sedia ada di halaman utama
@@ -324,4 +328,5 @@ if (window.location.pathname.endsWith('hospital-page.html')) {
     document.addEventListener('DOMContentLoaded', updateHospitalCards);
 
 }
+
 
