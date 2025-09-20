@@ -39,8 +39,8 @@ const criticalSystems = [
     { name: "AUTOCLAVE", id: "AUTOCLAVE" },
     { name: "MEDICAL GAS PIPELINE SYSTEM", id: "MEDICAL GAS PIPELINE SYSTEM" },
     { name: "VERTICAL TRANSPORTATION", id: "LIFT" },
-    { name: "AHU & HVAC (coming soon include)", id: "AHU HVAC" },
-    { name: "BAS SYSTEM (coming soon include)", id: "BAS SYSTEM" },
+    { name: "AHU & HVAC", id: "AHU HVAC" },
+    { name: "BAS SYSTEM", id: "BAS SYSTEM" },
     { name: "CHILLER & COOLING TOWER", id: "CHILLER-COOLING-TOWER" },
     { name: "FIRE PROTECTION SYSTEM", id: "FIRE PROTECTION SYSTEM" },
 ];
@@ -322,4 +322,5 @@ if (window.location.pathname.endsWith('hospital-page.html')) {
     document.addEventListener('DOMContentLoaded', setupHospitalPage);
 } else if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
     document.addEventListener('DOMContentLoaded', updateHospitalCards);
+
 }
