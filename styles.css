@@ -1,7 +1,7 @@
 /* Gaya Umum */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/main/IT2.webp'); 
+    background-image: url('Gambar/IT2.webp'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -23,7 +23,7 @@ body {
     width: 99%;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-image: url('https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/main/header.webp');
+    background-image: url('Gambar/header.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -88,6 +88,7 @@ body {
     align-items: center;
     justify-content: center;
     border: 1px solid #838383;
+    padding: 20px; /* Ditambah untuk memberi ruang di dalam kad */
 }
 
 .card:hover {
@@ -103,7 +104,6 @@ body {
 
 /* Gaya Tajuk Negeri */
 .state-header {
-    /* Kod ini yang membuatkan tajuk berada di baris penuh */
     grid-column: 1 / -1; 
     text-decoration: underline;
     font-size: 1.5em;
@@ -157,7 +157,7 @@ body {
 
 /* Gaya untuk Halaman Hospital */
 .location-section {
-    background-color: #ffffff39;
+    background-color: #62626239;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -230,14 +230,26 @@ body {
     background-color: #ff0019;
 }
 
+/* Gaya untuk Status Container di halaman utama */
+.status-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    font-size: 0.9em;
+    width: 100%;
+}
+
+
 /* Gaya untuk Loading Spinner */
 .loading-spinner {
     border: 8px solid #f3f3f3;
     border-top: 8px solid #3498db;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
+    width: 70px;
+    height: 70px;
+    animation: spin 0.5s linear infinite;
     margin: 50px auto;
 }
 
@@ -303,5 +315,4 @@ body {
         width: 90%;
         font-size: 0.9em;
     }
-
 }

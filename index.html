@@ -10,7 +10,6 @@
     <header class="main-header">
         <div class="header-left">
             <img src="medivest.png" alt="Logo Syarikat" class="header-logo">
-            
         </div>
         <h1>Facilities Engineering Management Services (FEMS)-Critical System Monitoring</h1>
         <div class="header-right">
@@ -20,82 +19,170 @@
 
     <main class="container">
         <section class="hospital-list-section">
+            <div id="loading-spinner" class="loading-spinner"></div>
             <div class="card-grid">
                 <h2 class="state-header">NEGERI SEMBILAN:</h2>
-                <a class="card" href="hospital-page.html?hosp=TUANKU-JAAFAR">
+                <a class="card" id="card-TUANKU-JAAFAR" href="hospital-page.html?hosp=TUANKU-JAAFAR">
                     <h3>Hospital Tuanku Ja'afar, Seremban</h3>
+                    <div class="status-container">
+                        <span class="status-box status-FUNCTIONING">FUNCTIONING: --</span>
+                        <span class="status-box status-NOT-FUNCTIONING">NOT FUNCTIONING: --</span>
+                    </div>
                 </a>
-                <a class="card" href="hospital-page.html?hosp=HTAN-KUALA-PILAH">
+                <a class="card" id="card-HTAN-KUALA-PILAH" href="hospital-page.html?hosp=HTAN-KUALA-PILAH">
                     <h3>Hospital Tuanku Ampuan Najihah, Kuala Pilah</h3>
+                    <div class="status-container">
+                        <span class="status-box status-FUNCTIONING">FUNCTIONING: --</span>
+                        <span class="status-box status-NOT-FUNCTIONING">NOT FUNCTIONING: --</span>
+                    </div>
                 </a>
-                <a class="card" href="hospital-page.html?hosp=HJ-JEMPOL">
+                <a class="card" id="card-HJ-JEMPOL" href="hospital-page.html?hosp=HJ-JEMPOL">
                     <h3>Hospital Jempol</h3>
+                    <div class="status-container">
+                        <span class="status-box status-FUNCTIONING">FUNCTIONING: --</span>
+                        <span class="status-box status-NOT-FUNCTIONING">NOT FUNCTIONING: --</span>
+                    </div>
                 </a>
-                <a class="card" href="hospital-page.html?hosp=HJ-JELEBU">
+                <a class="card" id="card-HJ-JELEBU" href="hospital-page.html?hosp=HJ-JELEBU">
                     <h3>Hospital Jelebu</h3>
+                    <div class="status-container">
+                        <span class="status-box status-FUNCTIONING">FUNCTIONING: --</span>
+                        <span class="status-box status-NOT-FUNCTIONING">NOT FUNCTIONING: --</span>
+                    </div>
                 </a>
-                <a class="card" href="hospital-page.html?hosp=HPD-PORT-DICKSON">
+                <a class="card" id="card-HPD-PORT-DICKSON" href="hospital-page.html?hosp=HPD-PORT-DICKSON">
                     <h3>Hospital Port Dickson</h3>
+                    <div class="status-container">
+                        <span class="status-box status-FUNCTIONING">FUNCTIONING: --</span>
+                        <span class="status-box status-NOT-FUNCTIONING">NOT FUNCTIONING: --</span>
+                    </div>
                 </a>
-                <a class="card" href="hospital-page.html?hosp=HT-TAMPIN">
+                <a class="card" id="card-HT-TAMPIN" href="hospital-page.html?hosp=HT-TAMPIN">
                     <h3>Hospital Tampin</h3>
+                    <div class="status-container">
+                        <span class="status-box status-FUNCTIONING">FUNCTIONING: --</span>
+                        <span class="status-box status-NOT-FUNCTIONING">NOT FUNCTIONING: --</span>
+                    </div>
                 </a>
 
                 <h2 class="state-header">MELAKA:</h2>
-                <a class="card" href="hospital-page.html?hosp=HM-MLK">
+                <a class="card" id="card-HM-MLK" href="hospital-page.html?hosp=HM-MLK">
                     <h3>Hospital Melaka</h3>
+                    <div class="status-container">
+                        <span class="status-box status-FUNCTIONING">FUNCTIONING: --</span>
+                        <span class="status-box status-NOT-FUNCTIONING">NOT FUNCTIONING: --</span>
+                    </div>
                 </a>
-                <a class="card" href="hospital-page.html?hosp=HJ-JASIN">
+                <a class="card" id="card-HJ-JASIN" href="hospital-page.html?hosp=HJ-JASIN">
                     <h3>Hospital Jasin</h3>
+                    <div class="status-container">
+                        <span class="status-box status-FUNCTIONING">FUNCTIONING: --</span>
+                        <span class="status-box status-NOT-FUNCTIONING">NOT FUNCTIONING: --</span>
+                    </div>
                 </a>
-                <a class="card" href="hospital-page.html?hosp=HAG-ALOR-GAJAH">
+                <a class="card" id="card-HAG-ALOR-GAJAH" href="hospital-page.html?hosp=HAG-ALOR-GAJAH">
                     <h3>Hospital Alor Gajah</h3>
+                    <div class="status-container">
+                        <span class="status-box status-FUNCTIONING">FUNCTIONING: --</span>
+                        <span class="status-box status-NOT-FUNCTIONING">NOT FUNCTIONING: --</span>
+                    </div>
                 </a>
 
-                <h2 class="state-header">JDT:</h2>
-                <a class="card" href="hospital-page.html?hosp=HSA-JOHOR">
+                <h2 class="state-header">JOHOR:</h2>
+                <a class="card" id="card-HSA-JOHOR" href="hospital-page.html?hosp=HSA-JOHOR">
                     <h3>Hospital Sultanah Aminah, Johor Bahru</h3>
+                    <div class="status-container">
+                        <span class="status-box status-FUNCTIONING">FUNCTIONING: --</span>
+                        <span class="status-box status-NOT-FUNCTIONING">NOT FUNCTIONING: --</span>
+                    </div>
                 </a>
-                <a class="card" href="hospital-page.html?hosp=HSI-JOHOR">
+                <a class="card" id="card-HSI-JOHOR" href="hospital-page.html?hosp=HSI-JOHOR">
                     <h3>Hospital Sultan Ismail, Johor Bahru</h3>
+                    <div class="status-container">
+                        <span class="status-box status-FUNCTIONING">FUNCTIONING: --</span>
+                        <span class="status-box status-NOT-FUNCTIONING">NOT FUNCTIONING: --</span>
+                    </div>
                 </a>
-                <a class="card" href="hospital-page.html?hosp=HPSF-MUAR">
+                <a class="card" id="card-HPSF-MUAR" href="hospital-page.html?hosp=HPSF-MUAR">
                     <h3>Hospital Pakar Sultanah Fatimah, Muar</h3>
+                    <div class="status-container">
+                        <span class="status-box status-FUNCTIONING">FUNCTIONING: --</span>
+                        <span class="status-box status-NOT-FUNCTIONing">NOT FUNCTIONING: --</span>
+                    </div>
                 </a>
-                <a class="card" href="hospital-page.html?hosp=HTSMTI-KULAI">
+                <a class="card" id="card-HTSMTI-KULAI" href="hospital-page.html?hosp=HTSMTI-KULAI">
                     <h3>Hospital Temenggong Seri Maharaja Tun Ibrahim, Kulai</h3>
+                    <div class="status-container">
+                        <span class="status-box status-FUNCTIONING">FUNCTIONING: --</span>
+                        <span class="status-box status-NOT-FUNCTIONING">NOT FUNCTIONING: --</span>
+                    </div>
                 </a>
-                <a class="card" href="hospital-page.html?hosp=HK-KLUANG">
+                <a class="card" id="card-HK-KLUANG" href="hospital-page.html?hosp=HK-KLUANG">
                     <h3>Hospital Enche' Besar Hajjah Khalsom</h3>
+                    <div class="status-container">
+                        <span class="status-box status-FUNCTIONING">FUNCTIONING: --</span>
+                        <span class="status-box status-NOT-FUNCTIONING">NOT FUNCTIONING: --</span>
+                    </div>
                 </a>
-                <a class="card" href="hospital-page.html?hosp=HBP-BATU-PAHAT">
+                <a class="card" id="card-HBP-BATU-PAHAT" href="hospital-page.html?hosp=HBP-BATU-PAHAT">
                     <h3>Hospital Batu Pahat</h3>
+                    <div class="status-container">
+                        <span class="status-box status-FUNCTIONING">FUNCTIONING: --</span>
+                        <span class="status-box status-NOT-FUNCTIONING">NOT FUNCTIONING: --</span>
+                    </div>
                 </a>
-                <a class="card" href="hospital-page.html?hosp=HP-PONTIAN">
+                <a class="card" id="card-HP-PONTIAN" href="hospital-page.html?hosp=HP-PONTIAN">
                     <h3>Hospital Pontian</h3>
+                    <div class="status-container">
+                        <span class="status-box status-FUNCTIONING">FUNCTIONING: --</span>
+                        <span class="status-box status-NOT-FUNCTIONING">NOT FUNCTIONING: --</span>
+                    </div>
                 </a>
-                <a class="card" href="hospital-page.html?hosp=HS-SEGAMAT">
+                <a class="card" id="card-HS-SEGAMAT" href="hospital-page.html?hosp=HS-SEGAMAT">
                     <h3>Hospital Segamat</h3>
+                    <div class="status-container">
+                        <span class="status-box status-FUNCTIONING">FUNCTIONING: --</span>
+                        <span class="status-box status-NOT-FUNCTIONING">NOT FUNCTIONING: --</span>
+                    </div>
                 </a>
-                <a class="card" href="hospital-page.html?hosp=HKT-KOTA-TINGGI">
+                <a class="card" id="card-HKT-KOTA-TINGGI" href="hospital-page.html?hosp=HKT-KOTA-TINGGI">
                     <h3>Hospital Kota Tinggi</h3>
+                    <div class="status-container">
+                        <span class="status-box status-FUNCTIONING">FUNCTIONING: --</span>
+                        <span class="status-box status-NOT-FUNCTIONING">NOT FUNCTIONING: --</span>
+                    </div>
                 </a>
-                <a class="card" href="hospital-page.html?hosp=HM-MERSING">
+                <a class="card" id="card-HM-MERSING" href="hospital-page.html?hosp=HM-MERSING">
                     <h3>Hospital Mersing</h3>
+                    <div class="status-container">
+                        <span class="status-box status-FUNCTIONING">FUNCTIONING: --</span>
+                        <span class="status-box status-NOT-FUNCTIONING">NOT FUNCTIONING: --</span>
+                    </div>
                 </a>
-                <a class="card" href="hospital-page.html?hosp=HT-TANGKAK">
+                <a class="card" id="card-HT-TANGKAK" href="hospital-page.html?hosp=HT-TANGKAK">
                     <h3>Hospital Tangkak</h3>
+                    <div class="status-container">
+                        <span class="status-box status-FUNCTIONING">FUNCTIONING: --</span>
+                        <span class="status-box status-NOT-FUNCTIONING">NOT FUNCTIONING: --</span>
+                    </div>
                 </a>
-                <a class="card" href="hospital-page.html?hosp=MKAJ-JB">
+                <a class="card" id="card-MKAJ-JB" href="hospital-page.html?hosp=MKAJ-JB">
                     <h3>Makmal Kesihatan Awam Johor</h3>
+                    <div class="status-container">
+                        <span class="status-box status-FUNCTIONING">FUNCTIONING: --</span>
+                        <span class="status-box status-NOT-FUNCTIONING">NOT FUNCTIONING: --</span>
+                    </div>
                 </a>
-                <a class="card" href="hospital-page.html?hosp=HT-PERMAI">
+                <a class="card" id="card-HT-PERMAI" href="hospital-page.html?hosp=HT-PERMAI">
                     <h3>Hospital Permai</h3>
+                    <div class="status-container">
+                        <span class="status-box status-FUNCTIONING">FUNCTIONING: --</span>
+                        <span class="status-box status-NOT-FUNCTIONING">NOT FUNCTIONING: --</span>
+                    </div>
                 </a>
             </div>
         </section>
     </main>
-
 
     <script src="script.js"></script>
 
