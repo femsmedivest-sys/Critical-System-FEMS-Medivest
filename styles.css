@@ -1,7 +1,7 @@
 /* Gaya Umum */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/main/IT2.webp'); 
+    background-image: url('Gambar/IT2.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -11,10 +11,11 @@ body {
     padding-top: 100px;
 }
 
+/* Header */
 .main-header {
     background-color: #ffffff;
     color: rgb(0, 0, 0);
-    padding: 20px;
+    padding: 10px 20px;
     font-size: 1.2em;
     text-align: center;
     position: fixed;
@@ -22,14 +23,13 @@ body {
     width: 99%;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-image: url('https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/main/header.webp');
+    background-image: url('Gambar/header.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
 }
 
 .title-home-container {
@@ -101,6 +101,61 @@ body {
     color: #2c2c2c;
 }
 
+/* Gaya Tajuk Negeri */
+.state-header {
+    /* Kod ini yang membuatkan tajuk berada di baris penuh */
+    grid-column: 1 / -1; 
+    text-decoration: underline;
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    text-align: left;
+    font-weight: bold;
+    color: #424242;
+}
+
+/* Gaya Butang Navigasi */
+.home-button, .back-button {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    border: 1px solid #838383;
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover, .back-button:hover {
+    background-color: #b5b5b5;
+    transform: translateY(-5px);
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+/* Gaya untuk Butang Borang */
+.form-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin: 15px auto;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    max-width: 300px;
+}
+
+.form-button:hover {
+    background-color: #0056b3;
+}
+
+/* Gaya untuk Halaman Hospital */
 .location-section {
     background-color: #ffffff39;
     padding: 20px;
@@ -158,41 +213,6 @@ body {
     margin-top: 10px;
 }
 
-.home-button {
-    background-color: #ffffff;
-    color: #000000;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.9em;
-    border: 1px solid #838383;
-}
-
-.home-button:hover {
-    background-color: #b5b5b5;
-    transform: translateY(-5px);
-}
-
-.button-group {
-    display: flex;
-    gap: 10px;
-}
-
-.back-button {
-    background-color: #ffffff;
-    color: #000000;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.9em;
-    border: 1px solid #838383;
-}
-
-.back-button:hover {
-    background-color: #b5b5b5;
-    transform: translateY(-5px);
-}
-
 .status-box {
     display: inline-block;
     padding: 6px 8px;
@@ -210,6 +230,7 @@ body {
     background-color: #ff0019;
 }
 
+/* Gaya untuk Loading Spinner */
 .loading-spinner {
     border: 8px solid #f3f3f3;
     border-top: 8px solid #3498db;
@@ -225,86 +246,61 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-/* Gaya untuk Butang Borang */
-.form-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    display: block;
-    margin: 15px auto;
-    text-align: center;
-    transition: background-color 0.3s ease;
-    max-width: 300px;
-}
-
-.form-button:hover {
-    background-color: #0056b3;
-
-}
-
-/*mode telefon*/
-/* Gaya untuk peranti skrin kecil (max-width: 768px) */
+/* Media Queries untuk reka bentuk responsif */
 @media (max-width: 768px) {
     .main-header {
-        flex-direction: column; /* Susun elemen dalam lajur */
-        align-items: center; /* Pusatkan elemen secara mendatar */
-        padding: 10px; /* Kurangkan padding */
-        height: auto; /* Biarkan tinggi menyesuaikan diri */
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        height: auto;
     }
 
     .main-header h1 {
-        font-size: 1em; /* Kecilkan saiz fon untuk tajuk */
+        font-size: 1em;
         text-align: center;
         margin-top: 10px;
         margin-bottom: 10px;
     }
 
     .logo-container {
-        justify-content: center; /* Pastikan logo berada di tengah */
+        justify-content: center;
         width: 100%;
         margin-bottom: 5px;
     }
     
     .header-logo, .header-logo2 {
-        height: 50px; /* Kecilkan saiz logo */
+        height: 50px;
         width: auto;
     }
     
     .title-home-container {
-        flex-direction: column; /* Susun tajuk dan butang dalam lajur */
-        align-items: center; /* Pusatkan mereka */
-        gap: 5px; /* Kurangkan jarak antara butang */
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
     }
 
     .button-group {
-        flex-direction: row; /* Kekalkan butang dalam baris */
+        flex-direction: row;
         justify-content: center;
-        flex-wrap: wrap; /* Benarkan butang melompat ke baris baharu jika perlu */
+        flex-wrap: wrap;
     }
 
     .back-button, .home-button, .link-button {
-        padding: 8px 12px; /* Kecilkan saiz padding butang */
-        font-size: 0.8em; /* Kecilkan saiz fon butang */
+        padding: 8px 12px;
+        font-size: 0.8em;
     }
 
-    /* Ubah grid kad untuk skrin kecil */
     .card-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 1-2 kad setiap baris */
-        gap: 15px; /* Kurangkan jarak antara kad */
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 15px;
     }
 
     .container {
-        padding-top: 130px; /* Tambahkan padding atas untuk mengelakkan bertindih */
+        padding-top: 130px;
     }
 
-    /* Gaya untuk `link-button` yang dinamik */
     .form-button {
-        width: 90%; /* Jadikan butang borang lebih lebar */
+        width: 90%;
         font-size: 0.9em;
     }
-
 }
-
