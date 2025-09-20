@@ -38,7 +38,7 @@ const criticalSystems = [
     { name: "AUTOCLAVE", id: "AUTOCLAVE" },
     { name: "MEDICAL GAS PIPELINE SYSTEM", id: "MEDICAL GAS PIPELINE SYSTEM" },
     { name: "VERTICAL TRANSPORTATION", id: "LIFT" },
-    { name: "AHU & HVAC", id: "AHU" },
+    { name: "AHU", id: "AHU" },
     { name: "BAS SYSTEM", id: "BAS SYSTEM" },
     { name: "CHILLER & COOLING TOWER", id: "CHILLER-COOLING-TOWER" },
     { name: "FIRE PROTECTION SYSTEM", id: "FIRE PROTECTION SYSTEM" },
@@ -52,7 +52,7 @@ const submissionForms = {
     'TUANKU-JAAFAR_FIRE PROTECTION SYSTEM': 'https://forms.gle/NBs6XQrdcfdt6xdZA',
     'TUANKU-JAAFAR_CHILLER-COOLING-TOWER': 'https://forms.gle/BVVG8sKYg3ZUHuE1A',
     'TUANKU-JAAFAR_WATER SUPPLY SYSTEM': 'https://forms.gle/PqRcpXEouvMubKbg8',
-    'TUANKU-JAAFAR_AHU HVAC': '',
+    'TUANKU-JAAFAR_AHU': '',
     'TUANKU-JAAFAR_MEDICAL GAS PIPELINE SYSTEM': 'https://forms.gle/Ah3eb6xrcqJLh5j37',
     'TUANKU-JAAFAR_BAS SYSTEM': '',
 
@@ -328,5 +328,6 @@ if (window.location.pathname.endsWith('hospital-page.html')) {
     document.addEventListener('DOMContentLoaded', updateHospitalCards);
 
 }
+
 
 
