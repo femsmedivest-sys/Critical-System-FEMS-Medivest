@@ -3,17 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO improvement -->
+    <meta name="description" content="Critical System Monitoring for FEMS Medivest - real-time monitoring of hospital facilities, ensuring reliability and safety.">
+    <meta name="keywords" content="FEMS, Critical System, Medivest, Hospital Monitoring, Facilities Engineering Management Services">
+
     <title>FEMS Critical System</title>
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Preload gambar penting -->
+    <link rel="preload" as="image" href="medivest.webp">
+    <link rel="preload" as="image" href="anything is possible.webp">
 </head>
 <body>
     <header class="main-header">
         <div class="header-left">
-            <img src="medivest.png" alt="Logo Syarikat" class="header-logo">
+            <img src="medivest.webp" alt="Logo Syarikat" class="header-logo" width="200" height="80">
         </div>
-        <h1>Facilities Engineering Management Services (FEMS)-Critical System Monitoring</h1>
+        <h1>Facilities Engineering Management Services (FEMS) - Critical System Monitoring</h1>
         <div class="header-right">
-            <img src="anything is possible.png" alt="Logo Syarikat" class="header-logo2">
+            <img src="anything is possible.webp" alt="Slogan Medivest" class="header-logo2" width="200" height="80">
         </div>
     </header>
 
@@ -21,6 +30,7 @@
         <section class="hospital-list-section">
             <div id="loading-spinner" class="loading-spinner"></div>
             <div class="card-grid">
+
                 <h2 class="state-header">NEGERI SEMBILAN:</h2>
                 <a class="card" id="card-TUANKU-JAAFAR" href="hospital-page.html?hosp=TUANKU-JAAFAR">
                     <h3>Hospital Tuanku Ja'afar, Seremban</h3>
@@ -107,7 +117,7 @@
                     <h3>Hospital Pakar Sultanah Fatimah, Muar</h3>
                     <div class="status-container">
                         <span class="status-box status-FUNCTIONING">FUNCTIONING: --</span>
-                        <span class="status-box status-NOT-FUNCTIONing">NOT FUNCTIONING: --</span>
+                        <span class="status-box status-NOT-FUNCTIONING">NOT FUNCTIONING: --</span>
                     </div>
                 </a>
                 <a class="card" id="card-HTSMTI-KULAI" href="hospital-page.html?hosp=HTSMTI-KULAI">
@@ -185,6 +195,5 @@
     </main>
 
     <script src="script.js"></script>
-
 </body>
 </html>
