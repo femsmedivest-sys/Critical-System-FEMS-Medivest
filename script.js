@@ -4,7 +4,7 @@ const hospitalData = [
     //---N9-------
     { name: "Hospital Tuanku Ja'afar, Seremban", id: "TUANKU-JAAFAR", sheetsUrl: "https://script.google.com/macros/s/AKfycbw6nwHbWfRtgEbu2w7BgD6ip6Xbd4G5XA6UnFc57LFJzYcQ_mnkJe9BJMUKTvuthJNG/exec" },
     { name: "Hospital Tuanku Ampuan Najihah, Kuala Pilah", id: "HTAN-KUALA-PILAH", sheetsUrl: "" },
-    { name: "Hospital Jempol", id: "HJ-JEMPOL", sheetsUrl: "https://script.google.com/macros/s/AKfycbyf746jLISfC08pgK0q5R2vTkYjI3TX-Bt89dfdovoYrPZv8aJYcD7DzAEV7vV4FwAO/exec" },
+    { name: "Hospital Jempol", id: "HJ-JEMPOL", sheetsUrl: "" },
     { name: "Hospital Jelebu", id: "HJ-JELEBU", sheetsUrl: "" },
     { name: "Hospital Port Dickson", id: "HPD-PORT-DICKSON", sheetsUrl: "" },
     { name: "Hospital Tampin", id: "HT-TAMPIN", sheetsUrl: "" },
@@ -328,6 +328,7 @@ if (window.location.pathname.endsWith('hospital-page.html')) {
     document.addEventListener('DOMContentLoaded', updateHospitalCards);
 
 }
+
 
 
 
