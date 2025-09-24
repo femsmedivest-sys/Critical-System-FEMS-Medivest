@@ -4,7 +4,7 @@ const hospitalData = [
     //---N9-------
     { name: "Hospital Tuanku Ja'afar, Seremban", id: "TUANKU-JAAFAR", sheetsUrl: "https://script.google.com/macros/s/AKfycbw6nwHbWfRtgEbu2w7BgD6ip6Xbd4G5XA6UnFc57LFJzYcQ_mnkJe9BJMUKTvuthJNG/exec" },
     { name: "Hospital Tuanku Ampuan Najihah, Kuala Pilah", id: "HTAN-KUALA-PILAH", sheetsUrl: "" },
-    { name: "Hospital Jempol", id: "HJ-JEMPOL", sheetsUrl: "" },
+    { name: "Hospital Jempol", id: "HJ-JEMPOL", sheetsUrl: "https://script.google.com/macros/s/AKfycbwLeYaE2fnj8k_GxBQdj0UHl5mCiHM1SpubVYvTVN7IM5Sr7J1H4XLzJkB9TTwC-VRn/exec" },
     { name: "Hospital Jelebu", id: "HJ-JELEBU", sheetsUrl: "" },
     { name: "Hospital Port Dickson", id: "HPD-PORT-DICKSON", sheetsUrl: "" },
     { name: "Hospital Tampin", id: "HT-TAMPIN", sheetsUrl: "" },
@@ -55,6 +55,9 @@ const submissionForms = {
     'TUANKU-JAAFAR_AHU': '',
     'TUANKU-JAAFAR_MEDICAL GAS PIPELINE SYSTEM': 'https://forms.gle/Ah3eb6xrcqJLh5j37',
     'TUANKU-JAAFAR_BAS SYSTEM': '',
+
+    'HJ-JEMPOL_LIFT': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
+    'HJ-JEMPOL_AHU': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
 
 };
 
@@ -328,6 +331,7 @@ if (window.location.pathname.endsWith('hospital-page.html')) {
     document.addEventListener('DOMContentLoaded', updateHospitalCards);
 
 }
+
 
 
 
