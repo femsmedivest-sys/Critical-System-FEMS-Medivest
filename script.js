@@ -3,31 +3,31 @@ const hospitalData = [
     // Jika tiada URL, biarkan string kosong seperti ini: ''
     //---N9-------
     { name: "Hospital Tuanku Ja'afar, Seremban", id: "TUANKU-JAAFAR", sheetsUrl: "https://script.google.com/macros/s/AKfycbw6nwHbWfRtgEbu2w7BgD6ip6Xbd4G5XA6UnFc57LFJzYcQ_mnkJe9BJMUKTvuthJNG/exec" },
-    { name: "Hospital Tuanku Ampuan Najihah, Kuala Pilah", id: "HTAN-KUALA-PILAH", sheetsUrl: "" },
-    { name: "Hospital Jempol", id: "HJ-JEMPOL", sheetsUrl: "" },
-    { name: "Hospital Jelebu", id: "HJ-JELEBU", sheetsUrl: "" },
-    { name: "Hospital Port Dickson", id: "PORT-DICKSON", sheetsUrl: "https://script.google.com/macros/s/AKfycbwLeYaE2fnj8k_GxBQdj0UHl5mCiHM1SpubVYvTVN7IM5Sr7J1H4XLzJkB9TTwC-VRn/exec" },
-    { name: "Hospital Tampin", id: "HT-TAMPIN", sheetsUrl: "" },
+    { name: "Hospital Tuanku Ampuan Najihah, Kuala Pilah", id: "KPL-KUALA-PILAH", sheetsUrl: "" },
+    { name: "Hospital Jempol", id: "JMP-JEMPOL", sheetsUrl: "https://script.google.com/macros/s/AKfycbyu-9HxaLzE__60qiYYsHcPcjhFDvaLywQvSCrR97_7A9IwvknRko5z_NdiFER-NmGx/exec" },
+    { name: "Hospital Jelebu", id: "JLB-JELEBU", sheetsUrl: "" },
+    { name: "Hospital Port Dickson", id: "PDX-PORT-DICKSON", sheetsUrl:""},
+    { name: "Hospital Tampin", id: "TMP-TAMPIN", sheetsUrl: "" },
 
     // --- MELAKA ---
-    { name: "Hospital Melaka", id: "HM-MLK", sheetsUrl: "" },
-    { name: "Hospital Jasin", id: "HJ-JASIN", sheetsUrl: "" },
-    { name: "Hospital Alor Gajah", id: "HAG-ALOR-GAJAH", sheetsUrl: "" },
+    { name: "Hospital Melaka", id: "MKA-MLK", sheetsUrl: "" },
+    { name: "Hospital Jasin", id: "JSN-JASIN", sheetsUrl: "" },
+    { name: "Hospital Alor Gajah", id: "AGJ-ALOR-GAJAH", sheetsUrl: "" },
 
     // --- JOHOR ---
     { name: "Hospital Sultanah Aminah, Johor Bahru", id: "HSA-JOHOR", sheetsUrl: "" },
     { name: "Hospital Sultan Ismail, Johor Bahru", id: "HSI-JOHOR", sheetsUrl: "" },
     { name: "Hospital Pakar Sultanah Fatimah, Muar", id: "HPSF-MUAR", sheetsUrl: "" },
-    { name: "Hospital Kluang", id: "HK-KLUANG", sheetsUrl: "" },
-    { name: "Hospital Batu Pahat", id: "HBP-BATU-PAHAT", sheetsUrl: "" },
-    { name: "Hospital Pontian", id: "HP-PONTIAN", sheetsUrl: "" },
-    { name: "Hospital Segamat", id: "HS-SEGAMAT", sheetsUrl: "" },
+    { name: "Hospital Kluang", id: "KLN-KLUANG", sheetsUrl: "" },
+    { name: "Hospital Batu Pahat", id: "BPH-BATU-PAHAT", sheetsUrl: "" },
+    { name: "Hospital Pontian", id: "PON-PONTIAN", sheetsUrl: "" },
+    { name: "Hospital Segamat", id: "SEG-SEGAMAT", sheetsUrl: "" },
     { name: "Hospital Temenggong Seri Maharaja Tun Ibrahim, Kulai", id: "HTSMTI-KULAI", sheetsUrl: "" },
-    { name: "Hospital Kota Tinggi", id: "HKT-KOTA-TINGGI", sheetsUrl: "" },
-    { name: "Hospital Mersing", id: "HM-MERSING", sheetsUrl: "" },
-    { name: "Hospital Tangkak", id: "HT-TANGKAK", sheetsUrl: "" },
+    { name: "Hospital Kota Tinggi", id: "KTG-KOTA-TINGGI", sheetsUrl: "" },
+    { name: "Hospital Mersing", id: "MER-MERSING", sheetsUrl: "" },
+    { name: "Hospital Tangkak", id: "TGK-TANGKAK", sheetsUrl: "" },
     { name: "Makmal Kesihatan Awam Johor", id: "MKAJ-JB", sheetsUrl: "" },
-    { name: "Hospital Permai", id: "HT-PERMAI", sheetsUrl: "" },
+    { name: "Hospital Permai", id: "PER-PERMAI", sheetsUrl: "" },
     // Tambah semua hospital di sini dengan ID dan URL mereka
 ];
 
@@ -38,7 +38,7 @@ const criticalSystems = [
     { name: "AUTOCLAVE", id: "AUTOCLAVE" },
     { name: "MEDICAL GAS PIPELINE SYSTEM", id: "MEDICAL GAS PIPELINE SYSTEM" },
     { name: "VERTICAL TRANSPORTATION", id: "LIFT" },
-    { name: "AIR HANDLING UNIT", id: "AHU" },
+    { name: "AHU", id: "AHU" },
     { name: "BAS SYSTEM", id: "BAS SYSTEM" },
     { name: "CHILLER & COOLING TOWER", id: "CHILLER-COOLING-TOWER" },
     { name: "FIRE PROTECTION SYSTEM", id: "FIRE PROTECTION SYSTEM" },
@@ -56,9 +56,17 @@ const submissionForms = {
     'TUANKU-JAAFAR_MEDICAL GAS PIPELINE SYSTEM': 'https://forms.gle/Ah3eb6xrcqJLh5j37',
     'TUANKU-JAAFAR_BAS SYSTEM': '',
 
-    'PORT DICKSON_LIFT': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
-    'PORT-DICKSON_AHU': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
-
+    
+    'JMP-JEMPOL_ELECTRICAL SUPPLY': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
+    'JMP-JEMPOL_GENERATOR SET': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
+    'JMP-JEMPOL_AUTOLCAVE': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
+    'JMP-JEMPOL_LIFT': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
+    'JMP-JEMPOL_FIRE PROTECTION SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
+    'JMP-JEMPOL_CHILLER-COOLING-TOWER': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
+    'JMP-JEMPOL_WATER SUPPLY SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
+    'JMP-JEMPOL_AHU': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
+    'JMP-JEMPOL_MEDICAL GAS PIPELINE SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
+    'JMP-JEMPOL_BAS SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
 };
 
 // Fungsi untuk mengemas kini kad hospital sedia ada di halaman utama
@@ -154,11 +162,11 @@ async function setupHospitalPage() {
         mainContent.innerHTML = '';
 
         if (!sheetsUrl || sheetsUrl === '') {
-            mainContent.innerHTML = `<p style="text-align:center; color:red; font-weight:bold;">No data from Google Spreadsheet for this hospital. Please contact 011-31234648.</p>`;
+            mainContent.innerHTML = `<p style="text-align:center; color:red; font-weight:bold;">No data from Google Spreadsheet for this hospital. Please contact (011-31234648).</p>`;
             return;
         }
 
-        mainContent.innerHTML = '<div class="loading-spinner"></div><p style="text-align:center; margin-top:10px;">Please wait while we load the data... 😔⏳</p>';
+        mainContent.innerHTML = '<div class="loading-spinner"></div><p style="text-align:center; margin-top:10px;">Please wait while the system load the data...</p>';
 
         try {
             const response = await fetch(sheetsUrl);
@@ -329,12 +337,4 @@ if (window.location.pathname.endsWith('hospital-page.html')) {
     document.addEventListener('DOMContentLoaded', setupHospitalPage);
 } else if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
     document.addEventListener('DOMContentLoaded', updateHospitalCards);
-
 }
-
-
-
-
-
-
-
