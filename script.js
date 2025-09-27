@@ -6,8 +6,8 @@ const hospitalData = [
     { name: "Hospital Tuanku Ampuan Najihah, Kuala Pilah", id: "KPL-KUALA-PILAH", sheetsUrl: "" },
     { name: "Hospital Jempol", id: "JMP-JEMPOL", sheetsUrl: "https://script.google.com/macros/s/AKfycbyu-9HxaLzE__60qiYYsHcPcjhFDvaLywQvSCrR97_7A9IwvknRko5z_NdiFER-NmGx/exec" },
     { name: "Hospital Jelebu", id: "JLB-JELEBU", sheetsUrl: "" },
-    { name: "Hospital Port Dickson", id: "PDX-PORT-DICKSON", sheetsUrl:""},
-    { name: "Hospital Tampin", id: "TMP-TAMPIN", sheetsUrl: "" },
+    { name: "Hospital Port Dickson", id: "PDX-PORT-DICKSON", sheetsUrl:"https://script.google.com/macros/s/AKfycbzEqrZI2uaMrzFo52BXS5bzj2WmKlUjEaJSog-08TCfAqZNigdysGHDRVB_0msmzzI/exec"},
+    { name: "Hospital Tampin", id: "TMP-TAMPIN", sheetsUrl: "https://script.google.com/macros/s/AKfycbxwKWMWIV-flIYJOWXdQf0egPCXMK2VAGMAOYfa68M9t9C8h8WHyY_DoKsTA3pD33EupQ/exec" },
 
     // --- MELAKA ---
     { name: "Hospital Melaka", id: "MKA-MLK", sheetsUrl: "" },
@@ -40,33 +40,55 @@ const criticalSystems = [
     { name: "VERTICAL TRANSPORTATION", id: "LIFT" },
     { name: "AHU", id: "AHU" },
     { name: "BAS SYSTEM", id: "BAS SYSTEM" },
-    { name: "CHILLER & COOLING TOWER", id: "CHILLER-COOLING-TOWER" },
+    { name: "CHILLER & COOLING TOWER", id: "CHILLER AND COOLING TOWER" },
     { name: "FIRE PROTECTION SYSTEM", id: "FIRE PROTECTION SYSTEM" },
 ];
 
+//link submission form
 const submissionForms = {
     'TUANKU-JAAFAR_ELECTRICAL SUPPLY': 'https://forms.gle/FGrMdiZeQqaK65Ay7',
     'TUANKU-JAAFAR_GENERATOR SET': 'https://forms.gle/mjACBCEG8qQbxyy66',
     'TUANKU-JAAFAR_AUTOLCAVE': 'https://forms.gle/DvrKQB1jiSueznyw7',
     'TUANKU-JAAFAR_LIFT': 'https://forms.gle/j9Qtte6Esvife31Q8',
     'TUANKU-JAAFAR_FIRE PROTECTION SYSTEM': 'https://forms.gle/NBs6XQrdcfdt6xdZA',
-    'TUANKU-JAAFAR_CHILLER-COOLING-TOWER': 'https://forms.gle/BVVG8sKYg3ZUHuE1A',
+    'TUANKU-JAAFAR_CHILLER AND COOLING TOWER': 'https://forms.gle/BVVG8sKYg3ZUHuE1A',
     'TUANKU-JAAFAR_WATER SUPPLY SYSTEM': 'https://forms.gle/PqRcpXEouvMubKbg8',
     'TUANKU-JAAFAR_AHU': '',
     'TUANKU-JAAFAR_MEDICAL GAS PIPELINE SYSTEM': 'https://forms.gle/Ah3eb6xrcqJLh5j37',
     'TUANKU-JAAFAR_BAS SYSTEM': '',
 
-    
     'JMP-JEMPOL_ELECTRICAL SUPPLY': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
     'JMP-JEMPOL_GENERATOR SET': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
     'JMP-JEMPOL_AUTOLCAVE': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
     'JMP-JEMPOL_LIFT': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
     'JMP-JEMPOL_FIRE PROTECTION SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
-    'JMP-JEMPOL_CHILLER-COOLING-TOWER': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
+    'JMP-JEMPOL_CHILLER AND COOLING TOWER': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
     'JMP-JEMPOL_WATER SUPPLY SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
     'JMP-JEMPOL_AHU': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
     'JMP-JEMPOL_MEDICAL GAS PIPELINE SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
     'JMP-JEMPOL_BAS SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
+
+    'TMP-TAMPIN_ELECTRICAL SUPPLY': 'https://femsmedivest-sys.github.io/Submission-Form/TMP.html',
+    'TMP-TAMPIN_GENERATOR SET': 'https://femsmedivest-sys.github.io/Submission-Form/TMP.html',
+    'TMP-TAMPIN_AUTOLCAVE': 'https://femsmedivest-sys.github.io/Submission-Form/TMP.html',
+    'TMP-TAMPIN_LIFT': 'https://femsmedivest-sys.github.io/Submission-Form/TMP.html',
+    'TMP-TAMPIN_FIRE PROTECTION SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/TMP.html',
+    'TMP-TAMPIN_CHILLER AND COOLING TOWER': 'https://femsmedivest-sys.github.io/Submission-Form/TMP.html',
+    'TMP-TAMPIN_WATER SUPPLY SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/TMP.html',
+    'TMP-TAMPIN_AHU': 'https://femsmedivest-sys.github.io/Submission-Form/TMP.html',
+    'TMP-TAMPIN_MEDICAL GAS PIPELINE SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/TMP.html',
+    'TMP-TAMPIN_BAS SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/TMP.html',
+
+    'PDX-PORT-DICKSON_ELECTRICAL SUPPLY': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
+    'PDX-PORT-DICKSON_GENERATOR SET': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
+    'PDX-PORT-DICKSON_AUTOLCAVE': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
+    'PDX-PORT-DICKSON_LIFT': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
+    'PDX-PORT-DICKSON_FIRE PROTECTION SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
+    'PDX-PORT-DICKSON_CHILLER AND COOLING TOWER': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
+    'PDX-PORT-DICKSON_WATER SUPPLY SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
+    'PDX-PORT-DICKSON_AHU': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
+    'PDX-PORT-DICKSON_MEDICAL GAS PIPELINE SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
+    'PDX-PORT-DICKSON_BAS SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
 };
 
 // Fungsi untuk mengemas kini kad hospital sedia ada di halaman utama
