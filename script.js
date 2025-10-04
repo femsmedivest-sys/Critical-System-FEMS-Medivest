@@ -2,7 +2,7 @@ const hospitalData = [
     // Pastikan URL di sini adalah URL Apps Script yang betul
     // Jika tiada URL, biarkan string kosong seperti ini: ''
     //---N9-------
-    { name: "Hospital Tuanku Ja'afar, Seremban", id: "TUANKU-JAAFAR", sheetsUrl: "https://script.google.com/macros/s/AKfycbw6nwHbWfRtgEbu2w7BgD6ip6Xbd4G5XA6UnFc57LFJzYcQ_mnkJe9BJMUKTvuthJNG/exec" },
+    { name: "Hospital Tuanku Ja'afar, Seremban", id: "TUANKU-JAAFAR", sheetsUrl: "https://script.google.com/macros/s/AKfycbyURuTW-q5YGseD763PXLfWP198nBg-DLToJxPJ3FciH7pQ12gebbU0xL0WEcrhkHiH/exec" },
     { name: "Hospital Tuanku Ampuan Najihah, Kuala Pilah", id: "KPL-KUALA-PILAH", sheetsUrl: "" },
     { name: "Hospital Jempol", id: "JMP-JEMPOL", sheetsUrl: "https://script.google.com/macros/s/AKfycbyu-9HxaLzE__60qiYYsHcPcjhFDvaLywQvSCrR97_7A9IwvknRko5z_NdiFER-NmGx/exec" },
     { name: "Hospital Jelebu", id: "JLB-JELEBU", sheetsUrl: "" },
@@ -46,16 +46,16 @@ const criticalSystems = [
 
 //link submission form
 const submissionForms = {
-    'TUANKU-JAAFAR_ELECTRICAL SUPPLY': 'https://forms.gle/FGrMdiZeQqaK65Ay7',
-    'TUANKU-JAAFAR_GENERATOR SET': 'https://forms.gle/mjACBCEG8qQbxyy66',
-    'TUANKU-JAAFAR_AUTOLCAVE': 'https://forms.gle/DvrKQB1jiSueznyw7',
-    'TUANKU-JAAFAR_LIFT': 'https://forms.gle/j9Qtte6Esvife31Q8',
-    'TUANKU-JAAFAR_FIRE PROTECTION SYSTEM': 'https://forms.gle/NBs6XQrdcfdt6xdZA',
-    'TUANKU-JAAFAR_CHILLER AND COOLING TOWER': 'https://forms.gle/BVVG8sKYg3ZUHuE1A',
-    'TUANKU-JAAFAR_WATER SUPPLY SYSTEM': 'https://forms.gle/PqRcpXEouvMubKbg8',
-    'TUANKU-JAAFAR_AHU': '',
-    'TUANKU-JAAFAR_MEDICAL GAS PIPELINE SYSTEM': 'https://forms.gle/Ah3eb6xrcqJLh5j37',
-    'TUANKU-JAAFAR_BAS SYSTEM': '',
+    'TUANKU-JAAFAR_ELECTRICAL SUPPLY': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
+    'TUANKU-JAAFAR_GENERATOR SET': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
+    'TUANKU-JAAFAR_AUTOLCAVE': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
+    'TUANKU-JAAFAR_LIFT': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
+    'TUANKU-JAAFAR_FIRE PROTECTION SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
+    'TUANKU-JAAFAR_CHILLER AND COOLING TOWER': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
+    'TUANKU-JAAFAR_WATER SUPPLY SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
+    'TUANKU-JAAFAR_AHU': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
+    'TUANKU-JAAFAR_MEDICAL GAS PIPELINE SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
+    'TUANKU-JAAFAR_BAS SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
 
     'JMP-JEMPOL_ELECTRICAL SUPPLY': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
     'JMP-JEMPOL_GENERATOR SET': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
@@ -256,7 +256,7 @@ async function setupHospitalPage() {
             return;
         }
 
-        mainContent.innerHTML = '<div class="loading-spinner"></div><p style="text-align:center; margin-top:10px;">Please be patient, data is being loaded... 😔⏳</p>';
+        mainContent.innerHTML = '<div class="loading-spinner"></div><p style="text-align:center; margin-top:10px;">Please be patient, data is being loaded</p>';
 
         const data = await fetchAssetData(sheetsUrl, systemId);
         mainContent.innerHTML = '';
