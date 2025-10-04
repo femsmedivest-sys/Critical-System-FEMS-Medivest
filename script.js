@@ -46,16 +46,16 @@ const criticalSystems = [
 
 //link submission form
 const submissionForms = {
-    'TUANKU-JAAFAR_ELECTRICAL SUPPLY': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
-    'TUANKU-JAAFAR_GENERATOR SET': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
-    'TUANKU-JAAFAR_AUTOLCAVE': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
-    'TUANKU-JAAFAR_LIFT': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
-    'TUANKU-JAAFAR_FIRE PROTECTION SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
-    'TUANKU-JAAFAR_CHILLER AND COOLING TOWER': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
-    'TUANKU-JAAFAR_WATER SUPPLY SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
-    'TUANKU-JAAFAR_AHU': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
-    'TUANKU-JAAFAR_MEDICAL GAS PIPELINE SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
-    'TUANKU-JAAFAR_BAS SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
+    'TUANKU-JAAFAR_ELECTRICAL SUPPLY': 'https://femsmedivest-sys.github.io/Submission-Form/HTJ.html',
+    'TUANKU-JAAFAR_GENERATOR SET': 'https://femsmedivest-sys.github.io/Submission-Form/HTJ.html',
+    'TUANKU-JAAFAR_AUTOLCAVE': 'https://femsmedivest-sys.github.io/Submission-Form/HTJ.html',
+    'TUANKU-JAAFAR_LIFT': 'https://femsmedivest-sys.github.io/Submission-Form/HTJ.html',
+    'TUANKU-JAAFAR_FIRE PROTECTION SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/HTJ.html',
+    'TUANKU-JAAFAR_CHILLER AND COOLING TOWER': 'https://femsmedivest-sys.github.io/Submission-Form/HTJ.html',
+    'TUANKU-JAAFAR_WATER SUPPLY SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/HTJ.html',
+    'TUANKU-JAAFAR_AHU': 'https://femsmedivest-sys.github.io/Submission-Form/HTJ.html',
+    'TUANKU-JAAFAR_MEDICAL GAS PIPELINE SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/HTJ.html',
+    'TUANKU-JAAFAR_BAS SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/HTJ.html',
 
     'JMP-JEMPOL_ELECTRICAL SUPPLY': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
     'JMP-JEMPOL_GENERATOR SET': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
