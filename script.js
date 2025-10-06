@@ -48,7 +48,7 @@ const criticalSystems = [
 const submissionForms = {
     'TUANKU-JAAFAR_ELECTRICAL SUPPLY': 'https://femsmedivest-sys.github.io/Submission-Form/HTJ.html',
     'TUANKU-JAAFAR_GENERATOR SET': 'https://femsmedivest-sys.github.io/Submission-Form/HTJ.html',
-    'TUANKU-JAAFAR_AUTOLCAVE': 'https://femsmedivest-sys.github.io/Submission-Form/HTJ.html',
+    'TUANKU-JAAFAR_AUTOCLAVE': 'https://femsmedivest-sys.github.io/Submission-Form/HTJ.html',
     'TUANKU-JAAFAR_LIFT': 'https://femsmedivest-sys.github.io/Submission-Form/HTJ.html',
     'TUANKU-JAAFAR_FIRE PROTECTION SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/HTJ.html',
     'TUANKU-JAAFAR_CHILLER AND COOLING TOWER': 'https://femsmedivest-sys.github.io/Submission-Form/HTJ.html',
@@ -59,7 +59,7 @@ const submissionForms = {
 
     'JMP-JEMPOL_ELECTRICAL SUPPLY': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
     'JMP-JEMPOL_GENERATOR SET': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
-    'JMP-JEMPOL_AUTOLCAVE': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
+    'JMP-JEMPOL_AUTOCLAVE': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
     'JMP-JEMPOL_LIFT': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
     'JMP-JEMPOL_FIRE PROTECTION SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
     'JMP-JEMPOL_CHILLER AND COOLING TOWER': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
@@ -70,7 +70,7 @@ const submissionForms = {
 
     'TMP-TAMPIN_ELECTRICAL SUPPLY': 'https://femsmedivest-sys.github.io/Submission-Form/TMP.html',
     'TMP-TAMPIN_GENERATOR SET': 'https://femsmedivest-sys.github.io/Submission-Form/TMP.html',
-    'TMP-TAMPIN_AUTOLCAVE': 'https://femsmedivest-sys.github.io/Submission-Form/TMP.html',
+    'TMP-TAMPIN_AUTOCLAVE': 'https://femsmedivest-sys.github.io/Submission-Form/TMP.html',
     'TMP-TAMPIN_LIFT': 'https://femsmedivest-sys.github.io/Submission-Form/TMP.html',
     'TMP-TAMPIN_FIRE PROTECTION SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/TMP.html',
     'TMP-TAMPIN_CHILLER AND COOLING TOWER': 'https://femsmedivest-sys.github.io/Submission-Form/TMP.html',
@@ -81,7 +81,7 @@ const submissionForms = {
 
     'PDX-PORT-DICKSON_ELECTRICAL SUPPLY': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
     'PDX-PORT-DICKSON_GENERATOR SET': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
-    'PDX-PORT-DICKSON_AUTOLCAVE': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
+    'PDX-PORT-DICKSON_AUTOCLAVE': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
     'PDX-PORT-DICKSON_LIFT': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
     'PDX-PORT-DICKSON_FIRE PROTECTION SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
     'PDX-PORT-DICKSON_CHILLER AND COOLING TOWER': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
