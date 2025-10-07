@@ -316,9 +316,22 @@ body {
         font-size: 0.9em;
     }
 
-    .text-xxs {
-        font-size: 2px; /* Tukar nilai ini untuk saiz yang berbeza */
-        line-height: 1rem;
+    /* Gaya untuk kontena tengah header (Tajuk, Jam, Kredit) */
+    .header-center-content {
+        display: flex;
+        flex-direction: column; /* Susun elemen secara menegak */
+        align-items: center;    /* Pusat elemen secara mendatar */
+        text-align: center;
+        flex-grow: 1;           /* Ambil ruang yang ada */
+        padding: 0 10px;        /* Tambah padding supaya tidak terlalu rapat dengan logo */
     }
 
+    /* Semak semula gaya sedia ada anda, jika ada, padamkan .header-left, .header-right
+    atau ubah mengikut keperluan. */
+
+    /* Pastikan anda juga mempunyai gaya font tersuai anda */
+    .text-xxs {
+        font-size: 8px; 
+        line-height: 1.25rem;
+    }
 }
