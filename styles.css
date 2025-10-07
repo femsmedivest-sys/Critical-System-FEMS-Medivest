@@ -1,7 +1,7 @@
 /* Gaya Umum */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/main/IT2.webp'); 
+    background-image: url('Gambar/IT2.webp'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -23,7 +23,7 @@ body {
     width: 99%;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-image: url('https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/main/header.webp');
+    background-image: url('Gambar/header.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -216,18 +216,18 @@ body {
 .status-box {
     display: inline-block;
     padding: 6px 8px;
-    border-radius: 10px;
+    border-radius: 30px;
     color: #000000;
     font-weight: bold;
     text-transform: uppercase;
 }
 
 .status-FUNCTIONING {
-    background-color: #00ff3c;
+    background-color: #26ff00; /*#26ff00,#ff0000*/
 }
 
 .status-NOT-FUNCTIONING {
-    background-color: #ff0019;
+    background-color: #ff0000;
 }
 
 /* Gaya untuk Status Container di halaman utama */
@@ -316,5 +316,8 @@ body {
         font-size: 0.9em;
     }
 
+    .text-xxs {
+        font-size: 2px; /* Tukar nilai ini untuk saiz yang berbeza */
+        line-height: 1rem;
+    }
 }
-

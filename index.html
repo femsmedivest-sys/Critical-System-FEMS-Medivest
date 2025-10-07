@@ -19,14 +19,22 @@
     <header class="main-header">
         <div class="header-left">
             <img src="medivest.webp" alt="Logo Syarikat" class="header-logo" width="200" height="80">
+            <div id="time-widget" class="text-xss font-bold text-center text-gray-700 mt-4 mb-4">
+                Loading Time...
+            </div>
+            <div class="text-xss text-center text-gray-500 mb-1">
+                Created by: <span class="font-semibold text-gray-700">FEMS HQ</span>
+            </div>
         </div>
         <h1>Facilities Engineering Management Services (FEMS) - Critical System Monitoring</h1>
         <div class="header-right">
             <img src="anything is possible.webp" alt="Slogan Medivest" class="header-logo2" width="200" height="80">
         </div>
+        </div>
     </header>
 
     <main class="container">
+        
         <section class="hospital-list-section">
             <div id="loading-spinner" class="loading-spinner"></div>
             <div class="card-grid">
@@ -195,5 +203,41 @@
     </main>
 
     <script src="script.js"></script>
+
+            <script>
+            // --- FUNGSI WIDGET MASA ---
+            function updateTimeWidget() {
+                const now = new Date();
+                
+                // Tetapkan pilihan format masa
+                const options = {
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: true, // Guna format 12 jam (e.g., 03:45:00 PM)
+                    // Anda boleh menukar ini kepada false untuk format 24 jam
+                };
+
+                // Dapatkan masa yang diformat
+                const formattedTime = now.toLocaleTimeString('en-US', options);
+
+                // Dapatkan tarikh yang diformat (Hari, Tarikh Penuh)
+                const dateOptions = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+                const formattedDate = now.toLocaleDateString('en-US', dateOptions);
+
+                // Gabungkan dan kemas kini elemen HTML
+                const timeWidget = document.getElementById('time-widget');
+                if (timeWidget) {
+                    // Memaparkan Hari, Tarikh, dan Masa
+                    timeWidget.innerHTML = `${formattedDate} | ${formattedTime}`;
+                }
+            }
+
+            // Panggil fungsi sekali untuk memaparkan masa segera
+            updateTimeWidget();
+
+            // Panggil fungsi setiap 1000 milisaat (1 saat) untuk mengemas kini masa secara langsung
+            setInterval(updateTimeWidget, 1000);
+        </script>
 </body>
 </html>
