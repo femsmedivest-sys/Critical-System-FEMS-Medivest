@@ -8,7 +8,7 @@ body {
     background-attachment: fixed;
     margin: 0;
     padding: 0;
-    padding-top: 140px;
+    padding-top: 100px;
 }
 
 /* Header */
@@ -268,14 +268,6 @@ body {
         height: auto;
     }
 
-    .logo-group-mobile {
-        display: flex;
-        flex-direction: row; /* Susun logo secara mendatar */
-        justify-content: space-between; /* Jarakkan logo ke tepi kiri/kanan */
-        width: 100%;
-        margin-bottom: 10px; /* Tambah jarak dari tajuk di bawah */
-    }
-
     .main-header h1 {
         font-size: 1em;
         text-align: center;
@@ -285,8 +277,8 @@ body {
 
     .logo-container {
         justify-content: center;
-        width: auto;
-        margin-bottom: 0px;
+        width: 100%;
+        margin-bottom: 5px;
     }
     
     .header-logo, .header-logo2 {
