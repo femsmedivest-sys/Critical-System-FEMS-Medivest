@@ -317,22 +317,27 @@ body {
         font-size: 0.9em;
     }
 
-    /* Gaya untuk kontena tengah header (Tajuk, Jam, Kredit) */
-    .header-center-content {
-        display: flex;
-        flex-direction: column; /* Susun elemen secara menegak */
-        align-items: center;    /* Pusat elemen secara mendatar */
-        text-align: center;
-        flex-grow: 1;           /* Ambil ruang yang ada */
-        padding: 0 10px;        /* Tambah padding supaya tidak terlalu rapat dengan logo */
+    /* 1. Paksa Logo Medivest dan Jam Bersebelahan */
+    .logo-and-time-wrapper {
+        display: flex !important; /* Guna Flexbox */
+        flex-direction: row !important; /* Susun mendatar (Side-by-side) */
+        align-items: center; /* Sejajarkan di tengah secara menegak */
+        justify-content: center; /* Pusatkan logo dan jam dalam kontena ini */
+        gap: 10px; /* Jarak antara logo dan jam */
+        width: auto; /* Jangan gunakan lebar penuh */
     }
 
-    /* Semak semula gaya sedia ada anda, jika ada, padamkan .header-left, .header-right
-    atau ubah mengikut keperluan. */
-
-    /* Pastikan anda juga mempunyai gaya font tersuai anda */
-    .text-xxs {
-        font-size: 8px; 
-        line-height: 1.25rem;
+    /* 2. PENTING: Pastikan kontena logo dan jam yang lain juga berpusat */
+    .main-header .logo-container {
+        /* Susunan menegak asal diubah kepada automatik/row di atas */
+        justify-content: center;
+        width: auto;
     }
+    
+    /* 3. Tweak Saiz Jam (jika terlalu besar) */
+    #time-widget {
+        font-size: 0.7em !important; 
+        margin: 0; 
+    }
+
 }
