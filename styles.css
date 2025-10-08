@@ -268,6 +268,14 @@ body {
         height: auto;
     }
 
+    .logo-group-mobile {
+        display: flex;
+        flex-direction: row; /* Susun logo secara mendatar */
+        justify-content: space-between; /* Jarakkan logo ke tepi kiri/kanan */
+        width: 100%;
+        margin-bottom: 10px; /* Tambah jarak dari tajuk di bawah */
+    }
+
     .main-header h1 {
         font-size: 1em;
         text-align: center;
@@ -277,8 +285,8 @@ body {
 
     .logo-container {
         justify-content: center;
-        width: 100%;
-        margin-bottom: 5px;
+        width: auto;
+        margin-bottom: 0px;
     }
     
     .header-logo, .header-logo2 {
