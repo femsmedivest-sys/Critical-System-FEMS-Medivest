@@ -281,12 +281,11 @@
         }
 
         /* Gaya responsif untuk 3 gambar - menukar kepada 1 gambar per slide pada skrin kecil */
-        /*@media screen and (max-width: 600px) {
+        @media screen and (max-width: 768px) {
             .gallery-slide-group {
-                flex-direction: column; 
-                gap: 20px;
+                grid-template-columns: repeat(1, 1fr); 
             }
-        }*/
+        }
 
         /* ==========================================================
         GAYA UNTUK SUSUNAN MEDIA (VIDEO & SLIDESHOW)
@@ -612,7 +611,6 @@
                                 <div class="slide-item"><img src="images/TF Muar 3.jpg" alt="Img 5"></div>
                                 <div class="slide-item"><img src="images/TF Muar 4.jpg" alt="Img 6"></div>
                                 <div class="slide-item"><img src="images/Makan.jpg" alt="Img 7"></div>
-                                
                             </div>
                         </div>
 
