@@ -1,3 +1,34 @@
+/* === FUNGSI DROPDOWN ABOUT US === */
+document.addEventListener('DOMContentLoaded', function() {
+    // Pastikan kita merujuk butang dropdown yang betul
+    const dropbtn = document.querySelector('.about-dropbtn'); 
+    const dropdownContent = document.getElementById("aboutDropdown");
+
+    if (dropbtn && dropdownContent) {
+        // ... (Kekalkan kod fungsi toggle dan window.onclick sedia ada)
+        dropbtn.addEventListener('click', function(event) {
+            event.stopPropagation(); 
+            dropdownContent.classList.toggle("show");
+        });
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.about-dropbtn')) {
+                const openDropdowns = document.getElementsByClassName("dropdown-content");
+                for (let i = 0; i < openDropdowns.length; i++) {
+                    const openDropdown = openDropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    }
+});
+
+/* === KOD LAMA ANDA DI BAWAH INI (cth: hospitalData, setupHospitalPage, dll.) === */
+// ... kekalkan semua kod script.js anda yang lain di sini ...
+
+
 const hospitalData = [
     // Pastikan URL di sini adalah URL Apps Script yang betul
     // Jika tiada URL, biarkan string kosong seperti ini: ''
@@ -234,7 +265,7 @@ async function setupHospitalPage() {
 
         } catch (error) {
             console.error("Fetch error:", error);
-            mainContent.innerHTML = `<p style="text-align:center; color:red; font-weight:bold;">Failed to retrieve data. Please refresh or check the URL or contact 011-31234648.</p>`;
+            mainContent.innerHTML = `<p style="text-align:center; color:red; font-weight:bold;">Failed to retrieve data. Please check the URL or contact 011-31234648.</p>`;
         }
     }
     // --- Logik untuk halaman butiran aset ---
@@ -286,7 +317,7 @@ async function setupHospitalPage() {
         });
 
         if (Object.keys(locations).length === 0) {
-            mainContent.innerHTML += `<p style="text-align:center; color:red; font-weight:bold;">No data found for this system!.</p>`;
+            mainContent.innerHTML += `<p style="text-align:center; color:red; font-weight:bold;">No data found for this system! 😲😤.</p>`;
             return;
         }
 
