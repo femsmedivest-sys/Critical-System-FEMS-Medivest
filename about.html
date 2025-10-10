@@ -357,6 +357,58 @@
                 width: 100%; 
             }
         }
+
+        /* ==========================================================
+        GAYA MODAL/LIGHTBOX BARU
+        ========================================================== */
+
+        /* Kontena Modal Penuh Skrin (Secara lalai tersembunyi) */
+        .modal {
+            display: none; /* Sembunyikan secara lalai */
+            position: fixed; /* Kekal di tempat yang sama walaupun scroll */
+            z-index: 10000; /* Pastikan ia berada di atas semua elemen lain */
+            padding-top: 50px; /* Jarak dari atas */
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; /* Membolehkan scroll jika gambar besar */
+            background-color: rgba(0,0,0,0.9); /* Latar belakang hitam lutsinar */
+        }
+
+        /* Gambar di dalam Modal */
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        /* Butang Tutup (X) */
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .close-btn:hover,
+        .close-btn:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Animasi untuk Modal */
+        @keyframes zoom {
+            from {transform:scale(0)} 
+            to {transform:scale(1)}
+        }
     </style>
 </head>
 <body>
@@ -604,13 +656,13 @@
 
                         <div class="mySlides fade" id="carousel-track">
                             <div class="gallery-slide-group">
-                                <div class="slide-item"><img src="images/Makan.jpg" alt="Img 7"></div>
-                                <div class="slide-item"><img src="images/FEMS HQ.jpg" alt="Img 1"></div>
-                                <div class="slide-item"><img src="images/Task Force Muar.jpg" alt="Img 2"></div>
-                                <div class="slide-item"><img src="images/nazree cat.jpg" alt="Img 3"></div>
-                                <div class="slide-item"><img src="images/TF Muar 2.jpg" alt="Img 4"></div>
-                                <div class="slide-item"><img src="images/TF Muar 3.jpg" alt="Img 5"></div>
-                                <div class="slide-item"><img src="images/TF Muar 4.jpg" alt="Img 6"></div>
+                                <div class="slide-item"><img src="images/Makan.jpg" alt="Img 1"onclick="openModal(this)"></div>
+                                <div class="slide-item"><img src="images/FEMS HQ.jpg" alt="Img 2"onclick="openModal(this)"></div>
+                                <div class="slide-item"><img src="images/Task Force Muar.jpg" alt="Img 3"onclick="openModal(this)"></div>
+                                <div class="slide-item"><img src="images/nazree cat.jpg" alt="Img 4"onclick="openModal(this)"></div>
+                                <div class="slide-item"><img src="images/TF Muar 2.jpg" alt="Img 5"onclick="openModal(this)"></div>
+                                <div class="slide-item"><img src="images/TF Muar 3.jpg" alt="Img 6"onclick="openModal(this)"></div>
+                                <div class="slide-item"><img src="images/TF Muar 4.jpg" alt="Img 7"onclick="openModal(this)"></div>
                                 
                             </div>
                         </div>
@@ -706,8 +758,25 @@
             }
             // ... (fungsi updateTimeWidget() kekal di sini) ...
         });
-    </script>
-    
-</body>
+        // Dapatkan elemen Modal
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("img01");
 
+            // Fungsi untuk membuka Modal
+            function openModal(element) {
+            modal.style.display = "block";
+            // Tetapkan sumber gambar Modal kepada sumber gambar yang diklik
+            modalImg.src = element.src; 
+            }
+
+            // Fungsi untuk menutup Modal
+            function closeModal() {
+            modal.style.display = "none";
+            }
+    </script>
+    <div id="myModal" class="modal">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+</body>
 </html>
