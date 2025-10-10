@@ -234,7 +234,7 @@ async function setupHospitalPage() {
 
         } catch (error) {
             console.error("Fetch error:", error);
-            mainContent.innerHTML = `<p style="text-align:center; color:red; font-weight:bold;">Failed to retrieve data. Please check the URL or contact 011-31234648.</p>`;
+            mainContent.innerHTML = `<p style="text-align:center; color:red; font-weight:bold;">Failed to retrieve data. Please refresh or check the URL or contact 011-31234648.</p>`;
         }
     }
     // --- Logik untuk halaman butiran aset ---
@@ -286,7 +286,7 @@ async function setupHospitalPage() {
         });
 
         if (Object.keys(locations).length === 0) {
-            mainContent.innerHTML += `<p style="text-align:center; color:red; font-weight:bold;">No data found for this system! 😲😤.</p>`;
+            mainContent.innerHTML += `<p style="text-align:center; color:red; font-weight:bold;">No data found for this system!.</p>`;
             return;
         }
 
