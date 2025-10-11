@@ -449,7 +449,7 @@
                 <div id="time-widget" class="text-xss font-bold text-center text-gray-700 mt-4 mb-4" style="font-size: 15px !important;">
                     Loading Time...
                 </div>
-                <button class="about-dropbtn">
+                <a href="#" class="about-dropbtn" onclick="toggleDropdown(event)"></a>
                     About Us ▾
                     
                     <div id="aboutDropdown" class="dropdown-content">
@@ -475,6 +475,18 @@
             </div>
         </div>
     </main>
+
+    <script>
+        function toggleDropdown(event) {
+                // PENTING: Untuk mengelakkan link utama (jika anda tukar kepada <a>) pergi ke #
+                if (event) {
+                    event.preventDefault(); 
+                }
+                
+                // Ini membuka dan menutup menu dropdown
+                document.getElementById("aboutDropdown").classList.toggle("show");
+            }
+    </script>
 
     <script>
         // FUNGSI UNTUK MEMAPARKAN KANDUNGAN ATAU IMEJ
