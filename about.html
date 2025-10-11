@@ -237,55 +237,66 @@
         .slide-item {
             /* (900px - 30px gap) / 4 = 217.5px. Kita gunakan calc */
             flex: 0 0 calc((100% - 30px) / 4); /* Tetapkan item untuk ambil 1/4 ruang kontena */
+            cursor: pointer;
             min-width: 0; 
         }
 
-        .slide-item img { /*adjustment sizing gambar*/
+        /* --- KOTAK ASPECT RATIO (Nisbah Gambar) --- */
+        .aspect-ratio-box {
+            position: relative;
             width: 100%;
-            height: 300px;
-            object-fit: contain;
+            padding-top: 75%; /* Nisbah 4:3 (75% of width) */
+            overflow: hidden;
+            border-radius: 5px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+            background-color: #f0f0f000;
+        }
+
+        /* Gambar sebenar kini mengisi kotak */
+        .aspect-ratio-box img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; 
+            object-fit: contain; /* Memastikan gambar penuh kelihatan, tidak terpotong */
             display: block;
-            border-radius: 5px;
+            border-radius: 5px; 
         }
 
         /* Butang Kiri/Kanan */
         .prev, .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        width: auto;
-        padding: 16px;
-        margin-top: -22px;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
-        transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
-        user-select: none;
-        background-color: rgba(0,0,0,0.4);
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: rgb(185, 185, 185);
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.4);
         }
         .next {
         right: 0;
         border-radius: 3px 0 0 3px;
         }
         .prev:hover, .next:hover {
-        background-color: rgba(0,0,0,0.8);
+            background-color: rgba(0,0,0,0.8);
         }
         .fade {
-        animation-name: fade;
-        animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
         }
         @keyframes fade {
-        from {opacity: .4} 
-        to {opacity: 1}
+            from {opacity: .4} 
+            to {opacity: 1}
         }
 
-        /* Gaya responsif untuk 3 gambar - menukar kepada 1 gambar per slide pada skrin kecil */
-        @media screen and (max-width: 768px) {
-            .gallery-slide-group {
-                grid-template-columns: repeat(1, 1fr); 
-            }
-        }
+        
 
         /* ==========================================================
         GAYA UNTUK SUSUNAN MEDIA (VIDEO & SLIDESHOW)
@@ -331,13 +342,13 @@
         /* Media Queries untuk reka bentuk responsif (kekal sama) */
         @media screen and (max-width: 900px) {
 
-            /*.media-section-flex {
+            .media-section-flex {
                 flex-direction: row;
             }*/
-            /*.video-col, .slideshow-col {
+            .video-col, .slideshow-col {
                 flex: 1; /* Ambil semua ruang lebar */
-                /*max-width: 100%;
-            }*/
+                max-width: 100%;
+            }
             .main-branch {
                 flex-direction: column;
                 gap: 15px;
@@ -355,6 +366,19 @@
             }
             .role-group {
                 width: 100%; 
+            }
+        }
+        /* Gaya responsif untuk 3 gambar - menukar kepada 1 gambar per slide pada skrin kecil */
+        @media screen and (max-width: 768px) {
+            /* Jadikan setiap gambar mengambil lebar penuh pada mobile */
+            .slide-item {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .gallery-slide-group {
+                flex-direction: column;
+                gap: 20px; 
             }
         }
 
@@ -651,23 +675,58 @@
                         </video>
                     </div>
                     
-                    <h3 style="margin-top: 30px;">Galeri Gambar</h3>
-                    <div class="slideshow-container">
-                        <div class="mySlides fade" id="carousel-track">
-                            <div class="gallery-slide-group">
-                                <div class="slide-item"><img src="images/Makan.jpg" alt="Img 1"onclick="openModal(this)"></div>
-                                <div class="slide-item"><img src="images/FEMS HQ.jpg" alt="Img 2"onclick="openModal(this)"></div>
-                                <div class="slide-item"><img src="images/Task Force Muar.jpg" alt="Img 3"onclick="openModal(this)"></div>
-                                <div class="slide-item"><img src="images/TF Muar 2.jpg" alt="Img 4"onclick="openModal(this)"></div>
-                                <div class="slide-item"><img src="images/TF Muar 3.jpg" alt="Img 5"onclick="openModal(this)"></div>
-                                <div class="slide-item"><img src="images/TF Muar 4.jpg" alt="Img 6"onclick="openModal(this)"></div>
-                                <div class="slide-item"><img src="images/nazree cat.jpg" alt="Img 7"onclick="openModal(this)"></div>
+                    <h3 style="margin-top: 30px;">Galeri images</h3>
+                        <div class="slideshow-container">
+                            <div class="mySlides fade" id="carousel-track">
+                                <div class="gallery-slide-group">
+                                    
+                                    <div class="slide-item" onclick="openModal(this.querySelector('img'))">
+                                        <div class="aspect-ratio-box">
+                                            <img src="images/Makan.jpg" alt="Img 1">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="slide-item" onclick="openModal(this.querySelector('img'))">
+                                        <div class="aspect-ratio-box">
+                                            <img src="images/FEMS HQ.jpg" alt="Img 2">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="slide-item" onclick="openModal(this.querySelector('img'))">
+                                        <div class="aspect-ratio-box">
+                                            <img src="images/Task Force Muar.jpg" alt="Img 3">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="slide-item" onclick="openModal(this.querySelector('img'))">
+                                        <div class="aspect-ratio-box">
+                                            <img src="images/TF Muar 2.jpg" alt="Img 4">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="slide-item" onclick="openModal(this.querySelector('img'))">
+                                        <div class="aspect-ratio-box">
+                                            <img src="images/TF Muar 3.jpg" alt="Img 5">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="slide-item" onclick="openModal(this.querySelector('img'))">
+                                        <div class="aspect-ratio-box">
+                                            <img src="images/TF Muar 4.jpg" alt="Img 6">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="slide-item" onclick="openModal(this.querySelector('img'))">
+                                        <div class="aspect-ratio-box">
+                                            <img src="images/nazree cat.jpg" alt="Img 7">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
                             </div>
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
                         </div>
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                        
-                    </div>
                 `;
             } else {
                 // Paparan lalai jika tiada pilihan dibuat
@@ -710,7 +769,7 @@
         ========================================================== */
         let slideIndex = 0; // Mulakan dari 0 (tiada anjakan)
         const ITEMS_PER_VIEW = 4;
-        const TOTAL_ITEMS = 10;
+        const TOTAL_ITEMS = 7;
         // Jumlah pergerakan yang boleh dibuat: 10 - 4 = 6 pergerakan
         const MAX_SLIDE_INDEX = TOTAL_ITEMS - ITEMS_PER_VIEW; 
 
@@ -755,20 +814,27 @@
             }
             // ... (fungsi updateTimeWidget() kekal di sini) ...
         });
+        
         // Dapatkan elemen Modal
-            var modal = document.getElementById("myModal");
-            var modalImg = document.getElementById("img01");
-
-            // Fungsi untuk membuka Modal
+             // Fungsi untuk membuka Modal
             function openModal(element) {
-            modal.style.display = "block";
-            // Tetapkan sumber gambar Modal kepada sumber gambar yang diklik
-            modalImg.src = element.src; 
-            }
+            // Dapatkan elemen Modal dan Imej dalam fungsi ini
+                var modal = document.getElementById("myModal");
+                var modalImg = document.getElementById("img01");
 
-            // Fungsi untuk menutup Modal
+            if (modal && modalImg) { // Semak jika elemen wujud
+                modal.style.display = "block";
+                // Tetapkan sumber gambar Modal kepada sumber gambar yang diklik
+                // 'element' yang dihantar ialah tag <img>
+                modalImg.src = element.src; 
+                }
+            }
+            // Fungsi untuk menutup Modal (Kekal sama)
             function closeModal() {
-            modal.style.display = "none";
+                var modal = document.getElementById("myModal"); // Tambah ini
+                if (modal) {
+                modal.style.display = "none";
+                }
             }
     </script>
     <div id="myModal" class="modal">
