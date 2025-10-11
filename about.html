@@ -6,6 +6,32 @@
     <title>About Us | FEMS Critical System</title>
     <link rel="stylesheet" href="styles.css"> 
     <style>
+        /* Gaya untuk Dropdown Container (Butang About Us itu sendiri) */
+        .about-dropbtn {
+            background-color: #008cba; /* PASTIKAN KOD WARNA INI ADA */
+            color: white;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            position: relative; 
+        }
+        /* Gaya untuk Dropdown Menu */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            /* PENTING: Tetapkan left: 0 untuk bermula dari tepi kiri butang */
+            left: 0; 
+            /* Buang sebarang penetapan 'right' jika ada */
+            
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1001; 
+            border-radius: 5px;
+        }
+
         /* Gaya khusus untuk halaman ini */
         .about-content {
             padding: 40px;
@@ -366,6 +392,10 @@
             }
             .role-group {
                 width: 100%; 
+            }
+            /* Tambah ini jika warna hilang: */
+            .about-dropbtn {
+                background-color: #008cba; 
             }
         }
         /* Gaya responsif untuk 3 gambar - menukar kepada 1 gambar per slide pada skrin kecil */
