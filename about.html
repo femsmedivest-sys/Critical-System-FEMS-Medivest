@@ -6,112 +6,65 @@
     <title>About Us | FEMS Critical System</title>
     <link rel="stylesheet" href="styles.css"> 
     <style>
+        /* TAMBAHKAN KOD INI KE DALAM FAIL CSS ANDA */
+        .main-header {
+            /* Ini memastikan elemen di dalamnya dijajar secara mendatar */
+            display: flex;
+            /* Ini menolak logo kiri ke kiri, dan logo kanan ke kanan */
+            justify-content: space-between; 
+            /* Ini menjajar item ke tengah secara menegak */
+            align-items: center;
+            
+            /* 🔴 PENYELESAIAN Jarak: Tambah padding yang sama di kiri dan kanan */
+            padding-left: 5px; 
+            padding-right: 5px;
+            /* Anda juga boleh gunakan shorthand: padding: 10px 30px; */
+
+            /* Pilihan: Untuk mengelakkan header menjadi terlalu lebar pada monitor besar */
+            max-width: 1400px; 
+            margin: 0 auto; /* Tengahkannya pada skrin yang sangat besar */
+        }
         /* Gaya untuk Dropdown Container (Butang About Us itu sendiri) */
         .about-dropbtn {
-            background-color: #008cba; /* PASTIKAN KOD WARNA INI ADA */
-            color: white;
+            background-color: #b2b2b237; /* PASTIKAN KOD WARNA INI ADA */
+            color: rgb(0, 0, 0);
             padding: 10px 15px;
-            font-size: 16px;
+            font-size: 13px;
             border: none;
             cursor: pointer;
-            border-radius: 5px;
-            position: relative; 
+            border-radius: 20px;
+            position: relative;
         }
         /* Gaya untuk Dropdown Menu */
         .dropdown-content {
             display: none;
             position: absolute;
             /* PENTING: Tetapkan left: 0 untuk bermula dari tepi kiri butang */
-            left: 0; 
+            left: auto; 
             /* Buang sebarang penetapan 'right' jika ada */
-            
-            background-color: #f9f9f9;
-            min-width: 160px;
+            background-color: #f9f9f9c7;
+            min-width: 200px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1001; 
-            border-radius: 5px;
+            z-index: 500; 
+            border-radius: 20px;
         }
-
-        /* Gaya khusus untuk halaman ini */
-        .about-content {
-            padding: 40px;
-            max-width: 1200px; /* Lebarkan kontena untuk carta organisasi */
-            margin: 0 auto;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
+        /* GAYA KRITIKAL YANG HILANG */
+        .dropdown-content.show {
+            /* BARIS INI WAJIB ADA: Paksa ia muncul */
+            display: block !important; 
         }
-        .about-content h2 {
-            color: #6a6a6a;
-            margin-top: 30px;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
+        .dropdown-wrapper {
+            position: relative; /* PENTING: Menu dropdown akan berbaris mengikut kontena ini */
+            display: inline-block;
         }
 
         /* ==========================================================
            GAYA CARTA ORGANISASI (Organization Chart)
            Ini adalah gaya yang telah diperbaiki untuk garisan dan susunan.
            ========================================================== */
-        
-        /* Kontena Induk Carta: Memegang garisan tegak */
-        .org-simple-container {
-            padding: 20px;
-            background-color: #fcfcfc;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            position: relative; 
-        }
-
-        /* Garisan Utama di Sebelah Kiri Carta (Induk) */
-        .org-simple-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 20px; 
-            width: 0;
-            height: 100%;
-            border-left: 2px solid #ddd;
-            z-index: 1; 
-        }
-
-        /* Kontena Tahap (Memegang semua kotak dalam satu baris) */
-        .level {
-            display: flex;
-            justify-content: center; 
-            align-items: flex-start;
-            gap: 20px; 
-            margin-bottom: 30px; 
-            padding: 10px 0 10px 20px; 
-            position: relative;
-            z-index: 5;
-            border-bottom: none;
-        }
-
-        /* Garisan Mendatar (Lurus) */
-        .level::before {
-            content: '';
-            position: absolute;
-            top: 20px; 
-            left: 0;
-            height: 0;
-            width: 15px; 
-            border-top: 2px solid #ddd;
-            z-index: 2;
-        }
-        
-        /* Buang garisan pada Tahap 1 (HOD) */
-        .level-1 {
-            padding: 10px 0 10px 0; 
-            margin-bottom: 10px;
-        }
-        .level-1::before {
-            content: none;
-        }
-
         /* Gaya Kotak Pekerja (Simple Node) */
         .node-simple {
-            background-color: #f6f6f685;
+            background-color: none;
             border: 1px solid #000000; 
             border-radius: 5px;
             padding: 10px 15px;
@@ -126,10 +79,7 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
         }
-        .root-node {
-            background-color: #f6f6f685; 
-            border-color: #ffffff;
-        }
+        
         .node-simple .name {
             font-weight: bold;
             color: #333;
@@ -139,7 +89,10 @@
             color: #555;
             font-size: 0.9em;
         }
-
+        .org-simple-container::before , .level.level-2.main-branch::before,.level.level-2-1-om::before {
+        display: none;
+        }
+        
         /* ==========================================================
            GAYA GAMBAR (FRAME DIBUANG)
            ========================================================== */
@@ -171,10 +124,10 @@
             display: flex;
             flex-direction: column; /* Susun ke bawah */
             align-items: center;
-            border: 1px solid #e0e0e0;
+            border: 1px solid #000000;
             padding: 15px;
             border-radius: 8px;
-            background-color: #ffffff29;
+            background-color: #00000000;
             min-height: 300px;
         }
         
@@ -233,6 +186,7 @@
             max-width: 300px;
             margin: 0 auto;
         }
+        
 
         /* ==========================================================
         GAYA SLIDESHOW BARU (3 GAMBAR PER FRAME)
@@ -243,7 +197,7 @@
         margin: auto;
         overflow: hidden; 
         border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
         }
 
         .mySlides {
@@ -274,8 +228,8 @@
             padding-top: 75%; /* Nisbah 4:3 (75% of width) */
             overflow: hidden;
             border-radius: 5px; 
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-            background-color: #f0f0f000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0); 
+            background-color: #00000000;
         }
 
         /* Gambar sebenar kini mengisi kotak */
@@ -355,7 +309,7 @@
             /* Gaya lama anda untuk video container (jika ada) */
             width: 100%;
             height: auto;
-            background-color: #000;
+            background-color: #00000000;
         }
         .video-container video {
             width: 100%;
@@ -395,7 +349,16 @@
             }
             /* Tambah ini jika warna hilang: */
             .about-dropbtn {
-                background-color: #008cba; 
+                position: relative; /* ULANGI INI PADA SKRIN KECIL */
+                /*background-color: #008cba;*/
+            }
+            /* 2. Susun Media (Kekal) */
+            .media-section-flex {
+                flex-direction: column; /* Ini perlu dibetulkan kepada 'column', bukan 'row' seperti dalam kod anda yang lama */
+            }
+            .video-col, .slideshow-col {
+                flex: 1; 
+                max-width: 100%;
             }
         }
         /* Gaya responsif untuk 3 gambar - menukar kepada 1 gambar per slide pada skrin kecil */
@@ -427,7 +390,7 @@
             width: 100%; 
             height: 100%; 
             overflow: auto; /* Membolehkan scroll jika gambar besar */
-            background-color: rgba(0,0,0,0.9); /* Latar belakang hitam lutsinar */
+            background-color: rgba(0, 0, 0, 0.344); /* Latar belakang hitam lutsinar */
         }
 
         /* Gambar di dalam Modal */
@@ -445,7 +408,7 @@
             position: absolute;
             top: 15px;
             right: 35px;
-            color: #f1f1f1;
+            color: #ffffff;
             font-size: 40px;
             font-weight: bold;
             transition: 0.3s;
@@ -479,16 +442,17 @@
                 <div id="time-widget" class="text-xss font-bold text-center text-gray-700 mt-4 mb-4" style="font-size: 15px !important;">
                     Loading Time...
                 </div>
-                <a href="#" class="about-dropbtn" onclick="toggleDropdown(event)"></a>
-                    About Us ▾
-                    
+                <div class="dropdown-wrapper"> 
+                    <a href="#" class="about-dropbtn" onclick="toggleDropdown(event)">
+                        About Us ▾
+                    </a> 
                     <div id="aboutDropdown" class="dropdown-content">
                         <a href="about.html?section=chart" class="dropdown-item">Organization Chart</a>
                         <a href="about.html?section=who" class="dropdown-item">Who We Are</a>
                         <a href="about.html?section=vision" class="dropdown-item">Vision & Mission</a>
                         <a href="about.html?section=media" class="dropdown-item">Media & Event</a>
                     </div>
-                </button>
+                </div>    
             </div>
         </div>
         
@@ -505,22 +469,105 @@
             </div>
         </div>
     </main>
+    </main>
+
+    <div id="myModal" class="modal">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
 
     <script>
+        // ==========================================================
+        // FUNGSI UTAMA: TOGGLE DROPDOWN
+        // ==========================================================
         function toggleDropdown(event) {
-                // PENTING: Untuk mengelakkan link utama (jika anda tukar kepada <a>) pergi ke #
-                if (event) {
-                    event.preventDefault(); 
-                }
-                
-                // Ini membuka dan menutup menu dropdown
-                document.getElementById("aboutDropdown").classList.toggle("show");
+            // Mencegah navigasi link #
+            if (event) {
+                event.preventDefault(); 
             }
-    </script>
+            // Pastikan ID 'aboutDropdown' adalah tepat
+            const dropdown = document.getElementById("aboutDropdown");
+            if (dropdown) {
+                dropdown.classList.toggle("show");
+            }
+        }
+        
+        // ==========================================================
+        // FUNGSI WIDGET MASA 
+        // ==========================================================
+        function updateTimeWidget() {
+            const now = new Date();
+            const timeOptions = { hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true };
+            const formattedTime = now.toLocaleTimeString('en-US', timeOptions);
 
-    <script>
-        // FUNGSI UNTUK MEMAPARKAN KANDUNGAN ATAU IMEJ
-        function displayContent() {
+            const dateOptions = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+            const formattedDate = now.toLocaleDateString('en-US', dateOptions);
+
+            const timeWidget = document.getElementById('time-widget');
+            if (timeWidget) {
+                timeWidget.innerHTML = `${formattedDate} | ${formattedTime}`;
+            }
+        }
+        updateTimeWidget(); // Panggil sekali untuk mulakan jam
+        setInterval(updateTimeWidget, 1000); // Setkan interval
+
+        // ==========================================================
+        // FUNGSI SLIDESHOW (Carousel)
+        // ==========================================================
+        let slideIndex = 0; 
+        const ITEMS_PER_VIEW = 4;
+        const TOTAL_ITEMS = 7;
+        const MAX_SLIDE_INDEX = TOTAL_ITEMS - ITEMS_PER_VIEW; 
+
+        function plusSlides(n) {
+            slideIndex += n;
+            showSlides();
+        }
+
+        function showSlides() {
+            const track = document.getElementById('carousel-track');
+            if (!track) return;
+
+            if (slideIndex > MAX_SLIDE_INDEX) {
+                slideIndex = 0; 
+            }
+            if (slideIndex < 0) {
+                slideIndex = MAX_SLIDE_INDEX; 
+            }
+            
+            let itemWidthPercent = 100 / ITEMS_PER_VIEW; 
+            let translateValue = slideIndex * itemWidthPercent;
+            
+            const galleryGroup = track.querySelector('.gallery-slide-group');
+            if(galleryGroup) {
+                galleryGroup.style.transform = `translateX(-${translateValue}%)`;
+            }
+        }
+        
+        // ==========================================================
+        // FUNGSI MODAL (Buka & Tutup)
+        // ==========================================================
+        function openModal(element) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("img01");
+
+            if (modal && modalImg) { 
+                modal.style.display = "block";
+                modalImg.src = element.src; 
+            }
+        }
+        
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            if (modal) {
+                modal.style.display = "none";
+            }
+        }
+        
+        // ==========================================================
+        // FUNGSI PAPAR KANDUNGAN (Routing / Deep Link)
+        // ==========================================================
+         function displayContent() {
             const urlParams = new URLSearchParams(window.location.search);
             const section = urlParams.get('section');
             const displayDiv = document.getElementById('content-display');
@@ -535,7 +582,7 @@
                         <div class="level level-1">
                             <div class="node-simple root-node">
                                 <div class="profile-img-container">
-                                    <img src="images/HOD.png" alt="HOD Profile" class="profile-img">
+                                    <img src="Gambar/HOD.png" alt="HOD Profile" class="profile-img">
                                 </div>
                                 <div class="name">Muhammad Hafizi B Zainal Abidin</div>
                                 <div class="title">Head Of Deparment FEMS</div>
@@ -548,7 +595,7 @@
                                 <div class="level level-2-1-om">
                                     <div class="node-simple">
                                         <div class="profile-img-container">
-                                            <img src="images/OM_Manager.png" alt="Operation Manager Profile" class="profile-img">
+                                            <img src="Gambar/OM_Manager.png" alt="Operation Manager Profile" class="profile-img">
                                         </div>
                                         <div class="name">VACANT</div>
                                         <div class="title">Operation Manager</div>
@@ -560,22 +607,22 @@
                                     <div class="role-group region-group">
                                         <div class="group-title">FEMS Region</div>
                                         <div class="node-simple">
-                                            <div class="profile-img-container"><img src="images/Region2.png" alt="Region 2" class="profile-img"></div>
+                                            <div class="profile-img-container"><img src="Gambar/Region2.png" alt="Region 2" class="profile-img"></div>
                                             <div class="name">Muhammad Hanif B. Atan</div>
                                             <div class="title">Regional Engineer</div>
                                         </div>
                                         <div class="node-simple">
-                                            <div class="profile-img-container"><img src="images/Region1.png" alt="Region 1" class="profile-img"></div>
+                                            <div class="profile-img-container"><img src="Gambar/Region1.png" alt="Region 1" class="profile-img"></div>
                                             <div class="name">Mohd Hanis Zariman B. Ismail</div>
                                             <div class="title">FR (ROSJ)</div>
                                         </div>
                                         <div class="node-simple">
-                                            <div class="profile-img-container"><img src="images/Region3.png" alt="Region 3" class="profile-img"></div>
+                                            <div class="profile-img-container"><img src="Gambar/Region3.png" alt="Region 3" class="profile-img"></div>
                                             <div class="name">Shaiful B. Mat Isa</div>
                                             <div class="title">FR (ROMNJ)</div>
                                         </div>
                                         <div class="node-simple">
-                                            <div class="profile-img-container"><img src="images/Region4.png" alt="Region 3" class="profile-img"></div>
+                                            <div class="profile-img-container"><img src="Gambar/Region4.png" alt="Region 3" class="profile-img"></div>
                                             <div class="name">Ariff Iskandar B. Iskandar</div>
                                             <div class="title">FR (RONS)</div>
                                         </div>
@@ -584,42 +631,42 @@
                                     <div class="role-group resource-group">
                                         <div class="group-title">Resource Person</div>
                                         <div class="node-simple">
-                                            <div class="profile-img-container"><img src="images/Resource1.png" alt="Resource 1" class="profile-img"></div>
+                                            <div class="profile-img-container"><img src="Gambar/Resource1.png" alt="Resource 1" class="profile-img"></div>
                                             <div class="name">Ir. Azari B Bakeri</div>
                                             <div class="title">RP Electrical</div>
                                         </div>
                                         <div class="node-simple">
-                                            <div class="profile-img-container"><img src="images/Resource2.png" alt="Resource 2" class="profile-img"></div>
+                                            <div class="profile-img-container"><img src="Gambar/Resource2.png" alt="Resource 2" class="profile-img"></div>
                                             <div class="name">Ameera Ratia</div>
                                             <div class="title">RP Civil & Structural Engineer</div>
                                         </div>
                                         <div class="node-simple">
-                                            <div class="profile-img-container"><img src="images/Resource2.png" alt="Resource 2" class="profile-img"></div>
+                                            <div class="profile-img-container"><img src="Gambar/Resource2.png" alt="Resource 2" class="profile-img"></div>
                                             <div class="name">Safri B. Maarop</div>
                                             <div class="title">RP HVAC</div>
                                         </div>
                                         <div class="node-simple">
-                                            <div class="profile-img-container"><img src="images/Resource2.png" alt="Resource 2" class="profile-img"></div>
+                                            <div class="profile-img-container"><img src="Gambar/Resource2.png" alt="Resource 2" class="profile-img"></div>
                                             <div class="name">Adnan B. Ishak</div>
                                             <div class="title">RP Mechanical</div>
                                         </div>
                                         <div class="node-simple">
-                                            <div class="profile-img-container"><img src="images/Resource2.png" alt="Resource 2" class="profile-img"></div>
+                                            <div class="profile-img-container"><img src="Gambar/Resource2.png" alt="Resource 2" class="profile-img"></div>
                                             <div class="name">Khairul Akram B. Azam Abdullah</div>
                                             <div class="title">RP PCB Specialist</div>
                                         </div>
                                         <div class="node-simple">
-                                            <div class="profile-img-container"><img src="images/Resource2.png" alt="Resource 2" class="profile-img"></div>
+                                            <div class="profile-img-container"><img src="Gambar/Resource2.png" alt="Resource 2" class="profile-img"></div>
                                             <div class="name">Tuan Farah Najwa Bt. tuan Mohd Noor</div>
                                             <div class="title">RP Entomologist</div>
                                         </div>
                                         <div class="node-simple">
-                                            <div class="profile-img-container"><img src="images/Resource2.png" alt="Resource 2" class="profile-img"></div>
+                                            <div class="profile-img-container"><img src="Gambar/Resource2.png" alt="Resource 2" class="profile-img"></div>
                                             <div class="name">Mazlina Bt. Hussein</div>
                                             <div class="title">Senior Drafter</div>
                                         </div>
                                         <div class="node-simple">
-                                            <div class="profile-img-container"><img src="images/Resource2.png" alt="Resource 2" class="profile-img"></div>
+                                            <div class="profile-img-container"><img src="Gambar/Resource2.png" alt="Resource 2" class="profile-img"></div>
                                             <div class="name">Fatin Azwa</div>
                                             <div class="title">Arborist</div>
                                         </div>
@@ -631,52 +678,52 @@
                                 <div class="level level-2-1-mgmt"> 
                                     <div class="group-title">Management FEMS</div>
                                     <div class="node-simple">
-                                        <div class="profile-img-container"><img src="images/Exec1.png" alt="Executive 1" class="profile-img"></div>
+                                        <div class="profile-img-container"><img src="Gambar/Exec1.png" alt="Executive 1" class="profile-img"></div>
                                         <div class="name">Muhammad Aisar B. Yusoff</div>
                                         <div class="title">Senior AME (RONS)</div>
                                     </div>
                                     <div class="node-simple">
-                                        <div class="profile-img-container"><img src="images/Exec2.png" alt="Executive 2" class="profile-img"></div>
+                                        <div class="profile-img-container"><img src="Gambar/Exec2.png" alt="Executive 2" class="profile-img"></div>
                                         <div class="name">Khairunisa Bt. Harun</div>
                                         <div class="title">AME (ROMNJ)</div>
                                     </div>
                                     <div class="node-simple">
-                                        <div class="profile-img-container"><img src="images/Exec2.png" alt="Executive 2" class="profile-img"></div>
+                                        <div class="profile-img-container"><img src="Gambar/Exec2.png" alt="Executive 2" class="profile-img"></div>
                                         <div class="name">Khairul</div>
                                         <div class="title">AME (ROSJ)</div>
                                     </div>
                                     <div class="node-simple">
-                                        <div class="profile-img-container"><img src="images/Exec2.png" alt="Executive 2" class="profile-img"></div>
+                                        <div class="profile-img-container"><img src="Gambar/Exec2.png" alt="Executive 2" class="profile-img"></div>
                                         <div class="name">Khairunisa Bt. Harun</div>
                                         <div class="title">AME (ROMNJ)</div>
                                     </div>
                                     <div class="node-simple">
-                                        <div class="profile-img-container"><img src="images/Exec2.png" alt="Executive 2" class="profile-img"></div>
+                                        <div class="profile-img-container"><img src="Gambar/Exec2.png" alt="Executive 2" class="profile-img"></div>
                                         <div class="name">Retzuan Izany B. Othman</div>
                                         <div class="title">Executive</div>
                                     </div>
                                     <div class="node-simple">
-                                        <div class="profile-img-container"><img src="images/Exec2.png" alt="Executive 2" class="profile-img"></div>
+                                        <div class="profile-img-container"><img src="Gambar/Exec2.png" alt="Executive 2" class="profile-img"></div>
                                         <div class="name">Abd Halim B. Che Idris</div>
                                         <div class="title">Executive</div>
                                     </div>
                                     <div class="node-simple">
-                                        <div class="profile-img-container"><img src="images/Exec2.png" alt="Executive 2" class="profile-img"></div>
+                                        <div class="profile-img-container"><img src="Gambar/Exec2.png" alt="Executive 2" class="profile-img"></div>
                                         <div class="name">Siti Athirah Bt. Abdul Ghani</div>
                                         <div class="title">Executive</div>
                                     </div>
                                     <div class="node-simple">
-                                        <div class="profile-img-container"><img src="images/Exec2.png" alt="Executive 2" class="profile-img"></div>
+                                        <div class="profile-img-container"><img src="Gambar/Exec2.png" alt="Executive 2" class="profile-img"></div>
                                         <div class="name">Nor Soleha Bt. Othman</div>
                                         <div class="title">Executive</div>
                                     </div>
                                     <div class="node-simple">
-                                        <div class="profile-img-container"><img src="images/Nazree.png" alt="Executive 2" class="profile-img"></div>
+                                        <div class="profile-img-container"><img src="Gambar/Nazree.png" alt="Executive 2" class="profile-img"></div>
                                         <div class="name">Nazree B. Dol Bahar</div>
                                         <div class="title">Pogrammer</div>
                                     </div>
                                     <div class="node-simple">
-                                        <div class="profile-img-container"><img src="images/Waliuddin.png" alt="Executive 2" class="profile-img"></div>
+                                        <div class="profile-img-container"><img src="Gambar/Waliuddin.png" alt="Executive 2" class="profile-img"></div>
                                         <div class="name">Muhammad Waliuddin Faiz B. Mohamad Rozi</div>
                                         <div class="title">Assistant Pogrammer</div>
                                     </div>
@@ -712,55 +759,55 @@
                     <h3>Sorotan Video Terkini</h3>
                     <div class="video-container">
                         <video controls muted loop>
-                            <source src="videos/CAT Muar.mp4" type="video/mp4">
+                            <source src="Gambar/CAT Muar.mp4" type="video/mp4">
                             Pelayar anda tidak menyokong video ini.
                         </video>
                     </div>
                     
-                    <h3 style="margin-top: 30px;">Galeri images</h3>
+                    <h3 style="margin-top: 30px;">Galeri Gambar</h3>
                         <div class="slideshow-container">
                             <div class="mySlides fade" id="carousel-track">
                                 <div class="gallery-slide-group">
                                     
                                     <div class="slide-item" onclick="openModal(this.querySelector('img'))">
                                         <div class="aspect-ratio-box">
-                                            <img src="images/Makan.jpg" alt="Img 1">
+                                            <img src="Gambar/Makan.jpg" alt="Img 1">
                                         </div>
                                     </div>
                                     
                                     <div class="slide-item" onclick="openModal(this.querySelector('img'))">
                                         <div class="aspect-ratio-box">
-                                            <img src="images/FEMS HQ.jpg" alt="Img 2">
+                                            <img src="Gambar/FEMS HQ.jpg" alt="Img 2">
                                         </div>
                                     </div>
                                     
                                     <div class="slide-item" onclick="openModal(this.querySelector('img'))">
                                         <div class="aspect-ratio-box">
-                                            <img src="images/Task Force Muar.jpg" alt="Img 3">
+                                            <img src="Gambar/Task Force Muar.jpg" alt="Img 3">
                                         </div>
                                     </div>
                                     
                                     <div class="slide-item" onclick="openModal(this.querySelector('img'))">
                                         <div class="aspect-ratio-box">
-                                            <img src="images/TF Muar 2.jpg" alt="Img 4">
+                                            <img src="Gambar/TF Muar 2.jpg" alt="Img 4">
                                         </div>
                                     </div>
                                     
                                     <div class="slide-item" onclick="openModal(this.querySelector('img'))">
                                         <div class="aspect-ratio-box">
-                                            <img src="images/TF Muar 3.jpg" alt="Img 5">
+                                            <img src="Gambar/TF Muar 3.jpg" alt="Img 5">
                                         </div>
                                     </div>
                                     
                                     <div class="slide-item" onclick="openModal(this.querySelector('img'))">
                                         <div class="aspect-ratio-box">
-                                            <img src="images/TF Muar 4.jpg" alt="Img 6">
+                                            <img src="Gambar/TF Muar 4.jpg" alt="Img 6">
                                         </div>
                                     </div>
                                     
                                     <div class="slide-item" onclick="openModal(this.querySelector('img'))">
                                         <div class="aspect-ratio-box">
-                                            <img src="images/nazree cat.jpg" alt="Img 7">
+                                            <img src="Gambar/nazree cat.jpg" alt="Img 7">
                                         </div>
                                     </div>
                                     
@@ -780,108 +827,13 @@
             
             displayDiv.innerHTML = htmlContent;
         }
-
-        document.addEventListener('DOMContentLoaded', displayContent);
-    </script>
-    
-    <script>
-        // --- FUNGSI WIDGET MASA ---
-        function updateTimeWidget() {
-            const now = new Date();
-            const options = {
-                hour: 'numeric',
-                minute: '2-digit',
-                second: '2-digit',
-                hour12: true, 
-            };
-            const formattedTime = now.toLocaleTimeString('en-US', options);
-
-            const dateOptions = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
-            const formattedDate = now.toLocaleDateString('en-US', dateOptions);
-
-            const timeWidget = document.getElementById('time-widget');
-            if (timeWidget) {
-                timeWidget.innerHTML = `${formattedDate} | ${formattedTime}`;
-            }
-        }
-        updateTimeWidget();
-        setInterval(updateTimeWidget, 1000);
-        /* ==========================================================
-        FUNGSI SLIDESHOW BARU (Carousel Penuh)
-        ========================================================== */
-        let slideIndex = 0; // Mulakan dari 0 (tiada anjakan)
-        const ITEMS_PER_VIEW = 4;
-        const TOTAL_ITEMS = 7;
-        // Jumlah pergerakan yang boleh dibuat: 10 - 4 = 6 pergerakan
-        const MAX_SLIDE_INDEX = TOTAL_ITEMS - ITEMS_PER_VIEW; 
-
-        function plusSlides(n) {
-        slideIndex += n;
-        showSlides();
-        }
-
-        function showSlides() {
-            const track = document.getElementById('carousel-track');
-            if (!track) return;
-
-            // =========================================================
-            // If statement untuk Gelung Carousel
-            // =========================================================
-            if (slideIndex > MAX_SLIDE_INDEX) {
-                slideIndex = 0; // Kembali ke permulaan (Slide 1)
-            }
-            if (slideIndex < 0) {
-                slideIndex = MAX_SLIDE_INDEX; // Pergi ke penghujung
-            }
-            // =========================================================
-            
-            // Kira peratusan anjakan. Setiap pergerakan adalah 1/4 (25%) ruang
-            // (100% / 4 item) * slideIndex
-            let itemWidthPercent = 100 / ITEMS_PER_VIEW; 
-            let translateValue = slideIndex * itemWidthPercent;
-            
-            // Terapkan anjakan mendatar
-            const galleryGroup = track.querySelector('.gallery-slide-group');
-            galleryGroup.style.transform = `translateX(-${translateValue}%)`;
-        }
-
-        // Pastikan showSlides dipanggil selepas DOMContentLoaded
+        // ==========================================================
+        // EVENT LISTENER (Dijalankan apabila laman dimuatkan)
+        // ==========================================================
         document.addEventListener('DOMContentLoaded', () => {
-            // ... (fungsi lain seperti displayContent() kekal di sini) ...
             displayContent();
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('section') === 'media') {
-                // Paparkan slide pertama (tidak perlu paparkan/sembunyikan, hanya tetapkan transform)
-                showSlides();
-            }
-            // ... (fungsi updateTimeWidget() kekal di sini) ...
         });
         
-        // Dapatkan elemen Modal
-             // Fungsi untuk membuka Modal
-            function openModal(element) {
-            // Dapatkan elemen Modal dan Imej dalam fungsi ini
-                var modal = document.getElementById("myModal");
-                var modalImg = document.getElementById("img01");
-
-            if (modal && modalImg) { // Semak jika elemen wujud
-                modal.style.display = "block";
-                // Tetapkan sumber gambar Modal kepada sumber gambar yang diklik
-                // 'element' yang dihantar ialah tag <img>
-                modalImg.src = element.src; 
-                }
-            }
-            // Fungsi untuk menutup Modal (Kekal sama)
-            function closeModal() {
-                var modal = document.getElementById("myModal"); // Tambah ini
-                if (modal) {
-                modal.style.display = "none";
-                }
-            }
     </script>
-    <div id="myModal" class="modal">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="img01">
-    </div>
 </body>
 </html>
