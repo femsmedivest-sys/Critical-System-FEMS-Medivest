@@ -75,7 +75,7 @@ const criticalSystems = [
     { name: "FIRE PROTECTION SYSTEM", id: "FIRE PROTECTION SYSTEM" },
 ];
 
-//link submission form
+//---------------------------------link to submission form--------------------------------------------------
 const submissionForms = {
     'TUANKU-JAAFAR_ELECTRICAL SUPPLY': 'https://femsmedivest-sys.github.io/Submission-Form/HTJ.html',
     'TUANKU-JAAFAR_GENERATOR SET': 'https://femsmedivest-sys.github.io/Submission-Form/HTJ.html',
