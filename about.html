@@ -383,6 +383,38 @@
                 flex-direction: column;
                 gap: 20px; 
             }
+            
+             header.main-header {
+                /* Pilihan 1: Kekalkan flex-direction: row, ubah justify-content */
+                justify-content: flex-start; /* Letakkan item di sebelah kiri */
+                align-items: center; /* Ratakan item secara menegak */
+
+                /* Pilihan 2: Ubah flex-direction: column (jika ingin susun item secara menegak secara umum) */
+                /* flex-direction: column; */
+                /* align-items: flex-start; */ /* Ratakan item ke kiri jika dalam column */
+            }
+
+            /* Jika title-and-menu-wrapper memisahkan logo, mungkin perlu sembunyikan atau ubah susunannya dalam mobile */
+            .title-and-menu-wrapper {
+                /* display: none; */ /* Contoh: Sembunyikan dalam mobile jika tidak diperlukan di sebelah logo */
+                /* Atau ubah margin/padding */
+                margin: 0;
+                padding: 0;
+            }
+
+            .header-right {
+                /* Sesuaikan margin pada .header-right untuk merapatkan logo "anything is possible" */
+                margin-left: 10px; /* Contoh: Tambah sedikit ruang antara logo Medivest dan logo ini */
+                /* Pastikan padding dan margin lain adalah 0 atau nilai kecil jika ingin rapat */
+                padding: 0;
+            }
+
+            .header-left {
+                /* Pastikan padding dan margin adalah 0 atau nilai kecil jika ingin rapat */
+                padding: 0;
+                margin: 0;
+            }
+        
         }
 
         /* ==========================================================
