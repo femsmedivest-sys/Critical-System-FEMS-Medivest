@@ -41,7 +41,7 @@ const hospitalData = [
     { name: "Hospital Tampin", id: "TMP-TAMPIN", sheetsUrl: "https://script.google.com/macros/s/AKfycbxwKWMWIV-flIYJOWXdQf0egPCXMK2VAGMAOYfa68M9t9C8h8WHyY_DoKsTA3pD33EupQ/exec" },
 
     // --- MELAKA ---
-    { name: "Hospital Melaka", id: "MKA-MLK", sheetsUrl: "" },
+    { name: "Hospital Melaka", id: "MKA-MLK", sheetsUrl: "https://script.google.com/macros/s/AKfycbyURuTW-q5YGseD763PXLfWP198nBg-DLToJxPJ3FciH7pQ12gebbU0xL0WEcrhkHiH/exec"},
     { name: "Hospital Jasin", id: "JSN-JASIN", sheetsUrl: "" },
     { name: "Hospital Alor Gajah", id: "AGJ-ALOR-GAJAH", sheetsUrl: "" },
 
@@ -63,14 +63,14 @@ const hospitalData = [
 ];
 
 const criticalSystems = [
-    { name: "ELECTRICAL SUPPLY", id: "ELECTRICAL SUPPLY" },
-    { name: "GENERATOR SET", id: "GENERATOR SET" },
-    { name: "WATER SUPPLY SYSTEM", id: "WATER SUPPLY SYSTEM" },
-    { name: "AUTOCLAVE", id: "AUTOCLAVE" },
-    { name: "MEDICAL GAS PIPELINE SYSTEM", id: "MEDICAL GAS PIPELINE SYSTEM" },
-    { name: "VERTICAL TRANSPORTATION", id: "LIFT" },
-    { name: "AHU", id: "AHU" },
-    { name: "BAS SYSTEM", id: "BAS SYSTEM" },
+    { name: "ELECTRICAL SUPPLY", id: "ELECTRICAL SUPPLY"},
+    { name: "GENERATOR SET", id: "GENERATOR SET"},
+    { name: "WATER SUPPLY SYSTEM", id: "WATER SUPPLY SYSTEM"},
+    { name: "AUTOCLAVE", id: "AUTOCLAVE"},
+    { name: "MEDICAL GAS PIPELINE SYSTEM", id: "MEDICAL GAS PIPELINE SYSTEM"},
+    { name: "VERTICAL TRANSPORTATION", id: "LIFT"},
+    { name: "AHU", id: "AHU"},
+    { name: "BAS SYSTEM", id: "BAS SYSTEM"},
     { name: "CHILLER & COOLING TOWER", id: "CHILLER AND COOLING TOWER" },
     { name: "FIRE PROTECTION SYSTEM", id: "FIRE PROTECTION SYSTEM" },
 ];
@@ -142,7 +142,18 @@ const submissionForms = {
     'KPL-KUALA-PILAH_AHU': 'https://femsmedivest-sys.github.io/Submission-Form/KPL.html',
     'KPL-KUALA-PILAH_MEDICAL GAS PIPELINE SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/KPL.html',
     'KPL-KUALA-PILAH_BAS SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/KPL.html',
-
+    
+    //melaka
+    'MKA-MLK_ELECTRICAL SUPPLY': 'https://femsmedivest-sys.github.io/Submission-Form/MKA.html',
+    'MKA-MLK_GENERATOR SET': 'https://femsmedivest-sys.github.io/Submission-Form/MKA.html',
+    'MKA-MLK_AUTOCLAVE': 'https://femsmedivest-sys.github.io/Submission-Form/MKA.html',
+    'MKA-MLK_LIFT': 'https://femsmedivest-sys.github.io/Submission-Form/MKA.html',
+    'MKA-MLK_FIRE PROTECTION SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/MKA.html',
+    'MKA-MLK_CHILLER AND COOLING TOWER': 'https://femsmedivest-sys.github.io/Submission-Form/MKA.html',
+    'MKA-MLK_WATER SUPPLY SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/MKA.html',
+    'MKA-MLK_AHU': 'https://femsmedivest-sys.github.io/Submission-Form/MKA.html',
+    'MKA-MLK_MEDICAL GAS PIPELINE SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/MKA.html',
+    'MKA-MLK_BAS SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/MKA.html',
     };
 
 // Fungsi untuk mengemas kini kad hospital sedia ada di halaman utama
