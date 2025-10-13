@@ -6,24 +6,34 @@
     <title>About Us | FEMS Critical System</title>
     <link rel="stylesheet" href="styles.css"> 
     <style>
-        /* TAMBAHKAN KOD INI KE DALAM FAIL CSS ANDA */
         .main-header {
-            /* Ini memastikan elemen di dalamnya dijajar secara mendatar */
-            display: flex;
-            /* Ini menolak logo kiri ke kiri, dan logo kanan ke kanan */
-            justify-content: space-between; 
-            /* Ini menjajar item ke tengah secara menegak */
-            align-items: center;
-            
+            display: flex;/* Ini memastikan elemen di dalamnya dijajar secara mendatar */
+            justify-content: space-between;  /* Ini menolak logo kiri ke kiri, dan logo kanan ke kanan */
+            align-items: center;/* Ini menjajar item ke tengah secara menegak */
             /* 🔴 PENYELESAIAN Jarak: Tambah padding yang sama di kiri dan kanan */
             padding-left: 5px; 
             padding-right: 5px;
             /* Anda juga boleh gunakan shorthand: padding: 10px 30px; */
-
-            /* Pilihan: Untuk mengelakkan header menjadi terlalu lebar pada monitor besar */
-            max-width: 1400px; 
+            max-width: 1400px;/* Pilihan: Untuk mengelakkan header menjadi terlalu lebar pada monitor besar */
             margin: 0 auto; /* Tengahkannya pada skrin yang sangat besar */
         }
+
+        /* GAYA BARU UNTUK KONTEKS CARTA ORGANISASI */
+        .org-simple-container {
+            /* 🔴 GANTIKAN DENGAN KOD WARNA PILIHAN ANDA */
+            background-color: #ffffff00; /* Contoh: Warna kelabu yang sangat muda */
+            /* ATAU WARNA LURUTSINAR */
+            /* background-color: transparent; */ 
+            /* PENTING: Tambah padding supaya kandungan tidak terlalu rapat ke tepi */
+            padding: 20px; 
+            /* PENTING: Tambah margin-top/bottom untuk pemisahan */
+            margin-top: 20px;
+            margin-bottom: 40px;
+            /* Pilihan: Untuk nampak kemas */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+        }
+
         /* Gaya untuk Dropdown Container (Butang About Us itu sendiri) */
         .about-dropbtn {
             background-color: #b2b2b237; /* PASTIKAN KOD WARNA INI ADA */
@@ -65,7 +75,7 @@
         /* Gaya Kotak Pekerja (Simple Node) */
         .node-simple {
             background-color: none;
-            border: 1px solid #000000; 
+            border: 1px solid #00000000; /*border HOD,OM,Exec*/
             border-radius: 5px;
             padding: 10px 15px;
             min-width: 160px;
@@ -124,7 +134,7 @@
             display: flex;
             flex-direction: column; /* Susun ke bawah */
             align-items: center;
-            border: 1px solid #000000;
+            border: 0px solid #3b3b3b00; /*border besar*/
             padding: 15px;
             border-radius: 8px;
             background-color: #00000000;
@@ -151,7 +161,7 @@
             margin-top: 15px;
             padding: 10px;
             width: 48%; 
-            border-top: 1px dashed #ddd;
+            border-top: 1px dashed #00000062;
         }
 
         .group-title {
@@ -167,7 +177,7 @@
             max-width: 150px;
             padding: 5px 8px;
             font-size: 0.8em;
-            border-color: #000000;
+            border-color: #00000000; /*border each O&M*/
         }
         
         /* ==========================================================
