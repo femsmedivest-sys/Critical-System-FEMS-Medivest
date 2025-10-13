@@ -34,9 +34,9 @@ const hospitalData = [
     // Jika tiada URL, biarkan string kosong seperti ini: ''
     //---N9-------
     { name: "Hospital Tuanku Ja'afar, Seremban", id: "TUANKU-JAAFAR", sheetsUrl: "https://script.google.com/macros/s/AKfycbyURuTW-q5YGseD763PXLfWP198nBg-DLToJxPJ3FciH7pQ12gebbU0xL0WEcrhkHiH/exec" },
-    { name: "Hospital Tuanku Ampuan Najihah, Kuala Pilah", id: "KPL-KUALA-PILAH", sheetsUrl: "" },
-    { name: "Hospital Jempol", id: "JMP-JEMPOL", sheetsUrl: "" },
-    { name: "Hospital Jelebu", id: "JLB-JELEBU", sheetsUrl: "" },
+    { name: "Hospital Tuanku Ampuan Najihah, Kuala Pilah", id: "KPL-KUALA-PILAH", sheetsUrl: "https://script.google.com/macros/s/AKfycbwdVEKA2JEVpz3eN6qMU8zu_t_zIkp7QSdvl1xdj0_J0Vm32gjrsH8Sv2DGGLmm5u6b9A/exec" },
+    { name: "Hospital Jempol", id: "JMP-JEMPOL", sheetsUrl: "https://script.google.com/macros/s/AKfycbyu-9HxaLzE__60qiYYsHcPcjhFDvaLywQvSCrR97_7A9IwvknRko5z_NdiFER-NmGx/exec" },
+    { name: "Hospital Jelebu", id: "JLB-JELEBU", sheetsUrl: "https://script.google.com/macros/s/AKfycbwBX9LrA0NKoavt8jB2jCmkcmLRb3z40plkLs43up-KsbkJXLrz1xS2pEu9j-So2IkjXg/exec" },
     { name: "Hospital Port Dickson", id: "PDX-PORT-DICKSON", sheetsUrl:"https://script.google.com/macros/s/AKfycbzEqrZI2uaMrzFo52BXS5bzj2WmKlUjEaJSog-08TCfAqZNigdysGHDRVB_0msmzzI/exec"},
     { name: "Hospital Tampin", id: "TMP-TAMPIN", sheetsUrl: "https://script.google.com/macros/s/AKfycbxwKWMWIV-flIYJOWXdQf0egPCXMK2VAGMAOYfa68M9t9C8h8WHyY_DoKsTA3pD33EupQ/exec" },
 
@@ -120,7 +120,30 @@ const submissionForms = {
     'PDX-PORT-DICKSON_AHU': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
     'PDX-PORT-DICKSON_MEDICAL GAS PIPELINE SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
     'PDX-PORT-DICKSON_BAS SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/PDX.html',
-};
+
+    'JLB-JELEBU_ELECTRICAL SUPPLY': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
+    'JLB-JELEBU_GENERATOR SET': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
+    'JLB-JELEBU_AUTOCLAVE': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
+    'JLB-JELEBU_LIFT': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
+    'JLB-JELEBU_FIRE PROTECTION SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
+    'JLB-JELEBU_CHILLER AND COOLING TOWER': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
+    'JLB-JELEBU_WATER SUPPLY SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
+    'JLB-JELEBU_AHU': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
+    'JLB-JELEBU_MEDICAL GAS PIPELINE SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
+    'JLB-JELEBU_BAS SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
+
+    'KPL-KUALA-PILAH_ELECTRICAL SUPPLY': 'https://femsmedivest-sys.github.io/Submission-Form/KPL.html',
+    'KPL-KUALA-PILAH_GENERATOR SET': 'https://femsmedivest-sys.github.io/Submission-Form/KPL.html',
+    'KPL-KUALA-PILAH_AUTOCLAVE': 'https://femsmedivest-sys.github.io/Submission-Form/KPL.html',
+    'KPL-KUALA-PILAH_LIFT': 'https://femsmedivest-sys.github.io/Submission-Form/KPL.html',
+    'KPL-KUALA-PILAH_FIRE PROTECTION SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/KPL.html',
+    'KPL-KUALA-PILAH_CHILLER AND COOLING TOWER': 'https://femsmedivest-sys.github.io/Submission-Form/KPL.html',
+    'KPL-KUALA-PILAH_WATER SUPPLY SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/KPL.html',
+    'KPL-KUALA-PILAH_AHU': 'https://femsmedivest-sys.github.io/Submission-Form/KPL.html',
+    'KPL-KUALA-PILAH_MEDICAL GAS PIPELINE SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/KPL.html',
+    'KPL-KUALA-PILAH_BAS SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/KPL.html',
+
+    };
 
 // Fungsi untuk mengemas kini kad hospital sedia ada di halaman utama
 function updateHospitalCards() {
