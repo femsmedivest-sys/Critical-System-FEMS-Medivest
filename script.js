@@ -41,7 +41,7 @@ const hospitalData = [
     { name: "Hospital Tampin", id: "TMP-TAMPIN", sheetsUrl: "https://script.google.com/macros/s/AKfycbxwKWMWIV-flIYJOWXdQf0egPCXMK2VAGMAOYfa68M9t9C8h8WHyY_DoKsTA3pD33EupQ/exec" },
 
     // --- MELAKA ---
-    { name: "Hospital Melaka", id: "MKA-MLK", sheetsUrl: "https://script.google.com/macros/s/AKfycbyURuTW-q5YGseD763PXLfWP198nBg-DLToJxPJ3FciH7pQ12gebbU0xL0WEcrhkHiH/exec"},
+    { name: "Hospital Melaka", id: "MKA-MLK", sheetsUrl: "https://script.google.com/macros/s/AKfycbwPQ2CAQmC48zHSO-JoPrJyMVx1js3UbnytQcs6rzjLBP8PuYE2DxusRBPnjZHPLy9r/exec"},
     { name: "Hospital Jasin", id: "JSN-JASIN", sheetsUrl: "" },
     { name: "Hospital Alor Gajah", id: "AGJ-ALOR-GAJAH", sheetsUrl: "" },
 
