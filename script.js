@@ -43,7 +43,7 @@ const hospitalData = [
     // --- MELAKA ---
     { name: "Hospital Melaka", id: "MKA-MLK", sheetsUrl: "https://script.google.com/macros/s/AKfycbwPQ2CAQmC48zHSO-JoPrJyMVx1js3UbnytQcs6rzjLBP8PuYE2DxusRBPnjZHPLy9r/exec"},
     { name: "Hospital Jasin", id: "JSN-JASIN", sheetsUrl: "" },
-    { name: "Hospital Alor Gajah", id: "AGJ-ALOR-GAJAH", sheetsUrl: "" },
+    { name: "Hospital Alor Gajah", id: "AGJ-ALOR-GAJAH", sheetsUrl: "https://script.google.com/macros/s/AKfycbw2qjTumpYARgSe0E0IrRZq7g5RrISPBedT96ItkAySjiy-ARH_nSpQwS_5LE8JOHTn/exec" },
 
     // --- JOHOR ---
     { name: "Hospital Sultanah Aminah, Johor Bahru", id: "HSA-JOHOR", sheetsUrl: "" },
@@ -154,6 +154,17 @@ const submissionForms = {
     'MKA-MLK_AHU': 'https://femsmedivest-sys.github.io/Submission-Form/MKA.html',
     'MKA-MLK_MEDICAL GAS PIPELINE SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/MKA.html',
     'MKA-MLK_BAS SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/MKA.html',
+
+    'AGJ-ALOR-GAJAH_ELECTRICAL SUPPLY': 'https://femsmedivest-sys.github.io/Submission-Form/AGJ.html',
+    'AGJ-ALOR-GAJAH_GENERATOR SET': 'https://femsmedivest-sys.github.io/Submission-Form/AGJ.html',
+    'AGJ-ALOR-GAJAH_AUTOCLAVE': 'https://femsmedivest-sys.github.io/Submission-Form/AGJ.html',
+    'AGJ-ALOR-GAJAH_LIFT': 'https://femsmedivest-sys.github.io/Submission-Form/AGJ.html',
+    'AGJ-ALOR-GAJAH_FIRE PROTECTION SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/AGJ.html',
+    'AGJ-ALOR-GAJAH_CHILLER AND COOLING TOWER': 'https://femsmedivest-sys.github.io/Submission-Form/AGJ.html',
+    'AGJ-ALOR-GAJAH_WATER SUPPLY SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/AGJ.html',
+    'AGJ-ALOR-GAJAH_AHU': 'https://femsmedivest-sys.github.io/Submission-Form/AGJ.html',
+    'AGJ-ALOR-GAJAH_MEDICAL GAS PIPELINE SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/AGJ.html',
+    'AGJ-ALOR-GAJAH_BAS SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/AGJ.html',
     };
 
 // Fungsi untuk mengemas kini kad hospital sedia ada di halaman utama
