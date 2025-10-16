@@ -69,13 +69,14 @@ body {
     background-color: #dddddd; 
     color: #4b4b4b;
     padding: 5px 10px; 
-    font-size: 0.9em; 
+    font-size: 13px; 
     border: 1px solid #b6b6b6; 
     cursor: pointer;
-    border-radius: 5px; 
+    border-radius: 20px; 
     position: relative; 
     z-index: 1002;
-    transition: background-color 0.3s;
+    transition: background-color 0.9s;
+    text-align: center;
 }
 
 .about-dropbtn:hover, .about-dropbtn:focus {
@@ -92,7 +93,7 @@ body {
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1001; 
-    border-radius: 5px;
+    border-radius: 20px;
 }
 
 .dropdown-content a {
@@ -100,8 +101,8 @@ body {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    text-align: left;
-    font-size: 0.9em;
+    text-align: center;
+    font-size: 13px;
 }
 
 .dropdown-content a:hover {
@@ -144,32 +145,61 @@ body {
     margin-top: 20px;
 }
 
+/* === GAYA KAD BARU DENGAN BACKGROUND IMAGE (GLOBAL) === */
 .card {
-    background-color: #d8d7d7d6;
+    /* Gaya ASAL dikekalkan */
     border-radius: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-decoration: none;
-    color: #333;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid #838383;
     padding: 20px; 
+
+    /* === GAYA BACKGROUND BARU === */
+    background-color: #2e2e2eba; /* Fallback jika imej gagal */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    color: white; /* Tukar teks utama kepada putih */
+    position: relative; /* Penting untuk kedudukan overlay */
+    overflow: hidden;
+    z-index: 1; 
+    border: none; /* Buang border */
 }
 
+/* GAYA HOVER BARU */
 .card:hover {
-    background-color: #ffffff;
-    transform: scaleX(1.1);
+    /* background-color: #ffffff; <--- DIKELUARKAN */
+    transform: scale(1.05); /* Transformasi hover yang lebih licin */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
 .card h3 {
     margin: 0;
     font-size: 1.5em;
-    color: #2c2c2c;
+    color: white; /* Wajib putih untuk latar belakang gelap */
+    position: relative; 
+    z-index: 3; /* Pastikan di atas overlay */
 }
+
+/* === GAYA OVERLAY BARU (GLOBAL) === */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Latar belakang hitam lutsinar (40% lutsinar) */
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: 2;                   
+    border-radius: 30px;          
+}
+
 
 /* Gaya Tajuk Negeri */
 .state-header {
@@ -308,6 +338,13 @@ body {
     margin-top: 10px;
     font-size: 0.9em;
     width: 100%;
+    position: relative; /* Penting untuk z-index */
+    z-index: 3; /* Lebih tinggi dari overlay */
+}
+/* Kembalikan warna teks status ke hitam agar kotak status menonjol */
+.status-box {
+    color: #000000 !important;
+    z-index: 4;
 }
 
 
@@ -532,5 +569,214 @@ body {
     }
     .role-group {
         width: 100%; 
+    }
+}
+
+
+/* ==========================================================
+   PENETAPAN BACKGROUND IMAGE INDIVIDU
+   (Sila pastikan semua gambar berada di folder "Gambar/" dan namanya betul)
+   ========================================================== */
+/* === NEGERI SEMBILAN === */
+#card-TUANKU-JAAFAR {
+    background-image: url('Gambar/HTJ.webp'); 
+}
+#card-KPL-KUALA-PILAH {
+    background-image: url('Gambar/KPL.webp');
+}
+#card-JMP-JEMPOL {
+    background-image: url('Gambar/JMP.webp');
+}
+#card-JLB-JELEBU {
+    background-image: url('Gambar/JLB.webp');
+}
+#card-PDX-PORT-DICKSON {
+    background-image: url('Gambar/PDX.webp');
+}
+#card-TMP-TAMPIN {
+    background-image: url('Gambar/TMP.webp');
+}
+
+/* === MELAKA === */
+#card-MKA-MLK {
+    background-image: url('Gambar/MKA.webp');
+}
+#card-JSN-JASIN {
+    background-image: url('Gambar/JSN.webp');
+}
+#card-AGJ-ALOR-GAJAH {
+    background-image: url('Gambar/AGJ.webp');
+}
+
+/* === JOHOR === */
+#card-HSA-JOHOR {
+    background-image: url('Gambar/HSA.webp');
+}
+#card-HSI-JOHOR {
+    background-image: url('Gambar/HSI.webp');
+}
+#card-HPSF-MUAR {
+    background-image: url('Gambar/MUR.webp');
+}
+#card-HTSMTI-KULAI {
+    background-image: url('Gambar/KUL.webp');
+}
+#card-KLN-KLUANG {
+    background-image: url('Gambar/KLN.webp');
+}
+#card-BPH-BATU-PAHAT {
+    background-image: url('Gambar/BPH.webp');
+}
+#card-PON-PONTIAN {
+    background-image: url('Gambar/PON.webp');
+}
+#card-SEG-SEGAMAT {
+    background-image: url('Gambar/SEG.webp');
+}
+#card-KTG-KOTA-TINGGI {
+    background-image: url('Gambar/KTG.webp');
+}
+#card-MER-MERSING {
+    background-image: url('Gambar/MER.webp');
+}
+#card-TGK-TANGKAK {
+    background-image: url('Gambar/TGK.webp');
+}
+#card-MKAJ-JB {
+    background-image: url('Gambar/MKJ.webp');
+}
+#card-PER-PERMAI {
+    background-image: url('Gambar/PER.webp');
+}
+
+/* ==========================================================
+   GAYA FOOTER (BAHAGIAN BAWAH) - GABUNGAN DARI RESPONS SEBELUMNYA
+   ========================================================== */
+.main-footer {
+    background-color: #013a54; /* Biru gelap seperti dalam imej */
+    color: white;
+    padding: 40px 20px;
+    margin-top: 50px; 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; 
+    gap: 30px;
+}
+
+.footer-section {
+    flex-basis: 30%; 
+    min-width: 250px; 
+}
+
+.footer-section h2 {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #ffffff;
+}
+
+.footer-section h4 {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 15px 0 5px 0;
+    text-transform: uppercase;
+}
+
+.footer-section p {
+    margin: 3px 0;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/* Gaya Pautan Anak Syarikat */
+.social-links {
+    display: flex;
+    /* Ubah ini: Susun di tengah dan gunakan ruang untuk paparan logo */
+    /* KUNCI UTAMA: Menyusun item dari kiri ke kanan (default) kepada atas ke bawah */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    gap: 20px;
+    flex-basis: 30%;
+    margin-top: 20px; 
+}
+
+/* Gaya Pautan Anak Syarikat (Social Links / Subsidiary Logos) */
+.social-links a {
+    /* MESTI ADA: Tetapkan saiz bekas setiap logo */
+    display: flex; /* Guna flex untuk pusat imej di dalamnya */
+    justify-content: center;
+    align-items: center;
+    width: 80px; /* TETAPKAN LEBAR DISINI */
+    height: 80px; /* TETAPKAN KETINGGIAN DISINI */
+    transition: transform 0.3s;
+    /* Anda boleh buang background-color: white dan border-radius: 50% yang lama */
+}
+
+.social-links a:hover {
+    transform: scale(1.15); /* Efek zoom apabila hover */
+}
+
+/* Gaya untuk imej logo sebenar di dalam Footer */
+.social-links a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Pastikan imej dimuatkan sepenuhnya tanpa dipotong */
+    /* Jika logo WORKSHOP2U hitam, gunakan filter ini untuk menjadikannya putih: */
+    /* filter: invert(100%); */ 
+}
+
+
+/* Gaya Hak Cipta */
+.copyright {
+    text-align: right;
+    font-size: 0.8em;
+    flex-basis: 30%;
+}
+
+
+/* Media Query untuk Footer Responsif */
+@media (max-width: 800px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-section {
+        flex-basis: 100%;
+        min-width: 100%;
+        text-align: center;
+    }
+
+    .footer-section h2, .footer-section h4 {
+        text-align: center;
+    }
+
+    .address-info {
+        order: 1;
+    }
+
+    .social-links {
+        order: 2;
+        margin-top: 10px;
+        justify-content: center;
+        /* Tambah ini: Membenarkan logo dibalut ke bawah jika skrin terlalu sempit */
+        flex-wrap: wrap; 
+    }
+
+    .copyright {
+        order: 3;
+        text-align: center;
     }
 }

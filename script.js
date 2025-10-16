@@ -36,11 +36,11 @@ const hospitalData = [
     { name: "Hospital Tuanku Ja'afar, Seremban", 
         id: "TUANKU-JAAFAR", sheetsUrl: "https://script.google.com/macros/s/AKfycbyURuTW-q5YGseD763PXLfWP198nBg-DLToJxPJ3FciH7pQ12gebbU0xL0WEcrhkHiH/exec" },
     { name: "Hospital Tuanku Ampuan Najihah, Kuala Pilah", 
-        id: "KPL-KUALA-PILAH", sheetsUrl: "https://script.google.com/macros/s/AKfycbwdVEKA2JEVpz3eN6qMU8zu_t_zIkp7QSdvl1xdj0_J0Vm32gjrsH8Sv2DGGLmm5u6b9A/exec" },
+        id: "KPL-KUALA-PILAH", sheetsUrl: "" },
     { name: "Hospital Jempol", 
-        id: "JMP-JEMPOL", sheetsUrl: "https://script.google.com/macros/s/AKfycbyu-9HxaLzE__60qiYYsHcPcjhFDvaLywQvSCrR97_7A9IwvknRko5z_NdiFER-NmGx/exec" },
+        id: "JMP-JEMPOL", sheetsUrl: "" },
     { name: "Hospital Jelebu", 
-        id: "JLB-JELEBU", sheetsUrl: "https://script.google.com/macros/s/AKfycbwBX9LrA0NKoavt8jB2jCmkcmLRb3z40plkLs43up-KsbkJXLrz1xS2pEu9j-So2IkjXg/exec" },
+        id: "JLB-JELEBU", sheetsUrl: "" },
     { name: "Hospital Port Dickson", 
         id: "PDX-PORT-DICKSON", sheetsUrl:"https://script.google.com/macros/s/AKfycbzEqrZI2uaMrzFo52BXS5bzj2WmKlUjEaJSog-08TCfAqZNigdysGHDRVB_0msmzzI/exec"},
     { name: "Hospital Tampin", 
@@ -48,9 +48,9 @@ const hospitalData = [
 
     // --- MELAKA ---
     { name: "Hospital Melaka", 
-        id: "MKA-MLK", sheetsUrl: "https://script.google.com/macros/s/AKfycbwPQ2CAQmC48zHSO-JoPrJyMVx1js3UbnytQcs6rzjLBP8PuYE2DxusRBPnjZHPLy9r/exec"},
+        id: "MKA-MLK", sheetsUrl: ""},
     { name: "Hospital Jasin", 
-        id: "JSN-JASIN", sheetsUrl: "https://script.google.com/macros/s/AKfycbw_KCqXlwchBJefsbZmph9_2TzZUrSTK-o2Lnao3r7MGAO94qN-VSgySc3CB_ToPZtR/exec" },
+        id: "JSN-JASIN", sheetsUrl: "" },
     { name: "Hospital Alor Gajah", 
         id: "AGJ-ALOR-GAJAH", sheetsUrl: "https://script.google.com/macros/s/AKfycbw2qjTumpYARgSe0E0IrRZq7g5RrISPBedT96ItkAySjiy-ARH_nSpQwS_5LE8JOHTn/exec" },
 
