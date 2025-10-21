@@ -698,7 +698,7 @@ body {
 }
 
 /* Gaya Pautan Anak Syarikat */
-.social-links {
+.subsidiary-logos {
     display: flex;
     /* Ubah ini: Susun di tengah dan gunakan ruang untuk paparan logo */
     /* KUNCI UTAMA: Menyusun item dari kiri ke kanan (default) kepada atas ke bawah */
@@ -711,7 +711,7 @@ body {
 }
 
 /* Gaya Pautan Anak Syarikat (Social Links / Subsidiary Logos) */
-.social-links a {
+.subsidiary-logos a {
     /* MESTI ADA: Tetapkan saiz bekas setiap logo */
     display: flex; /* Guna flex untuk pusat imej di dalamnya */
     justify-content: center;
@@ -722,12 +722,12 @@ body {
     /* Anda boleh buang background-color: white dan border-radius: 50% yang lama */
 }
 
-.social-links a:hover {
+.subsidiary-logos a:hover {
     transform: scale(1.15); /* Efek zoom apabila hover */
 }
 
 /* Gaya untuk imej logo sebenar di dalam Footer */
-.social-links a img {
+.subsidiary-logos a img {
     width: 100%;
     height: 100%;
     object-fit: contain; /* Pastikan imej dimuatkan sepenuhnya tanpa dipotong */
