@@ -90,7 +90,7 @@ const hospitalData = [
     { name: "Hospital Segamat", 
         id: "SEG-SEGAMAT", sheetsUrl: "" },
     { name: "Hospital Temenggong Seri Maharaja Tun Ibrahim, Kulai", 
-        id: "HTSMTI-KULAI", sheetsUrl: "" },
+        id: "HTSMTI-KULAI", sheetsUrl: "https://script.google.com/macros/s/AKfycbxbZ55Q_vo-MuMvxbKGlcRZVvwMSfQonOUVS4BjDU6S5EIX-VWwazRK3viR9f7zm647CA/exec" },
     { name: "Hospital Kota Tinggi", 
         id: "KTG-KOTA-TINGGI", sheetsUrl: "" },
     { name: "Hospital Mersing", 
