@@ -98,7 +98,7 @@ const hospitalData = [
     { name: "Hospital Tangkak", 
         id: "TGK-TANGKAK", sheetsUrl: "https://script.google.com/macros/s/AKfycbxNNdAZ7uOam6IljzwGJWFBd7VY9j-Ehu3QzgtnTo7bUltKg80aqSrE7NRh-dnDE8SQ/exec" },
     { name: "Makmal Kesihatan Awam Johor", 
-        id: "MKAJ-JB", sheetsUrl: "https://script.google.com/macros/s/AKfycbwr4glm_HZtke2nkD5LgsGl20G_gD_hZSWIQqX_Q3mKIW_k368sXrqpGXWzsvtjK3un/exec" },
+        id: "MKAJ-JB", sheetsUrl: "https://script.google.com/macros/s/AKfycbz0EYvqjDmUpw4FKVqavROJD1ocTOA1jRrLrIhg3dE-POrClexLJGrydG1qWNxx3FOHDQ/exec" },
     { name: "Hospital Permai", 
         id: "PER-PERMAI", sheetsUrl: "" },
     // Tambah semua hospital di sini dengan ID dan URL mereka
