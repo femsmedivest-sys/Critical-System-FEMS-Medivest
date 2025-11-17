@@ -312,13 +312,16 @@ body {
     margin-top: 10px;
 }
 
+/* Semak gaya untuk status box juga */
 .status-box {
-    display: inline-block;
-    padding: 6px 8px;
-    border-radius: 30px;
-    color: #000000;
+    /* Pastikan warna latar belakang status box cukup legap untuk dibaca */
+    background-color: rgba(255, 255, 255, 0.2); /* Contoh: Latar belakang status box lutsinar sedikit */
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.9em;
     font-weight: bold;
-    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
 }
 
 .status-FUNCTIONING {
@@ -346,7 +349,6 @@ body {
     color: #000000 !important;
     z-index: 4;
 }
-
 
 /* Gaya untuk Loading Spinner */
 .loading-spinner {
@@ -572,7 +574,6 @@ body {
     }
 }
 
-
 /* ==========================================================
    PENETAPAN BACKGROUND IMAGE INDIVIDU
    (Sila pastikan semua gambar berada di folder "Gambar/" dan namanya betul)
@@ -792,9 +793,9 @@ body {
         background-color: #555; /* Add a dark-grey background on hover */
         }
 
-        /* =============================================================================
+/* ========================
 // Gaya Floating Button
-// =============================================================================*/
+// ========================*/
 
 .floating-btn {
     position: fixed;
@@ -831,4 +832,83 @@ body {
     .floating-btn span {
         display: none !important; /* Sembunyikan teks pada mobile */
     }
+}
+
+/* =========================================================
+   GAYA UNTUK KAD SISTEM KRITIKAL (hospital-page.html)
+   ========================================================== */
+
+/* Susun atur Grid untuk Kad Sistem */
+.system-grid {
+    display: grid;
+    /* Meningkatkan lebar minimum untuk kad yang lebih besar jika perlu */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+    gap: 20px; 
+    padding: 20px 10px; 
+}
+
+/* 2. KAD UTAMA (Wajib guna position: relative) */
+.system-card {
+    position: relative; 
+    display: flex;         
+    flex-direction: column; 
+    align-items: center;   
+    justify-content: center; 
+    /* Gaya Visual */
+    /* ... */
+    padding: 10px;        /* Diubah: Kurangkan padding dalaman */
+    border-radius: 12px;
+    /* PERUBAHAN UTAMA UNTUK SAIZ SEPERTI YANG DIMINTA */
+    min-height: 150px;    /* Diubah: Menjadikan kad lebih pendek/rendah */
+    overflow: hidden; 
+    text-decoration: none; 
+    color: white; 
+}
+
+.card-title {
+    position: relative; 
+    z-index: 2;        
+    color: white;      
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); 
+    font-size: 1.5em; /* Jadikan tajuk lebih besar jika perlu */
+    font-weight: bold; /* Pastikan ia tebal/bold */
+    margin-bottom: 10px; /* Tambah jarak di bawah tajuk */
+    text-align: center;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* NILAI BARU: 0.2 untuk gambar yang lebih CERAH */
+    background-color: rgba(0, 0, 0, 0.2); 
+    z-index: 1; /* Di atas gambar, di bawah teks */
+    border-radius: 12px; 
+}
+
+.system-card:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Gaya Gambar di dalam Kad */
+.card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memenuhi keseluruhan kad */
+    z-index: 0; /* Di lapisan paling bawah */
+    margin: 0;
+}
+
+/* Pastikan Status Container diletakkan di bawah tajuk */
+.system-card .status-container {
+    position: relative; 
+    z-index: 2;
+    /* Hilangkan margin atas jika ia menolak ke tengah */
+    margin-top: 0; 
 }

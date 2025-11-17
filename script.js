@@ -31,10 +31,12 @@ document.addEventListener('DOMContentLoaded', function() {
             dropdownContent.classList.toggle("show");
         });
 
+        // Logik untuk menutup dropdown bila klik di luar
         window.onclick = function(event) {
             if (!event.target.matches('.about-dropbtn')) {
                 const openDropdowns = document.getElementsByClassName("dropdown-content");
-                for (let i = 0; i < openDropdowns.length; i++) {
+                let i;
+                for (i = 0; i < openDropdowns.length; i++) {
                     const openDropdown = openDropdowns[i];
                     if (openDropdown.classList.contains('show')) {
                         openDropdown.classList.remove('show');
@@ -45,14 +47,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-/* === KOD LAMA ANDA DI BAWAH INI (cth: hospitalData, setupHospitalPage, dll.) === */
-// ... kekalkan semua kod script.js anda yang lain di sini ...
-
 
 const hospitalData = [
     // Pastikan URL di sini adalah URL Apps Script yang betul
     // Jika tiada URL, biarkan string kosong seperti ini: ''
-    //-------------------------------N9----------------------------------
+    //---N9-------
     { name: "Hospital Tuanku Ja'afar, Seremban", 
         id: "TUANKU-JAAFAR", sheetsUrl: "https://script.google.com/macros/s/AKfycbyURuTW-q5YGseD763PXLfWP198nBg-DLToJxPJ3FciH7pQ12gebbU0xL0WEcrhkHiH/exec" },
     { name: "Hospital Tuanku Ampuan Najihah, Kuala Pilah", 
@@ -96,9 +95,9 @@ const hospitalData = [
     { name: "Hospital Mersing", 
         id: "MER-MERSING", sheetsUrl: "https://script.google.com/macros/s/AKfycbwkVr2WnVB_Ow1AttIXH4psBmSQ8m_OdaN-z3_JgUmq7mmrtYfogZUVPLl_t7QdrWV8/exec" },
     { name: "Hospital Tangkak", 
-        id: "TGK-TANGKAK", sheetsUrl: "https://script.google.com/macros/s/AKfycbxNNdAZ7uOam6IljzwGJWFBd7VY9j-Ehu3QzgtnTo7bUltKg80aqSrE7NRh-dnDE8SQ/exec" },
+        id: "TGK-TANGKAK", sheetsUrl: "https://script.google.com/macros/s/AKfycbxzxYkRAUl39TjMOIZZBBFhvX4AJF_mnH0GcoewJzQi1VqsdIC0AdLmkOnHVrvU957M/exec" },
     { name: "Makmal Kesihatan Awam Johor", 
-        id: "MKAJ-JB", sheetsUrl: "https://script.google.com/macros/s/AKfycby3NnHSa3pDqhb93lJWrYJ_GTs2VzIx-WgHKiCOcngQHid18zLhv1Zfvs6SoeVHCxLNzw/exec" },
+        id: "MKAJ-JB", sheetsUrl: "" },
     { name: "Hospital Permai", 
         id: "PER-PERMAI", sheetsUrl: "" },
     // Tambah semua hospital di sini dengan ID dan URL mereka
@@ -342,16 +341,16 @@ const submissionForms = {
     'TGK-TANGKAK_MEDICAL GAS PIPELINE SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/TGK.html',
     'TGK-TANGKAK_BAS SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/TGK.html',
 
-    'MKAJ-JB_ELECTRICAL SUPPLY': 'https://femsmedivest-sys.github.io/Submission-Form/MKJ.html',
-    'MKAJ-JB_GENERATOR SET': 'https://femsmedivest-sys.github.io/Submission-Form/MKJ.html',
-    'MKAJ-JB_AUTOCLAVE': 'https://femsmedivest-sys.github.io/Submission-Form/MKJ.html',
-    'MKAJ-JB_LIFT': 'https://femsmedivest-sys.github.io/Submission-Form/MKJ.html',
-    'MKAJ-JB_FIRE PROTECTION SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/MKJ.html',
-    'MKAJ-JB_CHILLER AND COOLING TOWER': 'https://femsmedivest-sys.github.io/Submission-Form/MKJ.html',
-    'MKAJ-JB_WATER SUPPLY SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/MKJ.html',
-    'MKAJ-JB_AHU': 'https://femsmedivest-sys.github.io/Submission-Form/MKJ.html',
-    'MKAJ-JB_MEDICAL GAS PIPELINE SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/MKJ.html',
-    'MKAJ-JB_BAS SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/MKJ.html',
+    'MKAJ-JB_ELECTRICAL SUPPLY': 'https://femsmedivest-sys.github.io/Submission-Form/MKAJ.html',
+    'MKAJ-JB_GENERATOR SET': 'https://femsmedivest-sys.github.io/Submission-Form/MKAJ.html',
+    'MKAJ-JB_AUTOCLAVE': 'https://femsmedivest-sys.github.io/Submission-Form/MKAJ.html',
+    'MKAJ-JB_LIFT': 'https://femsmedivest-sys.github.io/Submission-Form/MKAJ.html',
+    'MKAJ-JB_FIRE PROTECTION SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/MKAJ.html',
+    'MKAJ-JB_CHILLER AND COOLING TOWER': 'https://femsmedivest-sys.github.io/Submission-Form/MKAJ.html',
+    'MKAJ-JB_WATER SUPPLY SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/MKAJ.html',
+    'MKAJ-JB_AHU': 'https://femsmedivest-sys.github.io/Submission-Form/MKAJ.html',
+    'MKAJ-JB_MEDICAL GAS PIPELINE SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/MKAJ.html',
+    'MKAJ-JB_BAS SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/MKAJ.html',
 
     'PER-PERMAI_ELECTRICAL SUPPLY': 'https://femsmedivest-sys.github.io/Submission-Form/PER.html',
     'PER-PERMAI_GENERATOR SET': 'https://femsmedivest-sys.github.io/Submission-Form/PER.html',
@@ -363,7 +362,7 @@ const submissionForms = {
     'PER-PERMAI_AHU': 'https://femsmedivest-sys.github.io/Submission-Form/PER.html',
     'PER-PERMAI_MEDICAL GAS PIPELINE SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/PER.html',
     'PER-PERMAI_BAS SYSTEM': 'https://femsmedivest-sys.github.io/Submission-Form/PER.html',
-    };
+};
 
 // Fungsi untuk mengemas kini kad hospital sedia ada di halaman utama
 function updateHospitalCards() {
@@ -455,7 +454,8 @@ async function setupHospitalPage() {
             backButton.style.display = 'none';
         }
         headerTitle.textContent = `Type of Critical System - ${currentHospital ? currentHospital.name : hospitalId}`;
-        mainContent.innerHTML = '';
+        // Jangan hapuskan kandungan utama HTML hospital-page.html jika ia mengandungi struktur menu, 
+        // tetapi kita akan ganti dengan grid yang dijana JS jika dataSheets ada.
 
         if (!sheetsUrl || sheetsUrl === '') {
             mainContent.innerHTML = `<p style="text-align:center; color:red; font-weight:bold;">No data from Google Spreadsheet for this hospital. Please contact (011-31234648).</p>`;
@@ -468,19 +468,51 @@ async function setupHospitalPage() {
             const response = await fetch(sheetsUrl);
             const allData = await response.json();
 
-            mainContent.innerHTML = '';
+            // Sediakan tajuk
+            mainContent.innerHTML = `<h2 class="main-title"></h2>`;
             const cardGrid = document.createElement('div');
-            cardGrid.className = 'card-grid';
+            cardGrid.className = 'system-grid'; 
+
+            // --- PETA LALUAN GAMBAR (MAP) ---
+            const systemImageMap = {
+                "GENERATOR SET": "Gambar-System/genset.webp", 
+                "ELECTRICAL SUPPLY": "Gambar-System/ElectricalSupply.webp",
+                "WATER SUPPLY SYSTEM": "Gambar-System/WSS.webp",
+                "AUTOCLAVE": "Gambar-System/autoclave.webp",
+                "MEDICAL GAS PIPELINE SYSTEM": "Gambar-System/MGPS.webp",
+                "LIFT": "Gambar-System/lift.webp",
+                "AHU": "Gambar-System/AHU.webp",
+                "BAS SYSTEM": "Gambar-System/BAS.webp",
+                "CHILLER AND COOLING TOWER": "Gambar-System/CHILLER.webp", 
+                "FIRE PROTECTION SYSTEM": "Gambar-System/FPS.webp", 
+            };
+
 
             criticalSystems.forEach(system => {
                 const card = document.createElement('a');
-                card.className = 'card';
+                card.className = 'system-card'; 
                 card.href = `hospital-page.html?hosp=${hospitalId}&sys=${system.id}`;
 
-                const systemName = document.createElement('h3');
+                // --- START: TAMBAH OVERLAY ---
+                const overlay = document.createElement('div');
+                overlay.className = 'card-overlay';
+                card.appendChild(overlay);
+                // --- END: TAMBAH OVERLAY ---
+
+                // KOD GAMBAR
+                const img = document.createElement('img');
+                const imageSrc = systemImageMap[system.id] || "Gambar/default.webp"; 
+                img.src = imageSrc;
+                img.alt = system.name;
+                img.className = 'card-image';
+                card.appendChild(img);
+
+                // 3. TAMBAH TAJUK (z-index: 2)
+                const systemName = document.createElement('span');
+                systemName.className = 'card-title';
                 systemName.textContent = system.name;
                 card.appendChild(systemName);
-
+                
                 // Kira status untuk sistem ini dari data yang telah diambil
                 const systemData = allData.filter(item => (item['Type of System'] || '').trim().toUpperCase() === (system.id || '').trim().toUpperCase());
                 const functioningCount = systemData.filter(item => (item.Status || '').trim().toUpperCase() === 'FUNCTIONING').length;
@@ -488,7 +520,7 @@ async function setupHospitalPage() {
 
                 // Tambah status ke kad
                 const statusContainer = document.createElement('div');
-                statusContainer.className = 'status-container';
+                statusContainer.className = 'status-container'; 
 
                 const spanF = document.createElement('span');
                 spanF.className = 'status-box status-FUNCTIONING';
@@ -500,8 +532,9 @@ async function setupHospitalPage() {
 
                 statusContainer.appendChild(spanF);
                 statusContainer.appendChild(spanNF);
+                
                 card.appendChild(statusContainer);
-
+                
                 cardGrid.appendChild(card);
             });
             mainContent.appendChild(cardGrid);
@@ -513,6 +546,7 @@ async function setupHospitalPage() {
     }
     // --- Logik untuk halaman butiran aset ---
     else {
+        // Pautan butang "Back"
         if (backButton) {
             backButton.style.display = 'inline-block';
             backButton.href = `hospital-page.html?hosp=${hospitalId}`;
