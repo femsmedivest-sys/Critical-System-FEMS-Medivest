@@ -95,7 +95,7 @@ const hospitalData = [
     { name: "Hospital Mersing", 
         id: "MER-MERSING", sheetsUrl: "https://script.google.com/macros/s/AKfycbwkVr2WnVB_Ow1AttIXH4psBmSQ8m_OdaN-z3_JgUmq7mmrtYfogZUVPLl_t7QdrWV8/exec" },
     { name: "Hospital Tangkak", 
-        id: "TGK-TANGKAK", sheetsUrl: "https://script.google.com/macros/s/AKfycbxzxYkRAUl39TjMOIZZBBFhvX4AJF_mnH0GcoewJzQi1VqsdIC0AdLmkOnHVrvU957M/exec" },
+        id: "TGK-TANGKAK", sheetsUrl: "https://script.google.com/macros/s/AKfycbxNNdAZ7uOam6IljzwGJWFBd7VY9j-Ehu3QzgtnTo7bUltKg80aqSrE7NRh-dnDE8SQ/exec" },
     { name: "Makmal Kesihatan Awam Johor", 
         id: "MKAJ-JB", sheetsUrl: "" },
     { name: "Hospital Permai", 
