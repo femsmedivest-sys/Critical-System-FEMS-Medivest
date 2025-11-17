@@ -81,7 +81,7 @@ const hospitalData = [
     { name: "Hospital Pakar Sultanah Fatimah, Muar", 
         id: "HPSF-MUAR", sheetsUrl: "https://script.google.com/macros/s/AKfycbwr4glm_HZtke2nkD5LgsGl20G_gD_hZSWIQqX_Q3mKIW_k368sXrqpGXWzsvtjK3un/exec" },
     { name: "Hospital Kluang", 
-        id: "KLN-KLUANG", sheetsUrl: "" },
+        id: "KLN-KLUANG", sheetsUrl: "https://script.google.com/macros/s/AKfycbzcZs8X_V6Ed1GLdgJ9Kg78NiaYXBiDZMwm95g9Dddz8rkhyj8D-YptSAx4sO_T0319/exec" },
     { name: "Hospital Batu Pahat", 
         id: "BPH-BATU-PAHAT", sheetsUrl: "" },
     { name: "Hospital Pontian", 
