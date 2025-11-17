@@ -631,6 +631,6 @@ async function setupHospitalPage() {
 // Panggil fungsi yang betul berdasarkan halaman
 if (window.location.pathname.endsWith('hospital-page.html')) {
     document.addEventListener('DOMContentLoaded', setupHospitalPage);
-} else if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
+} else if (window.location.pathname === '/' || window.location.pathname.endsWith('Critical-System.html')) {
     document.addEventListener('DOMContentLoaded', updateHospitalCards);
 }
