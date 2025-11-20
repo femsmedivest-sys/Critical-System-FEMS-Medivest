@@ -69,7 +69,7 @@ const hospitalData = [
     { name: "Hospital Melaka", 
         id: "MKA-MLK", sheetsUrl: ""},
     { name: "Hospital Jasin", 
-        id: "JSN-JASIN", sheetsUrl: "https://script.google.com/macros/s/AKfycbxLAn-PlKJ9VQUMtDiWDnYkMXx23_qncMgjMHcQNmpqAakYKryJbHOcCl3uRpcXvldW/exec" },
+        id: "JSN-JASIN", sheetsUrl: "https://script.google.com/macros/s/AKfycbzXtO-TJ-cXXJQIbWBjs2RjQtsEKNPsBjOEV5ns2W4-qqodgMFpZmh9Z0AG_mOPwkeZ/exec" },
     { name: "Hospital Alor Gajah", 
         id: "AGJ-ALOR-GAJAH", sheetsUrl: "https://script.google.com/macros/s/AKfycbw2qjTumpYARgSe0E0IrRZq7g5RrISPBedT96ItkAySjiy-ARH_nSpQwS_5LE8JOHTn/exec" },
 
