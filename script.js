@@ -91,7 +91,7 @@ const hospitalData = [
     { name: "Hospital Temenggong Seri Maharaja Tun Ibrahim, Kulai", 
         id: "HTSMTI-KULAI", sheetsUrl: "https://script.google.com/macros/s/AKfycbxbZ55Q_vo-MuMvxbKGlcRZVvwMSfQonOUVS4BjDU6S5EIX-VWwazRK3viR9f7zm647CA/exec" },
     { name: "Hospital Kota Tinggi", 
-        id: "KTG-KOTA-TINGGI", sheetsUrl: "" },
+        id: "KTG-KOTA-TINGGI", sheetsUrl: "https://script.google.com/macros/s/AKfycbxr1iWVaL1eGuy_HhcccDPrm_6ipUG898uWzxrFFQqSWuSAnrHYR8vRmLlBU-QXymyt/exec" },
     { name: "Hospital Mersing", 
         id: "MER-MERSING", sheetsUrl: "https://script.google.com/macros/s/AKfycbwkVr2WnVB_Ow1AttIXH4psBmSQ8m_OdaN-z3_JgUmq7mmrtYfogZUVPLl_t7QdrWV8/exec" },
     { name: "Hospital Tangkak", 
