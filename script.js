@@ -477,16 +477,16 @@ async function setupHospitalPage() {
 
             // --- PETA LALUAN GAMBAR (MAP) ---
             const systemImageMap = {
-                "Generator Set": "Gambar-Sistem/genset.webp", 
-                "Electrical Supply": "Gambar-Sistem/ElectricalSupply.webp",
-                "Water Supply System": "Gambar-Sistem/WSS.webp",
-                "Autoclave": "Gambar-Sistem/autoclave.webp",
-                "Medical Gas Pipeline System": "Gambar-Sistem/MGPS.webp",
-                "Lift": "Gambar-Sistem/lift.webp",
-                "Air Handling Unit": "Gambar-Sistem/AHU.webp",
-                "BAS System": "Gambar-Sistem/BAS.webp",
-                "Chiller And Cooling Tower": "Gambar-Sistem/CHILLER.webp", 
-                "Fire Protection System": "Gambar-Sistem/FPS.webp", 
+                "Generator Set": "Gambar-System/genset.webp", 
+                "Electrical Supply": "Gambar-System/ElectricalSupply.webp",
+                "Water Supply System": "Gambar-System/WSS.webp",
+                "Autoclave": "Gambar-System/autoclave.webp",
+                "Medical Gas Pipeline System": "Gambar-System/MGPS.webp",
+                "Lift": "Gambar-System/lift.webp",
+                "Air Handling Unit": "Gambar-System/AHU.webp",
+                "BAS System": "Gambar-System/BAS.webp",
+                "Chiller And Cooling Tower": "Gambar-System/CHILLER.webp", 
+                "Fire Protection System": "Gambar-System/FPS.webp", 
             };
 
 
