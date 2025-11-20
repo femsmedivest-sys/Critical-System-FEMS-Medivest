@@ -352,8 +352,8 @@ body {
 
 /* Gaya untuk Loading Spinner */
 .loading-spinner {
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #3498db;
+    border: 8px solid #000000;
+    border-top: 8px solid #000292;
     border-radius: 50%;
     width: 70px;
     height: 70px;
