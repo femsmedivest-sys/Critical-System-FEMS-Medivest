@@ -807,7 +807,7 @@ body {
     z-index: 1000; /* Pastikan ia sentiasa di atas */
     display: flex;
     align-items: center;
-    background-color: #0d832d; /* Warna Hijau/Biru yang berbeza */
+    background-color: #f5ec00; /* Warna Hijau/Biru yang berbeza */
     color: white;
     padding: 12px 20px;
     border-radius: 50px; /* Bentuk pil/bujur */
