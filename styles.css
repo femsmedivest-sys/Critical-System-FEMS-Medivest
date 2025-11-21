@@ -808,7 +808,7 @@ body {
     display: flex;
     align-items: center;
     background-color: #e2ff3d; /* Warna Hijau/Biru yang berbeza */
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 12px 20px;
     border-radius: 50px; /* Bentuk pil/bujur */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
