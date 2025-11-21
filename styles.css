@@ -802,7 +802,7 @@ body {
 
 .floating-btn {
     position: fixed;
-    bottom: 20px; /* Jarak dari bawah */
+    bottom: 5px; /* Jarak dari bawah */
     left: 20px;  /* Jarak dari kanan */
     z-index: 1000; /* Pastikan ia sentiasa di atas */
     display: flex;
