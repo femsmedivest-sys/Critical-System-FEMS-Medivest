@@ -77,7 +77,7 @@ const hospitalData = [
     { name: "Hospital Sultanah Aminah, Johor Bahru", 
         id: "HSA-JOHOR", sheetsUrl: "" },
     { name: "Hospital Sultan Ismail, Johor Bahru", 
-        id: "HSI-JOHOR", sheetsUrl: "https://script.google.com/macros/s/AKfycbwmG3bdqIWsh6pzjJ91LTVX4BcVJk7OWe9yg6iEYwq3KuifUMHTWvHrG6R3tlMduWUxIw/exec" },
+        id: "HSI-JOHOR", sheetsUrl: "https://script.google.com/macros/s/AKfycbzSz536dHUFldW5uM09yuWdrlp-2wdN89GXVGvterROLKsNrH0Ccp89Ka59zhbhyaJ8og/exec" },
     { name: "Hospital Pakar Sultanah Fatimah, Muar", 
         id: "HPSF-MUAR", sheetsUrl: "https://script.google.com/macros/s/AKfycbwr4glm_HZtke2nkD5LgsGl20G_gD_hZSWIQqX_Q3mKIW_k368sXrqpGXWzsvtjK3un/exec" },
     { name: "Hospital Kluang", 
