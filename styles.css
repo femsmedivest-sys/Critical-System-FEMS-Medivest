@@ -807,7 +807,7 @@ body {
     z-index: 1000; /* Pastikan ia sentiasa di atas */
     display: flex;
     align-items: center;
-    background-color: #000292; /* Warna Hijau/Biru yang berbeza */
+    background-color: #e2ff3d; /* Warna Hijau/Biru yang berbeza */
     color: white;
     padding: 12px 20px;
     border-radius: 50px; /* Bentuk pil/bujur */
@@ -818,8 +818,9 @@ body {
 }
 
 .floating-btn:hover {
-    background-color: #0a6b24; /* Warna lebih gelap bila hover */
+    background-color: #000145; /* Warna lebih gelap bila hover */
     transform: translateY(-2px);
+    color: rgb(255, 255, 255);
 }
 
 .floating-btn svg {
