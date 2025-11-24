@@ -87,7 +87,7 @@ const hospitalData = [
     { name: "Hospital Pontian", 
         id: "PON-PONTIAN", sheetsUrl: "https://script.google.com/macros/s/AKfycbyTPjnBYxZ2asURDlZUplLz2g-zD1ddsFNKoOkBmicKaY0COS_ODdo3OHzTkUuRG60V/exec" },
     { name: "Hospital Segamat", 
-        id: "SEG-SEGAMAT", sheetsUrl: "" },
+        id: "SEG-SEGAMAT", sheetsUrl: "https://script.google.com/macros/s/AKfycbzVLuWcF9I0QgB7UjKBmfEZbDhKhfVBOvelndBt9XWOh2u92zjWAZUf_akhxusZqUUNAQ/exec" },
     { name: "Hospital Temenggong Seri Maharaja Tun Ibrahim, Kulai", 
         id: "HTSMTI-KULAI", sheetsUrl: "https://script.google.com/macros/s/AKfycbxbZ55Q_vo-MuMvxbKGlcRZVvwMSfQonOUVS4BjDU6S5EIX-VWwazRK3viR9f7zm647CA/exec" },
     { name: "Hospital Kota Tinggi", 
