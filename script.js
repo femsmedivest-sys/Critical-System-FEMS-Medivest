@@ -99,7 +99,7 @@ const hospitalData = [
     { name: "Makmal Kesihatan Awam Johor", 
         id: "MKJ-JB", sheetsUrl: "https://script.google.com/macros/s/AKfycby3NnHSa3pDqhb93lJWrYJ_GTs2VzIx-WgHKiCOcngQHid18zLhv1Zfvs6SoeVHCxLNzw/exec" },
     { name: "Hospital Permai", 
-        id: "PER-PERMAI", sheetsUrl: "" },
+        id: "PER-PERMAI", sheetsUrl: "https://script.google.com/macros/s/AKfycbxUfZwgjlTEHMHjOkKV7U0FCk3_4Z4FYVewrCkkfO6c50rF3xg3Seg1fxvWvbwu2Zi3Xw/exec" },
     { name: "Hospital Pasir Gudang", 
         id: "PGD-PASIR-GUDANG", sheetsUrl: "" },
     // Tambah semua hospital di sini dengan ID dan URL mereka
