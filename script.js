@@ -102,6 +102,8 @@ const hospitalData = [
         id: "PER-PERMAI", sheetsUrl: "https://script.google.com/macros/s/AKfycbxUfZwgjlTEHMHjOkKV7U0FCk3_4Z4FYVewrCkkfO6c50rF3xg3Seg1fxvWvbwu2Zi3Xw/exec" },
     { name: "Hospital Pasir Gudang", 
         id: "PGD-PASIR-GUDANG", sheetsUrl: "" },
+     { name: "Hospital Pantai", 
+        id: "PAN-Pantai", sheetsUrl: "" },
     // Tambah semua hospital di sini dengan ID dan URL mereka
 ];
 
