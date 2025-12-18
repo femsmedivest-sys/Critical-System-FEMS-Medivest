@@ -104,7 +104,7 @@ const hospitalData = [
         id: "PGD-PASIR-GUDANG", sheetsUrl: "" },
      { name: "Hospital Pantai", 
         id: "PAN-Pantai", sheetsUrl: "" },
-    // Tambah semua hospital di sini dengan ID dan URL mereka
+    // Tambah hospital di sini dengan ID dan URL mereka
 ];
 
 const criticalSystems = [
