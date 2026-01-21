@@ -545,7 +545,7 @@ async function setupHospitalPage() {
 
         } catch (error) {
             console.error("Fetch error:", error);
-            mainContent.innerHTML = `<p style="text-align:center; color:red; font-weight:bold;">Failed to retrieve data. Please check the URL or contact 011-31234648.</p>`;
+            mainContent.innerHTML = `<p style="text-align:center; color:red; font-weight:bold;">Failed to retrieve data. Please check the URL or contact 012-3456495.</p>`;
         }
     }
     // --- Logik untuk halaman butiran aset ---
