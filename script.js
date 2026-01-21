@@ -295,7 +295,7 @@ const submissionForms = {
     'SEG-SEGAMAT_Autoclave': 'https://femsmedivest-sys.github.io/Submission-Form/SGT.html',
     'SEG-SEGAMAT_Lift': 'https://femsmedivest-sys.github.io/Submission-Form/SGT.html',
     'SEG-SEGAMAT_Fire Protection System': 'https://femsmedivest-sys.github.io/Submission-Form/SGT.html',
-    'SEG-SEGAMAT_Chiller And Cooling Tower': 'https://femsmedivest-sys.github.io/Submission-Form/SEG.html',
+    'SEG-SEGAMAT_Chiller And Cooling Tower': 'https://femsmedivest-sys.github.io/Submission-Form/SGT.html',
     'SEG-SEGAMAT_Water Supply System': 'https://femsmedivest-sys.github.io/Submission-Form/SGT.html',
     'SEG-SEGAMAT_Air Handling Unit': 'https://femsmedivest-sys.github.io/Submission-Form/SGT.html',
     'SEG-SEGAMAT_Medical Gas Pipeline System': 'https://femsmedivest-sys.github.io/Submission-Form/SGT.html',
