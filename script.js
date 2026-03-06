@@ -367,16 +367,16 @@ const submissionForms = {
     'PER-PERMAI_Medical Gas Pipeline System': 'https://femsmedivest-sys.github.io/Submission-Form/PER.html',
     'PER-PERMAI_BAS System': 'https://femsmedivest-sys.github.io/Submission-Form/PER.html',
 
-    'PGD-PERMAI_Electrical Supply': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
-    'PGD-PERMAI_Generator Set': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
-    'PGD-PERMAI_Autoclave': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
-    'PGD-PERMAI_Lift': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
-    'PGD-PERMAI_Fire Protection System': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
-    'PGD-PERMAI_Chiller And Cooling Tower': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
-    'PGD-PERMAI_Water Supply System': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
-    'PGD-PERMAI_Air Handling Unit': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
-    'PGD-PERMAI_Medical Gas Pipeline System': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
-    'PGD-PERMAI_BAS System': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
+    'PGD-PASIR-GUDANG_Electrical Supply': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
+    'PGD-PASIR-GUDANG_Generator Set': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
+    'PGD-PASIR-GUDANG_Autoclave': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
+    'PGD-PASIR-GUDANG_Lift': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
+    'PGD-PASIR-GUDANG_Fire Protection System': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
+    'PGD-PASIR-GUDANG_Chiller And Cooling Tower': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
+    'PGD-PASIR-GUDANG_Water Supply System': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
+    'PGD-PASIR-GUDANG_Air Handling Unit': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
+    'PGD-PASIR-GUDANG_Medical Gas Pipeline System': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
+    'PGD-PASIR-GUDANG_BAS System': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
 };
 
 // Fungsi untuk mengemas kini kad hospital sedia ada di halaman utama
@@ -684,3 +684,4 @@ if (window.location.pathname.endsWith('hospital-page.html')) {
     document.addEventListener('DOMContentLoaded', updateHospitalCards);
 
 }
+
