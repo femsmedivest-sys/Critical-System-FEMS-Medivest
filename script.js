@@ -101,7 +101,7 @@ const hospitalData = [
     { name: "Hospital Permai", 
         id: "PER-PERMAI", sheetsUrl: "https://script.google.com/macros/s/AKfycbxUfZwgjlTEHMHjOkKV7U0FCk3_4Z4FYVewrCkkfO6c50rF3xg3Seg1fxvWvbwu2Zi3Xw/exec" },
     { name: "Hospital Pasir Gudang", 
-        id: "PGD-PASIR-GUDANG", sheetsUrl: "" },
+        id: "PGD-PASIR-GUDANG", sheetsUrl: "https://script.google.com/macros/s/AKfycbwbfX7uEBSOqFf2AlHdMbwE0ZJqZ9qC90_a9cfIjHSS7Vk0RCKvPcUNtusB6rQBjlK2/exec" },
      { name: "Hospital Pantai", 
         id: "PAN-Pantai", sheetsUrl: "" },
     // Tambah hospital di sini dengan ID dan URL mereka
@@ -366,6 +366,17 @@ const submissionForms = {
     'PER-PERMAI_Air Handling Unit': 'https://femsmedivest-sys.github.io/Submission-Form/PER.html',
     'PER-PERMAI_Medical Gas Pipeline System': 'https://femsmedivest-sys.github.io/Submission-Form/PER.html',
     'PER-PERMAI_BAS System': 'https://femsmedivest-sys.github.io/Submission-Form/PER.html',
+
+    'PGD-PERMAI_Electrical Supply': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
+    'PGD-PERMAI_Generator Set': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
+    'PGD-PERMAI_Autoclave': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
+    'PGD-PERMAI_Lift': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
+    'PGD-PERMAI_Fire Protection System': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
+    'PGD-PERMAI_Chiller And Cooling Tower': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
+    'PGD-PERMAI_Water Supply System': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
+    'PGD-PERMAI_Air Handling Unit': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
+    'PGD-PERMAI_Medical Gas Pipeline System': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
+    'PGD-PERMAI_BAS System': 'https://femsmedivest-sys.github.io/Submission-Form/PGD.html',
 };
 
 // Fungsi untuk mengemas kini kad hospital sedia ada di halaman utama
@@ -462,7 +473,7 @@ async function setupHospitalPage() {
         // tetapi kita akan ganti dengan grid yang dijana JS jika dataSheets ada.
 
         if (!sheetsUrl || sheetsUrl === '') {
-            mainContent.innerHTML = `<p style="text-align:center; color:red; font-weight:bold;">No data from Google Spreadsheet for this hospital. Please contact (011-31234648).</p>`;
+            mainContent.innerHTML = `<p style="text-align:center; color:red; font-weight:bold;">No data from Google Spreadsheet for this hospital. Please contact (012-3456495).</p>`;
             return;
         }
 
@@ -671,4 +682,5 @@ if (window.location.pathname.endsWith('hospital-page.html')) {
     document.addEventListener('DOMContentLoaded', setupHospitalPage);
 } else if (window.location.pathname === '/' || window.location.pathname.endsWith('Critical-System.html')) {
     document.addEventListener('DOMContentLoaded', updateHospitalCards);
+
 }
