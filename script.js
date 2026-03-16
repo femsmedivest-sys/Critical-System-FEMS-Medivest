@@ -118,6 +118,7 @@ const criticalSystems = [
     { name: "BAS System", id: "BAS System"},
     { name: "Chiller And Cooling Tower", id: "Chiller And Cooling Tower" },
     { name: "Fire Protection System", id: "Fire Protection System" },
+    { name: "Monitoring Dashboard", id: "Monitoring" },
 ];
 
 //---------------------------------link submission form--------------------------------------------------
