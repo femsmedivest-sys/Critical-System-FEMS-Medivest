@@ -137,7 +137,7 @@ const submissionForms = {
     'JMP-JEMPOL_Electrical Supply': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
     'JMP-JEMPOL_Generator Set': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
     'JMP-JEMPOL_Autoclave': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
-    // 'JMP-JEMPOL_Lift': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
+    'JMP-JEMPOL_Lift': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
     'JMP-JEMPOL_Fire Protection System': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
     'JMP-JEMPOL_Chiller And Cooling Tower': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
     'JMP-JEMPOL_Water Supply System': 'https://femsmedivest-sys.github.io/Submission-Form/JMP.html',
