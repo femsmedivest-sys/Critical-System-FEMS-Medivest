@@ -170,11 +170,11 @@ const submissionForms = {
     'JLB-JELEBU_Electrical Supply': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
     'JLB-JELEBU_Generator Set': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
     'JLB-JELEBU_Autoclave': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
-    'JLB-JELEBU_Lift': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
+    // 'JLB-JELEBU_Lift': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
     'JLB-JELEBU_Fire Protection System': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
     'JLB-JELEBU_Chiller And Cooling Tower': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
     'JLB-JELEBU_Water Supply System': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
-    'JLB-JELEBU_Air Handling Unit': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
+    // 'JLB-JELEBU_Air Handling Unit': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
     'JLB-JELEBU_Medical Gas Pipeline System': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
     'JLB-JELEBU_BAS System': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
 
