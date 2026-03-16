@@ -117,8 +117,7 @@ const criticalSystems = [
     { name: "Air Handling Unit", id: "Air Handling Unit"},
     { name: "BAS System", id: "BAS System"},
     { name: "Chiller And Cooling Tower", id: "Chiller And Cooling Tower" },
-    { name: "Fire Protection System", id: "Fire Protection System" },
-    { name: "Monitoring Dashboard", id: "Monitoring" },
+    { name: "Fire Protection System", id: "Fire Protection System" }
 ];
 
 //---------------------------------link submission form--------------------------------------------------
@@ -500,8 +499,7 @@ async function setupHospitalPage() {
                 "Air Handling Unit": "Gambar-System/AHU.webp",
                 "BAS System": "Gambar-System/BAS.webp",
                 "Chiller And Cooling Tower": "Gambar-System/CHILLER.webp", 
-                "Fire Protection System": "Gambar-System/FPS.webp", 
-                "Monitoring": "Gambar-System/FPS.webp", 
+                "Fire Protection System": "Gambar-System/FPS.webp"
             };
 
 
