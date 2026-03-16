@@ -500,6 +500,7 @@ async function setupHospitalPage() {
                 "BAS System": "Gambar-System/BAS.webp",
                 "Chiller And Cooling Tower": "Gambar-System/CHILLER.webp", 
                 "Fire Protection System": "Gambar-System/FPS.webp", 
+                "Monitoring": "Gambar-System/FPS.webp", 
             };
 
 
