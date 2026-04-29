@@ -520,6 +520,16 @@ async function setupHospitalPage() {
             });
           }
 
+           if (hospitalId === 'MKJ-JB') {
+            // Remove LIFT and AIR HANDLING UNIT (and any others you don't want)
+            systemsToShow = criticalSystems.filter(system => {
+              // List the system IDs to exclude for JLB hospital
+              const excludedSystems = ['Medical Gas Pipeline System', 'BAS System']; // IDs to remove
+              return !excludedSystems.includes(system.id);
+            });
+          }
+          
+
             systemsToShow.forEach(system => {
                 const card = document.createElement('a');
                 card.className = 'system-card'; 
