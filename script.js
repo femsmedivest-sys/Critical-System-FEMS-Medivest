@@ -353,8 +353,8 @@ const submissionForms = {
     'MKJ-JB_Chiller And Cooling Tower': 'https://femsmedivest-sys.github.io/Submission-Form/MKJ.html',
     'MKJ-JB_Water Supply System': 'https://femsmedivest-sys.github.io/Submission-Form/MKJ.html',
     'MKJ-JB_Air Handling Unit': 'https://femsmedivest-sys.github.io/Submission-Form/MKJ.html',
-    'MKJ-JB_Medical Gas Pipeline System': 'https://femsmedivest-sys.github.io/Submission-Form/MKJ.html',
-    'MKJ-JB_BAS System': 'https://femsmedivest-sys.github.io/Submission-Form/MKJ.html',
+    //'MKJ-JB_Medical Gas Pipeline System': 'https://femsmedivest-sys.github.io/Submission-Form/MKJ.html',
+    //'MKJ-JB_BAS System': 'https://femsmedivest-sys.github.io/Submission-Form/MKJ.html',
 
     'PER-PERMAI_Electrical Supply': 'https://femsmedivest-sys.github.io/Submission-Form/PER.html',
     'PER-PERMAI_Generator Set': 'https://femsmedivest-sys.github.io/Submission-Form/PER.html',
