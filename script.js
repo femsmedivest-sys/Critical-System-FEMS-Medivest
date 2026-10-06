@@ -176,7 +176,7 @@ const submissionForms = {
     'JLB-JELEBU_Water Supply System': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
     // 'JLB-JELEBU_Air Handling Unit': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
     'JLB-JELEBU_Medical Gas Pipeline System': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
-    'JLB-JELEBU_BAS System': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
+    // 'JLB-JELEBU_BAS System': 'https://femsmedivest-sys.github.io/Submission-Form/JLB.html',
 
     'KPL-KUALA-PILAH_Electrical Supply': 'https://femsmedivest-sys.github.io/Submission-Form/KPL.html',
     'KPL-KUALA-PILAH_Generator Set': 'https://femsmedivest-sys.github.io/Submission-Form/KPL.html',
@@ -515,7 +515,7 @@ async function setupHospitalPage() {
             // Remove LIFT and AIR HANDLING UNIT (and any others you don't want)
             systemsToShow = criticalSystems.filter(system => {
               // List the system IDs to exclude for JLB hospital
-              const excludedSystems = ['Lift', 'Air Handling Unit']; // IDs to remove
+              const excludedSystems = ['Lift', 'Air Handling Unit', 'BAS System']; // IDs to remove
               return !excludedSystems.includes(system.id);
             });
           }
